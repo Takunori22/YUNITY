@@ -1,10 +1,9 @@
 export default {
   nav: {
     home:   "ホーム",
-    guide:  "銭湯ガイド",
-    access: "アクセス",
+    sento:  "銭湯紹介",
+    manner: "マナー",
     about:  "アバウト",
-    blog:   "ブログ",
   },
   hero: {
     heading: "湯が、世界をつなぐ。",
@@ -58,10 +57,9 @@ export default {
     formPlaceholder: "Googleフォームがここに表示されます",
     ctaButton: "アンケートに回答する →",
   },
-  blog: {
-    label: "活動報告",
-    title: "ブログ",
-    more:  "すべて見る",
+  manner: {
+    page_label: "マナー",
+    page_title: "気持ちよく、みんなで入る。",
   },
   access: {
     label:      "場所",

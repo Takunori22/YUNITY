@@ -36,8 +36,6 @@ export const REVEAL_SELECTORS = [
   ".team-section .section__label",
   ".team-section .section__title",
   ".team-card",
-  // Blog
-  ".blog-card",
   // Survey
   ".survey-section__inner > *",
 ].join(", ");

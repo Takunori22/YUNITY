@@ -1,10 +1,9 @@
 export default {
   nav: {
     home:   "Home",
-    guide:  "Sento Guide",
-    access: "Access",
+    sento:  "Sento Guide",
+    manner: "Manners",
     about:  "About",
-    blog:   "Blog",
   },
   hero: {
     heading: "Where Water Unites the World.",
@@ -58,10 +57,9 @@ export default {
     formPlaceholder: "Google Form will appear here",
     ctaButton: "Take the Survey →",
   },
-  blog: {
-    label: "Activity Report",
-    title: "Blog",
-    more:  "View All",
+  manner: {
+    page_label: "Manners",
+    page_title: "Bathe well, together.",
   },
   access: {
     label:      "Location",

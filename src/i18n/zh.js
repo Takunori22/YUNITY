@@ -1,10 +1,9 @@
 export default {
   nav: {
     home:   "首页",
-    guide:  "钱汤指南",
-    access: "交通",
-    about:  "关于",
-    blog:   "博客",
+    sento:  "钱汤介绍",
+    manner: "礼仪",
+    about:  "关于我们",
   },
   hero: {
     heading: "汤，连接世界。",
@@ -58,10 +57,9 @@ export default {
     formPlaceholder: "Google表单将在此处显示",
     ctaButton: "参加问卷调查 →",
   },
-  blog: {
-    label: "活动报告",
-    title: "博客",
-    more:  "查看全部",
+  manner: {
+    page_label: "礼仪",
+    page_title: "舒心入浴，与众同乐。",
   },
   access: {
     label:      "地点",

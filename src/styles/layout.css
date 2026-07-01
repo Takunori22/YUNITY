@@ -551,30 +551,6 @@
   display: block;
 }
 
-/* ---- Blog sections ---- */
-.blog-preview-section,
-.blog-section {
-  background-color: var(--color-cream);
-}
-
-.blog-preview-section .section__title,
-.blog-section .section__title {
-  color: rgba(72, 146, 155, 0.65);
-  -webkit-text-stroke: 1px var(--color-charcoal);
-}
-
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-md);
-  margin-top: var(--space-lg);
-}
-
-.blog-preview__more {
-  text-align: center;
-  margin-top: var(--space-lg);
-}
-
 /* ---- Access section ---- */
 .access-section {
   background-color: var(--color-cream);
@@ -679,9 +655,7 @@
 .concept-section,
 .solution-section,
 .access-section,
-.team-section,
-.blog-preview-section,
-.blog-section {
+.team-section {
   background: transparent;
   background-color: transparent;
 }
@@ -690,9 +664,7 @@
 .concept-section > .container,
 .solution-section > .container,
 .access-section > .container,
-.team-section > .container,
-.blog-preview-section > .container,
-.blog-section > .container {
+.team-section > .container {
   background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(18px) saturate(1.08);
   -webkit-backdrop-filter: blur(18px) saturate(1.08);
@@ -708,9 +680,7 @@
 body.no-water .concept-section > .container,
 body.no-water .solution-section > .container,
 body.no-water .access-section > .container,
-body.no-water .team-section > .container,
-body.no-water .blog-preview-section > .container,
-body.no-water .blog-section > .container {
+body.no-water .team-section > .container {
   background: var(--color-cream);
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
@@ -722,9 +692,6 @@ body.no-water .blog-section > .container {
 
 /* ---- Tablet (≤1024px) ---- */
 @media (max-width: 1024px) {
-  .blog-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 /* ---- Mobile-L / Tablet-S (≤768px) ---- */
@@ -743,9 +710,7 @@ body.no-water .blog-section > .container {
   .concept-section > .container,
   .solution-section > .container,
   .access-section > .container,
-  .team-section > .container,
-  .blog-preview-section > .container,
-  .blog-section > .container {
+  .team-section > .container {
     backdrop-filter: blur(10px) saturate(1.05);
     -webkit-backdrop-filter: blur(10px) saturate(1.05);
     background: rgba(255, 255, 255, 0.94);
@@ -763,10 +728,6 @@ body.no-water .blog-section > .container {
   }
 
   .solution-section__cards {
-    grid-template-columns: 1fr;
-  }
-
-  .blog-grid {
     grid-template-columns: 1fr;
   }
 

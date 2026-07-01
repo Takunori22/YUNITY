@@ -709,11 +709,6 @@ button.nav__logo {
     padding: 0.75rem 1.5rem;
     font-size: var(--text-sm);
   }
-
-  /* Blog card: reduce internal padding */
-  .blog-card {
-    padding: var(--space-sm);
-  }
 }
 
 /* Connecting path — recolored off the off-palette #00C4B4 to 浅葱 teal */
@@ -848,64 +843,6 @@ button.nav__logo {
 
 .survey-section__placeholder.hidden {
   display: none;
-}
-
-/* ---- Blog Cards ---- */
-.blog-card {
-  background: var(--color-white);
-  border-radius: var(--radius-md);
-  padding: var(--space-md);
-  border: 1px solid rgba(0, 0, 0, 0.07);
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
-  transition: transform var(--transition-med), box-shadow var(--transition-med);
-  cursor: pointer;
-}
-
-@media (hover: hover) {
-  .blog-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-  }
-}
-
-.blog-card__meta {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  margin-bottom: var(--space-sm);
-}
-
-.blog-card__tag {
-  font-size: var(--text-xs);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--color-teal);
-  background: rgba(72, 146, 155, 0.1);
-  border: 1px solid rgba(72, 146, 155, 0.3);
-  padding: 0.2rem 0.6rem;
-  border-radius: var(--radius-full);
-}
-
-.blog-card__date {
-  font-size: var(--text-xs);
-  color: rgba(44, 40, 40, 0.45);
-  letter-spacing: 0.05em;
-}
-
-.blog-card__title {
-  font-family: var(--font-display);
-  font-size: var(--text-lg);
-  font-weight: 500;
-  color: var(--color-charcoal);
-  line-height: 1.5;
-  margin-bottom: var(--space-xs);
-  letter-spacing: 0.04em;
-}
-
-.blog-card__excerpt {
-  font-size: var(--text-sm);
-  color: rgba(44, 40, 40, 0.6);
-  line-height: 1.8;
 }
 
 /* ---- Footer ---- */

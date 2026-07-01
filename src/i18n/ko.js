@@ -1,10 +1,9 @@
 export default {
   nav: {
     home:   "홈",
-    guide:  "센토 가이드",
-    access: "오시는 길",
+    sento:  "센토 소개",
+    manner: "매너",
     about:  "소개",
-    blog:   "블로그",
   },
   hero: {
     heading: "탕이, 세계를 잇는다。",
@@ -58,10 +57,9 @@ export default {
     formPlaceholder: "Google 폼이 여기에 표시됩니다",
     ctaButton: "설문조사 참여하기 →",
   },
-  blog: {
-    label: "활동 보고",
-    title: "블로그",
-    more:  "전체 보기",
+  manner: {
+    page_label: "매너",
+    page_title: "다 함께, 기분 좋게 목욕하기.",
   },
   access: {
     label:      "위치",

@@ -42,10 +42,9 @@
       <button class="nav__logo" data-tab="home">YU-NITY</button>
       <ul class="nav__links" id="nav-links">
         <li><button class="nav__tab active" data-tab="home"   data-i18n="nav.home">ホーム</button></li>
-        <li><button class="nav__tab"        data-tab="guide"  data-i18n="nav.guide">銭湯ガイド</button></li>
-        <li><button class="nav__tab"        data-tab="access" data-i18n="nav.access">アクセス</button></li>
+        <li><button class="nav__tab"        data-tab="sento"  data-i18n="nav.sento">銭湯紹介</button></li>
+        <li><button class="nav__tab"        data-tab="manner" data-i18n="nav.manner">マナー</button></li>
         <li><button class="nav__tab"        data-tab="about"  data-i18n="nav.about">アバウト</button></li>
-        <li><button class="nav__tab"        data-tab="blog"   data-i18n="nav.blog">ブログ</button></li>
       </ul>
       <div class="nav__lang-switcher">
         <button class="lang-btn active" data-lang-btn="ja" onclick="window.__setLang('ja')">JP</button>
@@ -83,44 +82,7 @@
         </div>
       </section>
 
-      <!-- Blog Preview -->
-      <section class="section blog-preview-section" data-temp="0.22">
-        <div class="container">
-          <div class="section__label" data-i18n="blog.label">活動報告</div>
-          <h2 class="section__title" data-i18n="blog.title">ブログ</h2>
-          <div class="blog-grid">
-            <article class="blog-card">
-              <div class="blog-card__meta">
-                <span class="blog-card__tag">活動報告</span>
-                <time class="blog-card__date">2025.06.01</time>
-              </div>
-              <h3 class="blog-card__title">外国人の方へのインタビューを実施しました</h3>
-              <p class="blog-card__excerpt">実際に銭湯を利用した外国人の方々にインタビューを行い、その体験談を記録しました。</p>
-            </article>
-            <article class="blog-card">
-              <div class="blog-card__meta">
-                <span class="blog-card__tag">イベント</span>
-                <time class="blog-card__date">2025.05.20</time>
-              </div>
-              <h3 class="blog-card__title">地域の銭湯へ見学に行ってきました</h3>
-              <p class="blog-card__excerpt">今回は地域の銭湯にお邪魔し、店主の方にお話を伺いながら施設を見学しました。</p>
-            </article>
-            <article class="blog-card">
-              <div class="blog-card__meta">
-                <span class="blog-card__tag">お知らせ</span>
-                <time class="blog-card__date">2025.05.10</time>
-              </div>
-              <h3 class="blog-card__title">外国人向けパンフレットを作成しました</h3>
-              <p class="blog-card__excerpt">銭湯の入り方・マナーをわかりやすく解説した多言語パンフレットを作成しました。</p>
-            </article>
-          </div>
-          <div class="blog-preview__more">
-            <button class="btn btn--secondary" data-tab="blog" data-i18n="blog.more">すべて見る</button>
-          </div>
-        </div>
-      </section>
-
-      <!-- Survey -->
+<!-- Survey -->
       <section class="section survey-section" id="survey" data-temp="0.92">
         <div id="survey-particles" class="survey-section__particles"></div>
         <div class="container survey-section__inner">
@@ -147,9 +109,9 @@
     </div><!-- /page-home -->
 
     <!-- ============================================================
-         PAGE: 銭湯ガイド
+         PAGE: 銭湯紹介
     ============================================================ -->
-    <div class="page" id="page-guide">
+    <div class="page" id="page-sento">
 
       <section class="section concept-section" id="concept" data-temp="0.4">
         <div class="container">
@@ -218,13 +180,6 @@
         </div>
       </section>
 
-    </div><!-- /page-guide -->
-
-    <!-- ============================================================
-         PAGE: アクセス
-    ============================================================ -->
-    <div class="page" id="page-access">
-
       <section class="section access-section" data-temp="0.32">
         <div class="container">
           <div class="section__label" data-i18n="access.label">場所</div>
@@ -245,8 +200,6 @@
               <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn--primary" data-i18n="access.map_btn">Google マップで開く</a>
             </div>
             <div class="access-map">
-              <!-- Google マップ埋め込み: src に埋め込みURLを設定してください -->
-              <!-- <iframe src="YOUR_GOOGLE_MAPS_EMBED_URL" width="100%" height="100%" style="border:0" allowfullscreen loading="lazy"></iframe> -->
               <div class="access-map__placeholder">
                 <p style="font-size:2.5rem">📍</p>
                 <p>東京都文京区湯島2丁目1-15</p>
@@ -257,7 +210,21 @@
         </div>
       </section>
 
-    </div><!-- /page-access -->
+    </div><!-- /page-sento -->
+
+    <!-- ============================================================
+         PAGE: マナー
+    ============================================================ -->
+    <div class="page" id="page-manner">
+
+      <section class="section manner-page-placeholder" data-temp="0.45">
+        <div class="container">
+          <div class="section__label" data-i18n="manner.page_label">マナー</div>
+          <h2 class="section__title" data-i18n="manner.page_title">気持ちよく、みんなで入る。</h2>
+        </div>
+      </section>
+
+    </div><!-- /page-manner -->
 
     <!-- ============================================================
          PAGE: アバウト
@@ -363,47 +330,7 @@
 
     </div><!-- /page-about -->
 
-    <!-- ============================================================
-         PAGE: ブログ
-    ============================================================ -->
-    <div class="page" id="page-blog">
-
-      <section class="section blog-section" data-temp="0.3">
-        <div class="container">
-          <div class="section__label" data-i18n="blog.label">活動報告</div>
-          <h2 class="section__title" data-i18n="blog.title">ブログ</h2>
-          <div class="blog-grid">
-            <article class="blog-card">
-              <div class="blog-card__meta">
-                <span class="blog-card__tag">活動報告</span>
-                <time class="blog-card__date">2025.06.01</time>
-              </div>
-              <h3 class="blog-card__title">外国人の方へのインタビューを実施しました</h3>
-              <p class="blog-card__excerpt">実際に銭湯を利用した外国人の方々にインタビューを行い、その体験談を記録しました。</p>
-            </article>
-            <article class="blog-card">
-              <div class="blog-card__meta">
-                <span class="blog-card__tag">イベント</span>
-                <time class="blog-card__date">2025.05.20</time>
-              </div>
-              <h3 class="blog-card__title">地域の銭湯へ見学に行ってきました</h3>
-              <p class="blog-card__excerpt">今回は地域の銭湯にお邪魔し、店主の方にお話を伺いながら施設を見学しました。</p>
-            </article>
-            <article class="blog-card">
-              <div class="blog-card__meta">
-                <span class="blog-card__tag">お知らせ</span>
-                <time class="blog-card__date">2025.05.10</time>
-              </div>
-              <h3 class="blog-card__title">外国人向けパンフレットを作成しました</h3>
-              <p class="blog-card__excerpt">銭湯の入り方・マナーをわかりやすく解説した多言語パンフレットを作成しました。</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-    </div><!-- /page-blog -->
-
-    <!-- FOOTER -->
+<!-- FOOTER -->
     <footer class="footer" id="footer">
       <div class="container footer__inner">
         <div class="footer__brand">
@@ -426,10 +353,9 @@
           <h3 class="footer__nav-title">ページ</h3>
           <ul class="footer__nav-list">
             <li><button class="footer__nav-link" data-tab="home">ホーム</button></li>
-            <li><button class="footer__nav-link" data-tab="guide">銭湯ガイド</button></li>
+            <li><button class="footer__nav-link" data-tab="sento">銭湯紹介</button></li>
+            <li><button class="footer__nav-link" data-tab="manner">マナー</button></li>
             <li><button class="footer__nav-link" data-tab="about">アバウト</button></li>
-            <li><button class="footer__nav-link" data-tab="access">アクセス</button></li>
-            <li><button class="footer__nav-link" data-tab="blog">ブログ</button></li>
           </ul>
         </nav>
 
