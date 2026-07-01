@@ -22,6 +22,7 @@ export const REVEAL_SELECTORS = [
   // Gallery
   ".gallery-section .section__label",
   ".gallery-section .section__title",
+  ".gallery-tile",
   // Team
   ".team-section .section__label",
   ".team-section .section__title",

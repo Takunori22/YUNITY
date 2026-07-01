@@ -1,9 +1,7 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { initGallery } from "./gallery.js";
 
 const VALID_TABS = ["home", "sento", "manner", "about"];
-let galleryInitialized = false;
 
 export function initTabs(onTabSwitch) {
   const pages = document.querySelectorAll(".page");
@@ -32,18 +30,7 @@ export function initTabs(onTabSwitch) {
     document.getElementById("nav-hamburger")?.classList.remove("is-open");
     history.pushState(null, "", `#${tabId}`);
 
-    // Gallery needs ScrollTrigger — initialize once when sento tab first shown.
-    // Refresh AFTER the display swap so pinned-gallery offsets (scrollWidth/
-    // innerWidth) are measured against the now-visible page.
-    if (tabId === "sento" && !galleryInitialized) {
-      galleryInitialized = true;
-      requestAnimationFrame(() => {
-        initGallery();
-        ScrollTrigger.refresh();
-      });
-    } else {
-      requestAnimationFrame(() => ScrollTrigger.refresh());
-    }
+    requestAnimationFrame(() => ScrollTrigger.refresh());
 
     onTabSwitch?.();
   }

@@ -200,47 +200,73 @@
   -webkit-text-stroke: 1.5px var(--color-charcoal);
 }
 
-.gallery-track {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 1.5rem;
-  padding: 0 2rem 4rem;
-  width: max-content;
-  will-change: transform;
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 0 var(--space-md) var(--space-lg);
 }
 
-.gallery-item {
-  width: clamp(260px, 38vw, 560px);
-  height: 60vh;
-  flex-shrink: 0;
+@media (min-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    padding: 0 var(--space-lg) var(--space-xl);
+  }
+}
+
+.gallery-tile {
+  position: relative;
+  aspect-ratio: 4 / 5;
   border-radius: var(--radius-md);
   overflow: hidden;
-  position: relative;
-  background: var(--color-indigo);
+  background: linear-gradient(135deg, var(--color-navy), rgba(72, 146, 155, 0.18));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform var(--transition-med);
 }
 
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1.1);
-  transition: transform var(--transition-slow);
+.gallery-tile:nth-child(3n+2) {
+  background: linear-gradient(135deg, var(--color-navy), rgba(200, 150, 12, 0.16));
 }
 
-.gallery-item__placeholder {
+.gallery-tile:nth-child(3n+3) {
+  background: linear-gradient(135deg, var(--color-navy), rgba(197, 61, 67, 0.14));
+}
+
+.gallery-tile::before {
+  content: attr(data-index);
+  position: absolute;
+  top: 0.75rem;
+  left: 0.9rem;
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  letter-spacing: 0.1em;
+  color: rgba(238, 234, 228, 0.55);
+}
+
+.gallery-tile::after {
+  content: "COMING SOON";
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 5rem;
-  background: linear-gradient(135deg, var(--color-navy), rgba(72, 146, 155, 0.15));
-  border: 1px solid rgba(255,255,255,0.08);
-  opacity: 1;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: rgba(238, 234, 228, 0.35);
 }
 
-.gallery-item--placeholder img {
-  display: none;
+@media (hover: hover) {
+  .gallery-tile:hover {
+    transform: translateY(-4px);
+  }
 }
 
 /* ---- Team ---- */

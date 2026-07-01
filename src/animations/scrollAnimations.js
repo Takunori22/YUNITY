@@ -50,6 +50,7 @@ export function initScrollAnimations() {
   // ── Gallery ──────────────────────────────────────────
   registerAll(".gallery-section .section__label",  { y: 20 });
   registerAll(".gallery-section .section__title",  { y: 28 });
+  registerAll(".gallery-tile",                     { y: 32 }, 0.06);
 
   // ── Team ─────────────────────────────────────────────
   register(document.querySelector(".team-section > .container"), { y: 20 });
