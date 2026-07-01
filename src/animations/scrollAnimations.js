@@ -57,6 +57,11 @@ export function initScrollAnimations() {
   registerAll(".sento-section__text > *",        { x: -40 }, 0.08);
   registerAll(".sento-section__map",             { x: 40 });
 
+  // ── Manner teaser (home) ────────────────────────────
+  registerAll(".manner-section .section__label",  { y: 20 });
+  registerAll(".manner-section .section__title",  { y: 28 });
+  registerAll(".manner-highlight-card",           { y: 32 }, 0.08);
+
   // ── Team ─────────────────────────────────────────────
   register(document.querySelector(".team-section > .container"), { y: 20 });
   registerAll(".team-section .section__label",     { y: 20, delay: 0.15 });

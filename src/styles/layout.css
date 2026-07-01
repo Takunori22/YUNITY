@@ -153,6 +153,60 @@
   }
 }
 
+/* ---- Manner teaser (home) ---- */
+.manner-section {
+  background-color: var(--color-cream);
+}
+
+.manner-section .section__title {
+  color: rgba(72, 146, 155, 0.65);
+  -webkit-text-stroke: 1.5px var(--color-charcoal);
+}
+
+.manner-highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-sm);
+  margin: var(--space-lg) 0;
+}
+
+.manner-highlight-card {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(44, 40, 40, 0.10);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-sm);
+  text-align: center;
+}
+
+.manner-highlight-card__icon {
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: var(--space-xs);
+}
+
+.manner-highlight-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  color: var(--color-charcoal);
+  margin-bottom: 0.35rem;
+}
+
+.manner-highlight-card__body {
+  font-size: var(--text-sm);
+  color: rgba(44, 40, 40, 0.7);
+  line-height: 1.6;
+}
+
+.manner-section__cta {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .manner-highlight-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* ---- Concept ---- */
 .concept-section {
   background-color: #f0ece4;
@@ -653,6 +707,7 @@
 
 /* Light-content sections: transparent shell … */
 .sento-section,
+.manner-section,
 .concept-section,
 .access-section,
 .team-section {
@@ -662,6 +717,7 @@
 
 /* … with a frosted steam-glass panel holding the content */
 .sento-section > .container,
+.manner-section > .container,
 .concept-section > .container,
 .access-section > .container,
 .team-section > .container {
@@ -678,6 +734,7 @@
 
 /* Steam-glass panels off under reduced motion / no backdrop support → solid */
 body.no-water .sento-section > .container,
+body.no-water .manner-section > .container,
 body.no-water .concept-section > .container,
 body.no-water .access-section > .container,
 body.no-water .team-section > .container {

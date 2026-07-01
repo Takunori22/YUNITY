@@ -48,6 +48,17 @@ export default {
   manner: {
     page_label: "マナー",
     page_title: "気持ちよく、みんなで入る。",
+    teaser_label: "マナー",
+    teaser_title: "気持ちよく、みんなで入る。",
+    teaser_card1_title: "洗ってから浴槽へ",
+    teaser_card1_body: "湯船に入る前に、かけ湯とからだ洗いを。",
+    teaser_card2_title: "タオルは湯船の外に",
+    teaser_card2_body: "浴槽の中にタオルを浸けないのがマナーです。",
+    teaser_card3_title: "会話は控えめに",
+    teaser_card3_body: "静かな時間を、みんなで気持ちよく。",
+    teaser_card4_title: "タトゥーも相談を",
+    teaser_card4_body: "対応は施設ごとに異なるので、事前にご確認を。",
+    teaser_cta: "マナーを詳しく見る →",
   },
   access: {
     label:      "場所",

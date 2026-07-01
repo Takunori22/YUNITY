@@ -48,6 +48,17 @@ export default {
   manner: {
     page_label: "매너",
     page_title: "다 함께, 기분 좋게 목욕하기.",
+    teaser_label: "매너",
+    teaser_title: "다 함께, 기분 좋게 목욕하기.",
+    teaser_card1_title: "탕에 들어가기 전에 씻기",
+    teaser_card1_body: "탕에 들어가기 전 몸을 씻고 헹궈주세요.",
+    teaser_card2_title: "수건은 탕 밖에서",
+    teaser_card2_body: "수건을 탕 안에 담그지 마세요.",
+    teaser_card3_title: "대화는 조용히",
+    teaser_card3_body: "조용한 분위기는 모두를 위한 배려입니다.",
+    teaser_card4_title: "문신은 미리 확인을",
+    teaser_card4_body: "시설마다 규정이 다르니 사전에 확인해 주세요.",
+    teaser_cta: "매너 가이드 자세히 보기 →",
   },
   access: {
     label:      "위치",

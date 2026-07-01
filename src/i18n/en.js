@@ -48,6 +48,17 @@ export default {
   manner: {
     page_label: "Manners",
     page_title: "Bathe well, together.",
+    teaser_label: "Manners",
+    teaser_title: "Bathe well, together.",
+    teaser_card1_title: "Rinse before the tub",
+    teaser_card1_body: "Wash and rinse your body before entering the bath.",
+    teaser_card2_title: "Keep towels out of the water",
+    teaser_card2_body: "Never let your towel touch the bathwater.",
+    teaser_card3_title: "Keep your voice down",
+    teaser_card3_body: "Quiet moments are part of the shared experience.",
+    teaser_card4_title: "Ask about tattoos",
+    teaser_card4_body: "Policies vary by bathhouse, so check in advance.",
+    teaser_cta: "See the full manner guide →",
   },
   access: {
     label:      "Location",

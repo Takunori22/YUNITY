@@ -48,6 +48,17 @@ export default {
   manner: {
     page_label: "礼仪",
     page_title: "舒心入浴，与众同乐。",
+    teaser_label: "礼仪",
+    teaser_title: "舒心入浴，与众同乐。",
+    teaser_card1_title: "先冲洗，后入浴",
+    teaser_card1_body: "进入浴池前请先冲淋并清洗身体。",
+    teaser_card2_title: "毛巾不入浴池",
+    teaser_card2_body: "请勿将毛巾浸入浴池中。",
+    teaser_card3_title: "请保持安静",
+    teaser_card3_body: "安静的氛围是大家共同的享受。",
+    teaser_card4_title: "纹身请提前确认",
+    teaser_card4_body: "各店铺规定不同，请事先咨询。",
+    teaser_cta: "查看完整礼仪指南 →",
   },
   access: {
     label:      "地点",

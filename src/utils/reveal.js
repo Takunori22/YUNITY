@@ -27,6 +27,10 @@ export const REVEAL_SELECTORS = [
   ".sento-section .section__label",
   ".sento-section__text > *",
   ".sento-section__map",
+  // Manner teaser (home)
+  ".manner-section .section__label",
+  ".manner-section .section__title",
+  ".manner-highlight-card",
   // Team
   ".team-section .section__label",
   ".team-section .section__title",
