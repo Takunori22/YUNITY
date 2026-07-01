@@ -46,61 +46,6 @@ export function initScrollAnimations() {
   registerAll(".concept-section__visual",          { x: -50 });
   registerAll(".concept-section__text > *",        { x: 40 }, 0.1);
 
-  // ── Problem ──────────────────────────────────────────
-  registerAll(".problem-section .section__label",  { y: 20 });
-  registerAll(".problem-section .section__title",  { y: 28 });
-  registerAll(".counter-card",                     { y: 36 }, 0.1);
-  register(document.querySelector(".problem-text-card:nth-child(1)"), { x: -48 });
-  register(document.querySelector(".problem-text-card:nth-child(2)"), { x: 48, delay: 0.15 });
-  register(document.querySelector(".problem-conclusion"),              { y: 24 });
-
-  // カウントアップ（scroll イベントで監視）
-  const counters = [];
-  document.querySelectorAll("[data-counter]").forEach((el) => {
-    const target = parseInt(el.dataset.target, 10);
-    const suffix = el.dataset.suffix || "";
-    const obj    = { val: 0 };
-    let tween    = null;
-    let active   = false;
-    counters.push({
-      el,
-      check() {
-        const rect = el.getBoundingClientRect();
-        const inView = rect.top < window.innerHeight * 0.88 && rect.bottom > 0;
-        if (inView && !active) {
-          active = true;
-          tween?.kill();
-          obj.val = 0;
-          tween = gsap.to(obj, {
-            val: target, duration: 2, ease: "power1.out", snap: { val: 1 },
-            onUpdate() { el.textContent = Math.round(obj.val) + suffix; },
-            onComplete() {
-              // Elastic landing: final-digit overshoot + 紅 ring flash
-              gsap.fromTo(el, { scale: 1 },
-                { scale: 1.14, duration: 0.16, ease: "power2.out", yoyo: true, repeat: 1 });
-              const card = el.closest(".counter-card");
-              if (card) {
-                card.classList.remove("counter-card--pop");
-                void card.offsetWidth; // restart the keyframe
-                card.classList.add("counter-card--pop");
-              }
-            },
-          });
-        } else if (!inView && active) {
-          active = false;
-          tween?.kill();
-          el.textContent = "0" + suffix;
-        }
-      },
-    });
-  });
-
-  // ── Solution ─────────────────────────────────────────
-  // Register the container first so the white bg card is hidden until in view
-  register(document.querySelector(".solution-section > .container"), { y: 20 });
-  registerAll(".solution-section .section__label", { y: 20, delay: 0.15 });
-  registerAll(".solution-section .section__title", { y: 28, delay: 0.15 });
-  registerAll("[data-solution-card]",              { y: 40, delay: 0.15 }, 0.15);
 
   // ── Gallery ──────────────────────────────────────────
   registerAll(".gallery-section .section__label",  { y: 20 });
@@ -117,40 +62,20 @@ export function initScrollAnimations() {
 
   // ── 初期チェック（ロード時・anchor 遷移時にビュー内の要素を即表示）──
   checkVisible();
-  counters.forEach((c) => c.check());
   requestAnimationFrame(() => {
     checkVisible();
-    counters.forEach((c) => c.check());
   });
   // 全リソースロード後の最終フォールバック
   window.addEventListener("load", () => {
     checkVisible();
-    counters.forEach((c) => c.check());
   }, { once: true });
 
   // ── Scroll listener ──────────────────────────────────
   window.addEventListener("scroll", () => {
     checkVisible();
-    counters.forEach((c) => c.check());
 
     // Nav
     document.getElementById("nav")
       ?.classList.toggle("nav--scrolled", window.scrollY > 80);
   }, { passive: true });
-
-  // ── SVG path（スクラブのみ ScrollTrigger を維持）────
-  const solutionPath  = document.querySelector(".solution-path");
-  const pathContainer = document.querySelector(".solution-section__path");
-  if (solutionPath && pathContainer && window.innerWidth >= 900) {
-    pathContainer.style.display = "block";
-    const len = solutionPath.getTotalLength();
-    gsap.set(solutionPath, { strokeDasharray: len, strokeDashoffset: len });
-    gsap.to(solutionPath, {
-      strokeDashoffset: 0, ease: "none",
-      scrollTrigger: {
-        trigger: ".solution-section__cards",
-        start: "top 75%", end: "bottom 60%", scrub: 1,
-      },
-    });
-  }
 }

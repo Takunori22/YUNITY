@@ -184,62 +184,6 @@
   margin-top: var(--space-md);
 }
 
-/* ---- Problem ---- */
-.problem-section {
-  background-color: var(--color-indigo);
-}
-
-.problem-section__stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-md);
-  margin-top: var(--space-lg);
-}
-
-.problem-section__bg-pattern {
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(circle at 20% 50%, rgba(72,146,155,0.10) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(197,61,67,0.10) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.problem-section .container {
-  position: relative;
-  z-index: 1;
-}
-
-/* ---- Solution ---- */
-.solution-section {
-  background-color: #f0ece4;
-}
-
-.solution-section .section__title {
-  color: rgba(72, 146, 155, 0.65);
-  -webkit-text-stroke: 1.5px var(--color-charcoal);
-}
-
-.solution-section__cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-md);
-  margin-top: var(--space-lg);
-  position: relative;
-}
-
-.solution-section__path {
-  position: absolute;
-  top: 50%;
-  left: 10%;
-  width: 80%;
-  transform: translateY(-50%);
-  pointer-events: none;
-  z-index: 0;
-  display: none; /* shown at wide viewport via JS */
-}
-
 /* ---- Gallery ---- */
 .gallery-section {
   background-color: var(--color-navy);
@@ -643,7 +587,6 @@
 
 /* Dark sections: let the WebGL water be the background */
 .hero,
-.problem-section,
 .survey-section,
 .gallery-section {
   background: transparent !important;
@@ -653,7 +596,6 @@
 
 /* Light-content sections: transparent shell … */
 .concept-section,
-.solution-section,
 .access-section,
 .team-section {
   background: transparent;
@@ -662,7 +604,6 @@
 
 /* … with a frosted steam-glass panel holding the content */
 .concept-section > .container,
-.solution-section > .container,
 .access-section > .container,
 .team-section > .container {
   background: rgba(255, 255, 255, 0.88);
@@ -678,7 +619,6 @@
 
 /* Steam-glass panels off under reduced motion / no backdrop support → solid */
 body.no-water .concept-section > .container,
-body.no-water .solution-section > .container,
 body.no-water .access-section > .container,
 body.no-water .team-section > .container {
   background: var(--color-cream);
@@ -708,7 +648,6 @@ body.no-water .team-section > .container {
 
   /* Perf: lighter backdrop blur + more opaque glass on mobile GPUs */
   .concept-section > .container,
-  .solution-section > .container,
   .access-section > .container,
   .team-section > .container {
     backdrop-filter: blur(10px) saturate(1.05);
@@ -719,15 +658,6 @@ body.no-water .team-section > .container {
   }
 
   .concept-section__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .problem-section__stats {
-    grid-template-columns: 1fr;
-    gap: var(--space-sm);
-  }
-
-  .solution-section__cards {
     grid-template-columns: 1fr;
   }
 

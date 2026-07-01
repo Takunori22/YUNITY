@@ -19,16 +19,6 @@ export const REVEAL_SELECTORS = [
   ".concept-section .section__label",
   ".concept-section__visual",
   ".concept-section__text > *",
-  // Problem
-  ".problem-section .section__label",
-  ".problem-section .section__title",
-  ".counter-card",
-  ".problem-text-card",
-  ".problem-conclusion",
-  // Solution
-  ".solution-section .section__label",
-  ".solution-section .section__title",
-  "[data-solution-card]",
   // Gallery
   ".gallery-section .section__label",
   ".gallery-section .section__title",
@@ -57,11 +47,5 @@ export function revealAll(gsap) {
   // Survey brushstroke shows fully drawn (offset also enforced in survey.js).
   document.querySelectorAll(".survey-brush__path").forEach((p) => {
     p.style.strokeDashoffset = "0";
-  });
-
-  // Counters never tween under reduced motion — show final values, not "0".
-  document.querySelectorAll("[data-counter]").forEach((el) => {
-    const target = parseInt(el.dataset.target, 10);
-    if (!Number.isNaN(target)) el.textContent = target + (el.dataset.suffix || "");
   });
 }
