@@ -1,0 +1,78 @@
+- generic [ref=e1]:
+  - generic:
+    - generic:
+      - generic: YU-NITY
+      - paragraph: Choose your language / 言語を選択してください
+      - generic:
+        - button "🇯🇵 日本語":
+          - generic: 🇯🇵
+          - generic: 日本語
+        - button "🇬🇧 English":
+          - generic: 🇬🇧
+          - generic: English
+        - button "🇨🇳 中文":
+          - generic: 🇨🇳
+          - generic: 中文
+        - button "🇰🇷 한국어":
+          - generic: 🇰🇷
+          - generic: 한국어
+  - navigation [ref=e2]:
+    - button "YU-NITY" [ref=e3] [cursor=pointer]
+    - list [ref=e4]:
+      - listitem [ref=e5]:
+        - button "ホーム" [ref=e6] [cursor=pointer]
+      - listitem [ref=e7]:
+        - button "銭湯ガイド" [active] [ref=e8] [cursor=pointer]
+      - listitem [ref=e9]:
+        - button "アクセス" [ref=e10] [cursor=pointer]
+      - listitem [ref=e11]:
+        - button "アバウト" [ref=e12] [cursor=pointer]
+      - listitem [ref=e13]:
+        - button "ブログ" [ref=e14] [cursor=pointer]
+    - generic [ref=e15]:
+      - button "JP" [ref=e16] [cursor=pointer]
+      - button "EN" [ref=e17] [cursor=pointer]
+      - button "中文" [ref=e18] [cursor=pointer]
+      - button "한국어" [ref=e19] [cursor=pointer]
+  - generic [ref=e116]:
+    - generic [ref=e118]:
+      - generic [ref=e119]: 銭湯文化とは
+      - generic [ref=e120]:
+        - generic [ref=e121]:
+          - img "銭湯のイラスト" [ref=e123]
+          - generic [ref=e124]:
+            - generic [ref=e125]:
+              - generic [ref=e126]: 3,000+
+              - generic [ref=e127]: 全国の銭湯数
+            - generic [ref=e128]:
+              - generic [ref=e129]: 400年
+              - generic [ref=e130]: の歴史
+        - generic [ref=e131]:
+          - heading "日本が誇る、湯の文化" [level=2] [ref=e132]
+          - paragraph [ref=e133]: 銭湯は単なる入浴施設ではありません。地域のコミュニティが集まり、裸の付き合いで本音を語り合える、日本独自の文化的空間です。江戸時代から続くこの文化には、外国人観光客が体験できる本物の日本がある。
+    - generic [ref=e137]:
+      - img "銭湯外観" [ref=e139]
+      - img "脱衣所" [ref=e141]
+      - img "浴場内部" [ref=e143]
+      - img "交流イベント" [ref=e145]
+      - img "のれん" [ref=e147]
+      - img "地域住民" [ref=e149]
+      - img "外国人観光客" [ref=e151]
+  - contentinfo [ref=e55]:
+    - generic [ref=e56]:
+      - generic [ref=e57]:
+        - generic [ref=e58]: YU-NITY
+        - paragraph [ref=e59]: 銭湯でつながる世界
+      - generic [ref=e60]:
+        - link "Instagram" [ref=e61] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e62]
+        - link "X (Twitter)" [ref=e64] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e65]
+        - link "LINE" [ref=e67] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e68]
+      - paragraph [ref=e70]: © 2025 YU-NITY Project. All rights reserved.
+    - button "back to top" [ref=e71] [cursor=pointer]:
+      - img [ref=e72]

@@ -1,0 +1,81 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - generic: YU-NITY
+      - paragraph: Choose your language / 言語を選択してください
+      - generic:
+        - button "🇯🇵 日本語":
+          - generic: 🇯🇵
+          - generic: 日本語
+        - button "🇬🇧 English":
+          - generic: 🇬🇧
+          - generic: English
+        - button "🇨🇳 中文":
+          - generic: 🇨🇳
+          - generic: 中文
+        - button "🇰🇷 한국어":
+          - generic: 🇰🇷
+          - generic: 한국어
+  - navigation [ref=e2]:
+    - button "YU-NITY" [ref=e3] [cursor=pointer]
+    - list [ref=e4]:
+      - listitem [ref=e5]:
+        - button "ホーム" [ref=e6] [cursor=pointer]
+      - listitem [ref=e7]:
+        - button "銭湯ガイド" [ref=e8] [cursor=pointer]
+      - listitem [ref=e9]:
+        - button "アクセス" [ref=e10] [cursor=pointer]
+      - listitem [ref=e11]:
+        - button "アバウト" [ref=e12] [cursor=pointer]
+      - listitem [ref=e13]:
+        - button "ブログ" [ref=e14] [cursor=pointer]
+    - generic [ref=e15]:
+      - button "JP" [ref=e16] [cursor=pointer]
+      - button "EN" [ref=e17] [cursor=pointer]
+      - button "中文" [ref=e18] [cursor=pointer]
+      - button "한국어" [ref=e19] [cursor=pointer]
+  - generic [ref=e20]:
+    - generic [ref=e24]:
+      - generic [ref=e25]: SENTO × MULTICULTURAL
+      - heading "YU-NITY" [level=1] [ref=e26]
+    - generic [ref=e29]:
+      - generic [ref=e30]: 活動報告
+      - heading "ブログ" [level=2] [ref=e31]
+      - generic [ref=e32]:
+        - article [ref=e33] [cursor=pointer]:
+          - generic [ref=e34]:
+            - generic [ref=e35]: 活動報告
+            - time [ref=e36]: 2025.06.01
+          - heading "外国人の方へのインタビューを実施しました" [level=3] [ref=e37]
+          - paragraph [ref=e38]: 実際に銭湯を利用した外国人の方々にインタビューを行い、その体験談を記録しました。
+        - article [ref=e39] [cursor=pointer]:
+          - generic [ref=e40]:
+            - generic [ref=e41]: イベント
+            - time [ref=e42]: 2025.05.20
+          - heading "地域の銭湯へ見学に行ってきました" [level=3] [ref=e43]
+          - paragraph [ref=e44]: 今回は地域の銭湯にお邪魔し、店主の方にお話を伺いながら施設を見学しました。
+        - article [ref=e45] [cursor=pointer]:
+          - generic [ref=e46]:
+            - generic [ref=e47]: お知らせ
+            - time [ref=e48]: 2025.05.10
+          - heading "外国人向けパンフレットを作成しました" [level=3] [ref=e49]
+          - paragraph [ref=e50]: 銭湯の入り方・マナーをわかりやすく解説した多言語パンフレットを作成しました。
+      - button "すべて見る" [ref=e52] [cursor=pointer]
+  - contentinfo [ref=e55]:
+    - generic [ref=e56]:
+      - generic [ref=e57]:
+        - generic [ref=e58]: YU-NITY
+        - paragraph [ref=e59]: 銭湯でつながる世界
+      - generic [ref=e60]:
+        - link "Instagram" [ref=e61] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e62]
+        - link "X (Twitter)" [ref=e64] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e65]
+        - link "LINE" [ref=e67] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e68]
+      - paragraph [ref=e70]: © 2025 YU-NITY Project. All rights reserved.
+    - button "back to top" [ref=e71] [cursor=pointer]:
+      - img [ref=e72]

@@ -1,0 +1,819 @@
+/* ============================================================
+   LAYOUT — Sections, Container, Grid, Responsive
+============================================================ */
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* ---- Generic section ---- */
+.section {
+  padding: var(--space-xl) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.section__label {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-now);   /* warms with the temperature journey */
+  margin-bottom: var(--space-sm);
+}
+
+.section__title {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-2xl), 5vw, var(--text-4xl));
+  font-weight: 500;
+  color: rgba(72, 146, 155, 0.65);        /* teal — ボーダー(charcoal)と異なる色 */
+  -webkit-text-stroke: 1px var(--color-charcoal);
+  line-height: 1.3;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-md);
+}
+
+.section__title--light {
+  color: rgba(72, 146, 155, 0.65);
+  -webkit-text-stroke: 1.5px var(--color-charcoal);
+}
+
+.section__body {
+  font-size: var(--text-lg);
+  line-height: 1.8;
+  color: var(--color-charcoal);
+  max-width: 680px;
+}
+
+.section__body--light {
+  color: var(--color-charcoal);
+}
+
+/* ---- Hero ---- */
+.hero {
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: transparent;   /* let the WebGL 湯 show through */
+}
+
+.hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+  z-index: 0;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(14,16,24,0.25) 0%, rgba(14,16,24,0.15) 40%, rgba(14,16,24,0.55) 100%);
+  z-index: 1;
+}
+
+/* rising water-line near the hero foot */
+.hero__waterline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14%;
+  height: 2px;
+  z-index: 2;
+  background: linear-gradient(90deg, transparent, rgba(72,146,155,0.7) 20%, rgba(237,232,222,0.85) 50%, rgba(72,146,155,0.7) 80%, transparent);
+  box-shadow: 0 0 24px rgba(72,146,155,0.5);
+  opacity: 0.6;
+  transform-origin: center;
+  animation: waterlineSway 6s ease-in-out infinite;
+}
+
+.hero__particles {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: var(--space-md);
+  max-width: 900px;
+}
+
+.hero__scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.6;
+}
+
+/* ---- Concept ---- */
+.concept-section {
+  background-color: #f0ece4;
+}
+
+.concept-section .section__title {
+  color: rgba(72, 146, 155, 0.65);
+  -webkit-text-stroke: 1.5px var(--color-charcoal);
+}
+
+.concept-section .section__body {
+  color: var(--color-charcoal);
+}
+
+.concept-section__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+  margin-top: var(--space-md);
+}
+
+.concept-section__img-wrap {
+  aspect-ratio: 4/3;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+  background: var(--color-navy);
+}
+
+.concept-section__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.concept-section__img-placeholder {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.concept-section__img-placeholder svg {
+  width: 100%;
+  height: 100%;
+}
+
+.concept-section__stats {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.concept-section__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-top: var(--space-md);
+}
+
+/* ---- Problem ---- */
+.problem-section {
+  background-color: var(--color-indigo);
+}
+
+.problem-section__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.problem-section__bg-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(72,146,155,0.10) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(197,61,67,0.10) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.problem-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- Solution ---- */
+.solution-section {
+  background-color: #f0ece4;
+}
+
+.solution-section .section__title {
+  color: rgba(72, 146, 155, 0.65);
+  -webkit-text-stroke: 1.5px var(--color-charcoal);
+}
+
+.solution-section__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  position: relative;
+}
+
+.solution-section__path {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  width: 80%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 0;
+  display: none; /* shown at wide viewport via JS */
+}
+
+/* ---- Gallery ---- */
+.gallery-section {
+  background-color: var(--color-navy);
+  overflow: hidden;
+  padding: var(--space-lg) 0 0;
+}
+
+.gallery-section__header {
+  margin-bottom: var(--space-md);
+}
+
+.gallery-section .section__title {
+  color: rgba(72, 146, 155, 0.65);
+  -webkit-text-stroke: 1.5px var(--color-charcoal);
+}
+
+.gallery-track {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1.5rem;
+  padding: 0 2rem 4rem;
+  width: max-content;
+  will-change: transform;
+}
+
+.gallery-item {
+  width: clamp(260px, 38vw, 560px);
+  height: 60vh;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+  background: var(--color-indigo);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.1);
+  transition: transform var(--transition-slow);
+}
+
+.gallery-item__placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  background: linear-gradient(135deg, var(--color-navy), rgba(72, 146, 155, 0.15));
+  border: 1px solid rgba(255,255,255,0.08);
+  opacity: 1;
+}
+
+.gallery-item--placeholder img {
+  display: none;
+}
+
+/* ---- Team ---- */
+.team-section {
+  background-color: var(--color-cream);
+}
+
+.team-grid {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 1.5rem;
+  margin-top: var(--space-lg);
+  padding: 0 var(--space-md) var(--space-sm);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-teal) rgba(0,0,0,0.1);
+}
+
+.team-grid::-webkit-scrollbar {
+  height: 4px;
+}
+
+.team-grid::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.08);
+  border-radius: 2px;
+}
+
+.team-grid::-webkit-scrollbar-thumb {
+  background: var(--color-teal);
+  border-radius: 2px;
+}
+
+.team-card {
+  flex: 0 0 clamp(150px, 18vw, 190px);
+  scroll-snap-align: start;
+}
+
+/* ---- Survey ---- */
+.survey-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* 湯が満ちる — warm tide glow rising at the climax (warmest point) */
+.survey-section::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -30%;
+  width: 140%;
+  height: 80%;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center bottom,
+    rgba(200, 150, 12, 0.32) 0%,
+    rgba(197, 61, 67, 0.18) 35%,
+    transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  animation: tideBreath 7s ease-in-out infinite;
+}
+
+.survey-section__particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.survey-section__inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+/* ── ご記帳 title with sumi brushstroke underline ── */
+.survey-section__title-wrap {
+  position: relative;
+  display: inline-block;
+  margin-bottom: var(--space-md);
+}
+
+.survey-section__title {
+  margin-bottom: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.survey-brush {
+  position: absolute;
+  left: -2%;
+  bottom: -0.35em;
+  width: 104%;
+  height: 0.5em;
+  overflow: visible;
+  z-index: 0;
+}
+
+.survey-brush__path {
+  stroke: var(--color-yuzu);
+  filter: drop-shadow(0 1px 2px rgba(200, 150, 12, 0.4));
+}
+
+.survey-section__subtitle {
+  margin: 0 auto var(--space-lg);
+  text-align: center;
+}
+
+/* ── Washi-paper iframe frame + 朱印 seal ── */
+.survey-section__form-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  min-height: 600px;
+  border-radius: var(--radius-md);
+  background: var(--color-cream);
+  border: 1px solid rgba(249, 243, 232, 0.5);
+  padding: 6px;
+  box-shadow:
+    0 0 0 1px rgba(200, 150, 12, 0.25),
+    0 24px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* iframeなし状態 — プレースホルダーを全面表示 */
+.survey-form-wrap--no-iframe {
+  min-height: auto;
+  padding: var(--space-lg) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+.survey-form-wrap--no-iframe .survey-section__placeholder {
+  position: static;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0;
+}
+
+.survey-form-wrap--no-iframe .survey-section__placeholder p {
+  font-size: var(--text-lg);
+  font-family: var(--font-display);
+  color: var(--color-charcoal);
+  letter-spacing: 0.05em;
+}
+
+.survey-form-wrap--no-iframe .survey-section__placeholder-note {
+  font-size: var(--text-sm) !important;
+  color: rgba(44,40,40,0.45);
+  opacity: 1;
+}
+
+.survey-iframe,
+.survey-section__placeholder {
+  border-radius: calc(var(--radius-md) - 5px);
+  overflow: hidden;
+}
+
+/* CTA モード — ボタンのみ表示する際のコンパクトラッパー */
+.survey-form-wrap--cta {
+  min-height: auto !important;
+  height: auto !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: var(--space-md) 0 0 0 !important;
+  display: flex;
+  justify-content: center;
+}
+
+/* CTA ボタン（iframe 非埋め込み時のフォールバック） */
+.survey-section__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: var(--space-xl);
+  padding: 1rem 2.5rem;
+  background: var(--color-teal);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 24px rgba(72, 146, 155, 0.35);
+  transition: background 0.2s, transform 0.18s, box-shadow 0.18s;
+}
+
+.survey-section__cta-btn:hover {
+  background: var(--color-indigo);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(72, 146, 155, 0.45);
+}
+
+/* 朱印 wax-seal straddling the bottom-right corner (outside the form area) */
+.survey-section__seal {
+  position: absolute;
+  right: -0.6rem;
+  bottom: -0.6rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--color-cream);
+  background: var(--seal);
+  border-radius: 8px 8px 8px 0;
+  box-shadow: 0 4px 16px rgba(197, 61, 67, 0.4);
+  z-index: 3;
+  pointer-events: none;
+  transform: rotate(-4deg);
+}
+
+.survey-iframe {
+  width: 100%;
+  height: 700px;
+  border: none;
+  display: block;
+}
+
+/* ---- Footer ---- */
+.footer {
+  background-color: var(--color-indigo);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: var(--space-lg) 0 var(--space-md);
+  position: relative;
+}
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: var(--space-md) var(--space-lg);
+  align-items: start;
+}
+
+/* ---- Pages (tab switching) ---- */
+.page {
+  display: none;
+}
+.page.active {
+  display: block;
+}
+
+/* ---- Blog sections ---- */
+.blog-preview-section,
+.blog-section {
+  background-color: var(--color-cream);
+}
+
+.blog-preview-section .section__title,
+.blog-section .section__title {
+  color: rgba(72, 146, 155, 0.65);
+  -webkit-text-stroke: 1px var(--color-charcoal);
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.blog-preview__more {
+  text-align: center;
+  margin-top: var(--space-lg);
+}
+
+/* ---- Access section ---- */
+.access-section {
+  background-color: var(--color-cream);
+  min-height: 70vh;
+}
+
+.access-section .section__title {
+  color: rgba(72, 146, 155, 0.65);
+  -webkit-text-stroke: 1px var(--color-charcoal);
+}
+
+.access-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+  margin-top: var(--space-lg);
+}
+
+.access-info__name {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: var(--color-charcoal);
+  margin-bottom: var(--space-md);
+  letter-spacing: 0.06em;
+}
+
+.access-details {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.access-details dt {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-teal);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.access-details dd {
+  font-size: var(--text-base);
+  color: var(--color-charcoal);
+  line-height: 1.6;
+}
+
+.access-map {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-navy);
+}
+
+.access-map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.access-map__placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: rgba(238, 234, 228, 0.5);
+  font-size: var(--text-base);
+  padding: var(--space-md);
+  text-align: center;
+}
+
+.access-map__note {
+  font-size: var(--text-xs);
+  opacity: 0.5;
+  margin-top: 0.25rem;
+}
+
+/* ============================================================
+   LIQUID SENTŌ — sections dissolve into the 湯
+   Dark sections go transparent (light text floats on water);
+   light-content sections become floating frosted steam-glass panels.
+============================================================ */
+.page { background: transparent; }
+
+/* Dark sections: let the WebGL water be the background */
+.hero,
+.problem-section,
+.survey-section,
+.gallery-section {
+  background: transparent !important;
+  background-color: transparent !important;
+  animation: none !important;   /* drop the old problem gradient-shift */
+}
+
+/* Light-content sections: transparent shell … */
+.concept-section,
+.solution-section,
+.access-section,
+.team-section,
+.blog-preview-section,
+.blog-section {
+  background: transparent;
+  background-color: transparent;
+}
+
+/* … with a frosted steam-glass panel holding the content */
+.concept-section > .container,
+.solution-section > .container,
+.access-section > .container,
+.team-section > .container,
+.blog-preview-section > .container,
+.blog-section > .container {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(18px) saturate(1.08);
+  -webkit-backdrop-filter: blur(18px) saturate(1.08);
+  border: 1px solid rgba(44, 40, 40, 0.08);
+  border-radius: var(--radius-lg);
+  padding: clamp(2rem, 5vw, 4rem);
+  box-shadow:
+    0 8px 40px rgba(14, 16, 24, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+/* Steam-glass panels off under reduced motion / no backdrop support → solid */
+body.no-water .concept-section > .container,
+body.no-water .solution-section > .container,
+body.no-water .access-section > .container,
+body.no-water .team-section > .container,
+body.no-water .blog-preview-section > .container,
+body.no-water .blog-section > .container {
+  background: var(--color-cream);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+/* ---- Tablet (≤1024px) ---- */
+@media (max-width: 1024px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---- Mobile-L / Tablet-S (≤768px) ---- */
+@media (max-width: 768px) {
+  :root {
+    --space-xl: 5rem;
+    --space-lg: 3rem;
+  }
+
+  /* Tighten horizontal padding so content breathes on narrow screens */
+  .container {
+    padding: 0 var(--space-sm);
+  }
+
+  /* Perf: lighter backdrop blur + more opaque glass on mobile GPUs */
+  .concept-section > .container,
+  .solution-section > .container,
+  .access-section > .container,
+  .team-section > .container,
+  .blog-preview-section > .container,
+  .blog-section > .container {
+    backdrop-filter: blur(10px) saturate(1.05);
+    -webkit-backdrop-filter: blur(10px) saturate(1.05);
+    background: rgba(255, 255, 255, 0.94);
+    padding: clamp(1.5rem, 5vw, 2.5rem);
+    border-radius: var(--radius-md);
+  }
+
+  .concept-section__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .problem-section__stats {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  .solution-section__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .access-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .access-map {
+    aspect-ratio: 16 / 9;
+  }
+
+  /* Survey: reduce fixed height so form doesn't dwarf the screen */
+  .survey-iframe {
+    height: 580px;
+  }
+
+  .survey-section__form-wrap {
+    min-height: 480px;
+  }
+
+  .footer__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
+  }
+
+  .gallery-item {
+    width: clamp(220px, 80vw, 400px);
+    height: 50vh;
+  }
+}
+
+/* ---- Mobile (≤480px) ---- */
+@media (max-width: 480px) {
+  :root {
+    --space-xl: 3.5rem;
+    --space-lg: 2.5rem;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+  }
+
+  .survey-iframe {
+    height: 520px;
+  }
+}

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <clipPath id="c5"><circle cx="100" cy="100" r="100"/></clipPath>
+    <radialGradient id="bg5" cx="50%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#1E5038"/>
+      <stop offset="100%" stop-color="#123222"/>
+    </radialGradient>
+  </defs>
+  <g clip-path="url(#c5)">
+    <rect width="200" height="200" fill="url(#bg5)"/>
+    <!-- Jacket -->
+    <path d="M18 200 L18 162 Q42 148 70 150 L84 162 L100 156 L116 162 L130 150 Q158 148 182 162 L182 200 Z" fill="#1A3828"/>
+    <!-- Inner shirt -->
+    <path d="M92 156 L100 160 L108 156 L106 170 L100 174 L94 170 Z" fill="#F9F3E8" opacity="0.85"/>
+    <!-- Neck -->
+    <rect x="88" y="149" width="24" height="12" rx="2" fill="#F0B880"/>
+    <!-- Ears -->
+    <ellipse cx="63" cy="119" rx="6" ry="8" fill="#F0B880"/>
+    <ellipse cx="137" cy="119" rx="6" ry="8" fill="#F0B880"/>
+    <!-- Face - clean, calm -->
+    <ellipse cx="100" cy="115" rx="36" ry="41" fill="#F3BC84"/>
+    <!-- Hair - short buzzcut/crew cut, very neat -->
+    <path d="M64 109 Q66 75 100 68 Q134 75 136 109 Q126 85 100 82 Q74 85 64 109 Z" fill="#1C1A1A"/>
+    <!-- Very short side coverage -->
+    <path d="M64 109 Q62 97 65 88 Q68 80 73 76 Q66 90 64 109 Z" fill="#1C1A1A"/>
+    <path d="M136 109 Q138 97 135 88 Q132 80 127 76 Q134 90 136 109 Z" fill="#1C1A1A"/>
+    <!-- Sideburn thin -->
+    <path d="M64 110 Q63 118 64 123" stroke="#1C1A1A" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <path d="M136 110 Q137 118 136 123" stroke="#1C1A1A" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <!-- Eyebrows - tidy, straight -->
+    <path d="M82 103 Q89 101 95 103" stroke="#1C1A1A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M105 103 Q111 101 118 103" stroke="#1C1A1A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <!-- Eyes - calm, slight squint/gentle -->
+    <ellipse cx="88" cy="112" rx="5.5" ry="5" fill="#1C1A1A"/>
+    <ellipse cx="112" cy="112" rx="5.5" ry="5" fill="#1C1A1A"/>
+    <circle cx="90" cy="110" r="1.6" fill="white"/>
+    <circle cx="114" cy="110" r="1.6" fill="white"/>
+    <!-- Nose -->
+    <path d="M97 121 Q100 126 103 121" stroke="#C07845" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <!-- Mouth - gentle soft smile -->
+    <path d="M91 130 Q100 135 109 130" stroke="#A86040" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

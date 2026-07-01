@@ -1,0 +1,107 @@
+- generic [ref=e1]:
+  - generic:
+    - generic:
+      - generic: YU-NITY
+      - paragraph: Choose your language / 言語を選択してください
+      - generic:
+        - button "🇯🇵 日本語":
+          - generic: 🇯🇵
+          - generic: 日本語
+        - button "🇬🇧 English":
+          - generic: 🇬🇧
+          - generic: English
+        - button "🇨🇳 中文":
+          - generic: 🇨🇳
+          - generic: 中文
+        - button "🇰🇷 한국어":
+          - generic: 🇰🇷
+          - generic: 한국어
+  - navigation [ref=e2]:
+    - button "YU-NITY" [ref=e3] [cursor=pointer]
+    - list [ref=e4]:
+      - listitem [ref=e5]:
+        - button "ホーム" [ref=e6] [cursor=pointer]
+      - listitem [ref=e7]:
+        - button "銭湯ガイド" [ref=e8] [cursor=pointer]
+      - listitem [ref=e9]:
+        - button "アクセス" [ref=e10] [cursor=pointer]
+      - listitem [ref=e11]:
+        - button "アバウト" [active] [ref=e12] [cursor=pointer]
+      - listitem [ref=e13]:
+        - button "ブログ" [ref=e14] [cursor=pointer]
+    - generic [ref=e15]:
+      - button "JP" [ref=e16] [cursor=pointer]
+      - button "EN" [ref=e17] [cursor=pointer]
+      - button "中文" [ref=e18] [cursor=pointer]
+      - button "한국어" [ref=e19] [cursor=pointer]
+  - generic [ref=e91]:
+    - generic [ref=e93]:
+      - generic [ref=e94]: 課題
+      - heading "見えない壁" [level=2] [ref=e95]
+      - generic [ref=e96]:
+        - generic [ref=e97]:
+          - generic [ref=e98]: 1982万
+          - text: 訪日外国人数/年
+        - generic [ref=e99]:
+          - generic [ref=e100]: 2%未満
+          - text: 外国人の銭湯利用率
+        - generic [ref=e101]:
+          - generic [ref=e102]: 39%
+          - text: 「行ってみたい」と答えた外国人
+      - generic [ref=e103]:
+        - generic [ref=e104]:
+          - generic [ref=e105]: ♨️ 銭湯の課題
+          - paragraph [ref=e106]:
+            - text: 銭湯の課題として、
+            - emphasis [ref=e107]: 利用者が減っていること
+            - text: があげられる。また、昨今では外国人客の利用者が増えているものの、マナーを知らない外国人の利用によるトラブルも生じており、
+            - strong [ref=e108]: 外国人への啓発が必要
+            - text: となっている。
+        - generic [ref=e109]:
+          - generic [ref=e110]: 🌏 外国人の課題
+          - paragraph [ref=e111]:
+            - text: 銭湯の入り方がわからない、タトゥーが禁止されているとの
+            - emphasis [ref=e112]: 思い込み
+            - text: から、銭湯に関心があっても
+            - strong [ref=e113]: 利用を躊躇するケースが多い
+            - text: とも報告されている。
+    - generic [ref=e116]:
+      - img
+  - contentinfo [ref=e55]:
+    - generic [ref=e56]:
+      - generic [ref=e57]:
+        - generic [ref=e58]: YU-NITY
+        - paragraph [ref=e59]: 銭湯でつながる世界
+        - generic [ref=e60]:
+          - link "Instagram" [ref=e61] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e62]
+          - link "X (Twitter)" [ref=e64] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e65]
+          - link "LINE" [ref=e67] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e68]
+      - navigation [ref=e70]:
+        - heading "ページ" [level=3] [ref=e71]
+        - list [ref=e72]:
+          - listitem [ref=e73]:
+            - button "ホーム" [ref=e74] [cursor=pointer]
+          - listitem [ref=e75]:
+            - button "銭湯ガイド" [ref=e76] [cursor=pointer]
+          - listitem [ref=e77]:
+            - button "アバウト" [ref=e78] [cursor=pointer]
+          - listitem [ref=e79]:
+            - button "アクセス" [ref=e80] [cursor=pointer]
+          - listitem [ref=e81]:
+            - button "ブログ" [ref=e82] [cursor=pointer]
+      - generic [ref=e83]:
+        - heading "お問い合わせ" [level=3] [ref=e84]
+        - paragraph [ref=e85]:
+          - text: yunity.project
+          - text: "@example.com"
+        - link "アンケートに参加する →" [ref=e86] [cursor=pointer]:
+          - /url: "#survey"
+      - paragraph [ref=e87]: © 2025 YU-NITY Project. All rights reserved.
+    - button "back to top" [ref=e88] [cursor=pointer]:
+      - img [ref=e89]

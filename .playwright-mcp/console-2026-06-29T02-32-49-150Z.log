@@ -1,0 +1,6 @@
+[     434ms] [ERROR] Setting the document's base URI to 'https://proxy.link.app/' violates the following Content Security Policy directive: "base-uri 'self'". The action has been blocked. @ https://forms.gle/eRkf3yYtsHTEPZaX9:0
+[     658ms] [ERROR] Failed to load resource: the server responded with a status of 405 () @ https://forms.gle/_/DurableDeepLinkUi/cspreport:0
+[    1155ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://docs.google.com/forms/d/e/1FAIpQLSf6eWyV6tKpyUyL25uMsq7CKJFUw2madVYCwvngVgZE36HlSw/viewform?usp=send_form:0
+[   27789ms] [ERROR] Setting the document's base URI to 'https://proxy.link.app/' violates the following Content Security Policy directive: "base-uri 'self'". The action has been blocked. @ https://forms.gle/eRkf3yYtsHTEPZaX9:0
+[   28021ms] [ERROR] Failed to load resource: the server responded with a status of 405 () @ https://forms.gle/_/DurableDeepLinkUi/cspreport:0
+[   28391ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://docs.google.com/forms/d/e/1FAIpQLSf6eWyV6tKpyUyL25uMsq7CKJFUw2madVYCwvngVgZE36HlSw/viewform?usp=send_form:0

@@ -1,0 +1,87 @@
+[     541ms] [ERROR] Setting the document's base URI to 'https://proxy.link.app/' violates the following Content Security Policy directive: "base-uri 'self'". The action has been blocked. @ https://forms.gle/eRkf3yYtsHTEPZaX9:0
+[     771ms] [ERROR] Failed to load resource: the server responded with a status of 405 () @ https://forms.gle/_/DurableDeepLinkUi/cspreport:0
+[    1412ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://docs.google.com/forms/d/e/1FAIpQLSf6eWyV6tKpyUyL25uMsq7CKJFUw2madVYCwvngVgZE36HlSw/viewform?usp=send_form:0
+[   52437ms] TypeError: Cannot read properties of undefined (reading 'bind')
+    at ScrollTrigger.init (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:1035:62)
+    at new ScrollTrigger (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:1012:8)
+    at ScrollTrigger.create (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:1820:9)
+    at _scrollTrigger (http://localhost:5174/node_modules/.vite/deps/gsap.js?v=397ad415:233:104)
+    at new Tween (http://localhost:5174/node_modules/.vite/deps/gsap.js?v=397ad415:1979:20)
+    at _createTweenType (http://localhost:5174/node_modules/.vite/deps/gsap.js?v=397ad415:347:9)
+    at Object.fromTo (http://localhost:5174/node_modules/.vite/deps/gsap.js?v=397ad415:2166:10)
+    at http://localhost:5174/src/animations/gallery.js:47:10
+    at Array.forEach (<anonymous>)
+    at initGallery (http://localhost:5174/src/animations/gallery.js:46:43)
+[  357430ms] [ERROR] Setting the document's base URI to 'https://proxy.link.app/' violates the following Content Security Policy directive: "base-uri 'self'". The action has been blocked. @ https://forms.gle/eRkf3yYtsHTEPZaX9:0
+[  357652ms] [ERROR] Failed to load resource: the server responded with a status of 405 () @ https://forms.gle/_/DurableDeepLinkUi/cspreport:0
+[  358232ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://docs.google.com/forms/d/e/1FAIpQLSf6eWyV6tKpyUyL25uMsq7CKJFUw2madVYCwvngVgZE36HlSw/viewform?usp=send_form:0
+[  363454ms] Error: Register plugins can only be done before calling tsParticles.load()
+    at PluginManager.register (http://localhost:5174/node_modules/.vite/deps/browser-BxZifKFO.js?v=d6f33a85:929:32)
+    at loadSlim (http://localhost:5174/node_modules/.vite/deps/@tsparticles_slim.js?v=bdadfcac:4201:29)
+    at onEnter (http://localhost:5174/src/main.js?t=1782699292022:80:13)
+    at _callback (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:514:8)
+    at self.update (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:1490:33)
+    at self.refresh (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:1395:46)
+    at ScrollTrigger.init (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:1615:15)
+    at new ScrollTrigger (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:1012:8)
+    at ScrollTrigger.create (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:1820:9)
+    at initSurveyParticles (http://localhost:5174/src/main.js?t=1782699292022:71:17)
+[  363548ms] [ERROR] Setting the document's base URI to 'https://proxy.link.app/' violates the following Content Security Policy directive: "base-uri 'self'". The action has been blocked. @ https://forms.gle/eRkf3yYtsHTEPZaX9:0
+[  363777ms] [ERROR] Failed to load resource: the server responded with a status of 405 () @ https://forms.gle/_/DurableDeepLinkUi/cspreport:0
+[  364150ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://docs.google.com/forms/d/e/1FAIpQLSf6eWyV6tKpyUyL25uMsq7CKJFUw2madVYCwvngVgZE36HlSw/viewform?usp=send_form:0
+[  372276ms] Error: Register plugins can only be done before calling tsParticles.load()
+    at PluginManager.register (http://localhost:5174/node_modules/.vite/deps/browser-BxZifKFO.js?v=d6f33a85:929:32)
+    at loadSlim (http://localhost:5174/node_modules/.vite/deps/@tsparticles_slim.js?v=bdadfcac:4201:29)
+    at onEnter (http://localhost:5174/src/main.js?t=1782699300908:80:13)
+    at _callback (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:514:8)
+    at self.update (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:1490:33)
+    at self.refresh (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:1395:46)
+    at ScrollTrigger.init (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:1615:15)
+    at new ScrollTrigger (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:1012:8)
+    at ScrollTrigger.create (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:1820:9)
+    at initSurveyParticles (http://localhost:5174/src/main.js?t=1782699300908:71:17)
+[  372451ms] [ERROR] Setting the document's base URI to 'https://proxy.link.app/' violates the following Content Security Policy directive: "base-uri 'self'". The action has been blocked. @ https://forms.gle/eRkf3yYtsHTEPZaX9:0
+[  372688ms] [ERROR] Failed to load resource: the server responded with a status of 405 () @ https://forms.gle/_/DurableDeepLinkUi/cspreport:0
+[  373101ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://docs.google.com/forms/d/e/1FAIpQLSf6eWyV6tKpyUyL25uMsq7CKJFUw2madVYCwvngVgZE36HlSw/viewform?usp=send_form:0
+[  403748ms] Error: Register plugins can only be done before calling tsParticles.load()
+    at PluginManager.register (http://localhost:5174/node_modules/.vite/deps/browser-BxZifKFO.js?v=d6f33a85:929:32)
+    at loadSlim (http://localhost:5174/node_modules/.vite/deps/@tsparticles_slim.js?v=bdadfcac:4201:29)
+    at onEnter (http://localhost:5174/src/main.js?t=1782699300908:80:13)
+    at _callback (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:514:8)
+    at self.update (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:1490:33)
+    at self.refresh (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:1395:46)
+    at ScrollTrigger.init (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:1615:15)
+    at new ScrollTrigger (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:1012:8)
+    at ScrollTrigger.create (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:1820:9)
+    at initSurveyParticles (http://localhost:5174/src/main.js?t=1782699300908:71:17)
+[  403791ms] [ERROR] Setting the document's base URI to 'https://proxy.link.app/' violates the following Content Security Policy directive: "base-uri 'self'". The action has been blocked. @ https://forms.gle/eRkf3yYtsHTEPZaX9:0
+[  404023ms] [ERROR] Failed to load resource: the server responded with a status of 405 () @ https://forms.gle/_/DurableDeepLinkUi/cspreport:0
+[  404394ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://docs.google.com/forms/d/e/1FAIpQLSf6eWyV6tKpyUyL25uMsq7CKJFUw2madVYCwvngVgZE36HlSw/viewform?usp=send_form:0
+[  410593ms] Error: Register plugins can only be done before calling tsParticles.load()
+    at PluginManager.register (http://localhost:5174/node_modules/.vite/deps/browser-BxZifKFO.js?v=d6f33a85:929:32)
+    at loadSlim (http://localhost:5174/node_modules/.vite/deps/@tsparticles_slim.js?v=bdadfcac:4201:29)
+    at onEnter (http://localhost:5174/src/main.js?t=1782699300908:80:13)
+    at _callback (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:514:8)
+    at self.update (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:1490:33)
+    at self.refresh (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:1395:46)
+    at ScrollTrigger.init (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:1615:15)
+    at new ScrollTrigger (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:1012:8)
+    at ScrollTrigger.create (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:1820:9)
+    at initSurveyParticles (http://localhost:5174/src/main.js?t=1782699300908:71:17)
+[  410731ms] [ERROR] Setting the document's base URI to 'https://proxy.link.app/' violates the following Content Security Policy directive: "base-uri 'self'". The action has been blocked. @ https://forms.gle/eRkf3yYtsHTEPZaX9:0
+[  410962ms] [ERROR] Failed to load resource: the server responded with a status of 405 () @ https://forms.gle/_/DurableDeepLinkUi/cspreport:0
+[  411395ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://docs.google.com/forms/d/e/1FAIpQLSf6eWyV6tKpyUyL25uMsq7CKJFUw2madVYCwvngVgZE36HlSw/viewform?usp=send_form:0
+[  460407ms] Error: Register plugins can only be done before calling tsParticles.load()
+    at PluginManager.register (http://localhost:5174/node_modules/.vite/deps/browser-BxZifKFO.js?v=d6f33a85:929:32)
+    at loadSlim (http://localhost:5174/node_modules/.vite/deps/@tsparticles_slim.js?v=bdadfcac:4201:29)
+    at onEnter (http://localhost:5174/src/main.js?t=1782699300908:80:13)
+    at _callback (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:514:8)
+    at self.update (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:1490:33)
+    at self.refresh (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:1395:46)
+    at ScrollTrigger.init (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:1615:15)
+    at new ScrollTrigger (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:1012:8)
+    at ScrollTrigger.create (http://localhost:5174/node_modules/.vite/deps/gsap_ScrollTrigger.js?v=486aed3b:1820:9)
+    at initSurveyParticles (http://localhost:5174/src/main.js?t=1782699300908:71:17)
+[  460437ms] [ERROR] Setting the document's base URI to 'https://proxy.link.app/' violates the following Content Security Policy directive: "base-uri 'self'". The action has been blocked. @ https://forms.gle/eRkf3yYtsHTEPZaX9:0
+[  460660ms] [ERROR] Failed to load resource: the server responded with a status of 405 () @ https://forms.gle/_/DurableDeepLinkUi/cspreport:0
+[  461078ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://docs.google.com/forms/d/e/1FAIpQLSf6eWyV6tKpyUyL25uMsq7CKJFUw2madVYCwvngVgZE36HlSw/viewform?usp=send_form:0

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="YU-NITY — 銭湯でつながる多文化共生プロジェクト" />
+    <title>YU-NITY | 銭湯でつながる世界</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/styles/base.css" />
+    <link rel="stylesheet" href="/src/styles/layout.css" />
+    <link rel="stylesheet" href="/src/styles/components.css" />
+    <link rel="stylesheet" href="/src/styles/animations.css" />
+  </head>
+  <body>
+
+    <!-- LANGUAGE OVERLAY -->
+    <div id="lang-overlay" class="lang-overlay">
+      <div class="lang-overlay__inner">
+        <div class="lang-overlay__logo">YU-NITY</div>
+        <p class="lang-overlay__prompt">Choose your language / 言語を選択してください</p>
+        <div class="lang-overlay__buttons">
+          <button class="lang-btn lang-btn--large" data-lang-btn="ja" onclick="window.__setLang('ja')">
+            <span class="lang-btn__flag">🇯🇵</span><span class="lang-btn__label">日本語</span>
+          </button>
+          <button class="lang-btn lang-btn--large" data-lang-btn="en" onclick="window.__setLang('en')">
+            <span class="lang-btn__flag">🇬🇧</span><span class="lang-btn__label">English</span>
+          </button>
+          <button class="lang-btn lang-btn--large" data-lang-btn="zh" onclick="window.__setLang('zh')">
+            <span class="lang-btn__flag">🇨🇳</span><span class="lang-btn__label">中文</span>
+          </button>
+          <button class="lang-btn lang-btn--large" data-lang-btn="ko" onclick="window.__setLang('ko')">
+            <span class="lang-btn__flag">🇰🇷</span><span class="lang-btn__label">한국어</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="nav" id="nav">
+      <button class="nav__logo" data-tab="home">YU-NITY</button>
+      <ul class="nav__links" id="nav-links">
+        <li><button class="nav__tab active" data-tab="home"   data-i18n="nav.home">ホーム</button></li>
+        <li><button class="nav__tab"        data-tab="guide"  data-i18n="nav.guide">銭湯ガイド</button></li>
+        <li><button class="nav__tab"        data-tab="access" data-i18n="nav.access">アクセス</button></li>
+        <li><button class="nav__tab"        data-tab="about"  data-i18n="nav.about">アバウト</button></li>
+        <li><button class="nav__tab"        data-tab="blog"   data-i18n="nav.blog">ブログ</button></li>
+      </ul>
+      <div class="nav__lang-switcher">
+        <button class="lang-btn active" data-lang-btn="ja" onclick="window.__setLang('ja')">JP</button>
+        <button class="lang-btn"        data-lang-btn="en" onclick="window.__setLang('en')">EN</button>
+        <button class="lang-btn"        data-lang-btn="zh" onclick="window.__setLang('zh')">中文</button>
+        <button class="lang-btn"        data-lang-btn="ko" onclick="window.__setLang('ko')">한국어</button>
+      </div>
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- ============================================================
+         PAGE: ホーム
+    ============================================================ -->
+    <div class="page active" id="page-home">
+
+      <section class="hero" id="hero" data-temp="0.04">
+        <video class="hero__video" autoplay muted loop playsinline poster="/public/video/hero-poster.webp">
+          <source src="/public/video/hero-sento.mp4" type="video/mp4" />
+        </video>
+        <div class="hero__overlay"></div>
+        <div id="hero-particles" class="hero__particles"></div>
+        <div class="hero__content">
+          <h1 class="hero__logo" aria-label="YU-NITY">YU-NITY</h1>
+          <div class="hero__label">SENTO × MULTICULTURAL</div>
+          <p class="hero__heading" data-i18n="hero.heading">湯が、世界をつなぐ。</p>
+          <p class="hero__subtitle" data-i18n="hero.subtitle">日本の銭湯文化を通じて、訪日外国人と地域住民の多文化共生・交流を促進するプロジェクト</p>
+          <a href="#survey" class="btn btn--primary hero__cta" data-i18n="hero.cta">声を聞かせてください</a>
+        </div>
+        <div class="hero__waterline" aria-hidden="true"></div>
+        <div class="hero__scroll-indicator">
+          <span class="hero__scroll-line"></span>
+          <span class="hero__scroll-text">SCROLL</span>
+        </div>
+      </section>
+
+      <!-- Blog Preview -->
+      <section class="section blog-preview-section" data-temp="0.22">
+        <div class="container">
+          <div class="section__label" data-i18n="blog.label">活動報告</div>
+          <h2 class="section__title" data-i18n="blog.title">ブログ</h2>
+          <div class="blog-grid">
+            <article class="blog-card">
+              <div class="blog-card__meta">
+                <span class="blog-card__tag">活動報告</span>
+                <time class="blog-card__date">2025.06.01</time>
+              </div>
+              <h3 class="blog-card__title">外国人の方へのインタビューを実施しました</h3>
+              <p class="blog-card__excerpt">実際に銭湯を利用した外国人の方々にインタビューを行い、その体験談を記録しました。</p>
+            </article>
+            <article class="blog-card">
+              <div class="blog-card__meta">
+                <span class="blog-card__tag">イベント</span>
+                <time class="blog-card__date">2025.05.20</time>
+              </div>
+              <h3 class="blog-card__title">地域の銭湯へ見学に行ってきました</h3>
+              <p class="blog-card__excerpt">今回は地域の銭湯にお邪魔し、店主の方にお話を伺いながら施設を見学しました。</p>
+            </article>
+            <article class="blog-card">
+              <div class="blog-card__meta">
+                <span class="blog-card__tag">お知らせ</span>
+                <time class="blog-card__date">2025.05.10</time>
+              </div>
+              <h3 class="blog-card__title">外国人向けパンフレットを作成しました</h3>
+              <p class="blog-card__excerpt">銭湯の入り方・マナーをわかりやすく解説した多言語パンフレットを作成しました。</p>
+            </article>
+          </div>
+          <div class="blog-preview__more">
+            <button class="btn btn--secondary" data-tab="blog" data-i18n="blog.more">すべて見る</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Survey -->
+      <section class="section survey-section" id="survey" data-temp="0.92">
+        <div id="survey-particles" class="survey-section__particles"></div>
+        <div class="container survey-section__inner">
+          <div class="section__label" data-i18n="survey.label">アンケート</div>
+          <div class="survey-section__title-wrap">
+            <h2 class="section__title section__title--light survey-section__title" data-i18n="survey.title">声を聞かせてください</h2>
+            <svg class="survey-brush" viewBox="0 0 600 44" preserveAspectRatio="none" aria-hidden="true">
+              <path class="survey-brush__path" d="M12,30 C110,14 190,32 300,22 C405,12 470,34 588,20" fill="none" stroke-width="7" stroke-linecap="round" />
+            </svg>
+          </div>
+          <p class="section__body section__body--light survey-section__subtitle" data-i18n="survey.subtitle">皆さんのご意見が、YU-NITYの活動をつくります。ぜひアンケートにご協力ください。（所要時間：約3分）</p>
+          <div class="survey-section__form-wrap">
+            <iframe class="survey-iframe" src="" frameborder="0" marginheight="0" marginwidth="0" title="YU-NITY Survey">読み込んでいます…</iframe>
+            <div class="survey-section__placeholder" id="survey-placeholder">
+              <p data-i18n="survey.formPlaceholder">Googleフォームがここに表示されます</p>
+              <p class="survey-section__placeholder-note">※ 実際のアンケートURLを設定後に有効になります</p>
+            </div>
+            <a id="survey-cta-link" class="survey-section__cta-btn" href="#" target="_blank" rel="noopener noreferrer" style="display:none" data-i18n="survey.ctaButton">アンケートに回答する →</a>
+            <span class="survey-section__seal" aria-hidden="true">記</span>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /page-home -->
+
+    <!-- ============================================================
+         PAGE: 銭湯ガイド
+    ============================================================ -->
+    <div class="page" id="page-guide">
+
+      <section class="section concept-section" id="concept" data-temp="0.4">
+        <div class="container">
+          <div class="section__label" data-i18n="concept.label">銭湯文化とは</div>
+          <div class="concept-section__grid">
+            <div class="concept-section__visual">
+              <div class="concept-section__img-wrap">
+                <img src="/src/assets/images/concept-sento.webp" alt="銭湯のイラスト" class="concept-section__img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+                <div class="concept-section__img-placeholder">
+                  <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="400" height="300" fill="#252A40"/>
+                    <rect x="50" y="80" width="300" height="180" rx="4" fill="none" stroke="#48929B" stroke-width="2"/>
+                    <polygon points="30,80 200,20 370,80" fill="none" stroke="#48929B" stroke-width="2"/>
+                    <rect x="175" y="190" width="50" height="70" rx="4" fill="none" stroke="#C8960C" stroke-width="2"/>
+                    <rect x="80" y="120" width="60" height="50" rx="2" fill="none" stroke="#C53D43" stroke-width="1.5"/>
+                    <rect x="260" y="120" width="60" height="50" rx="2" fill="none" stroke="#C53D43" stroke-width="1.5"/>
+                    <line x1="175" y1="185" x2="225" y2="185" stroke="#48929B" stroke-width="2"/>
+                    <line x1="183" y1="185" x2="183" y2="200" stroke="#48929B" stroke-width="1.5"/>
+                    <line x1="200" y1="185" x2="200" y2="205" stroke="#48929B" stroke-width="1.5"/>
+                    <line x1="217" y1="185" x2="217" y2="200" stroke="#48929B" stroke-width="1.5"/>
+                    <path d="M120 105 Q125 95 120 85 Q115 75 120 65" fill="none" stroke="#EEEAE4" stroke-width="1.5" opacity="0.6"/>
+                    <path d="M200 105 Q205 95 200 85 Q195 75 200 65" fill="none" stroke="#EEEAE4" stroke-width="1.5" opacity="0.6"/>
+                    <path d="M280 105 Q285 95 280 85 Q275 75 280 65" fill="none" stroke="#EEEAE4" stroke-width="1.5" opacity="0.6"/>
+                    <text x="200" y="165" text-anchor="middle" font-size="28" fill="#C8960C" font-family="serif">銭湯</text>
+                  </svg>
+                </div>
+              </div>
+              <div class="concept-section__stats">
+                <div class="stat-badge">
+                  <span class="stat-badge__num" data-i18n="concept.stat1_num">3,000+</span>
+                  <span class="stat-badge__label" data-i18n="concept.stat1_label">全国の銭湯数</span>
+                </div>
+                <div class="stat-badge">
+                  <span class="stat-badge__num" data-i18n="concept.stat2_num">400年</span>
+                  <span class="stat-badge__label" data-i18n="concept.stat2_label">の歴史</span>
+                </div>
+              </div>
+            </div>
+            <div class="concept-section__text">
+              <h2 class="section__title" data-i18n="concept.title">日本が誇る、湯の文化</h2>
+              <p class="section__body" data-i18n="concept.body">銭湯は単なる入浴施設ではありません。地域のコミュニティが集まり、裸の付き合いで本音を語り合える、日本独自の文化的空間です。</p>
+              <div class="concept-section__tags">
+                <span class="tag">🛁 Community</span>
+                <span class="tag">🌏 Culture</span>
+                <span class="tag">♨️ Tradition</span>
+                <span class="tag">🤝 Connection</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery-section" id="gallery" data-temp="0.5">
+        <div class="gallery-section__header container">
+          <div class="section__label" data-i18n="gallery.label">ギャラリー</div>
+          <h2 class="section__title" data-i18n="gallery.title">銭湯の世界へ</h2>
+        </div>
+        <div class="gallery-track" id="gallery-track">
+          <div class="gallery-item"><img src="/src/assets/images/gallery/gallery-01.webp" alt="銭湯外観" /></div>
+          <div class="gallery-item"><img src="/src/assets/images/gallery/gallery-02.webp" alt="脱衣所" /></div>
+          <div class="gallery-item"><img src="/src/assets/images/gallery/gallery-03.webp" alt="浴場内部" /></div>
+          <div class="gallery-item"><img src="/src/assets/images/gallery/gallery-04.webp" alt="交流イベント" /></div>
+          <div class="gallery-item"><img src="/src/assets/images/gallery/gallery-05.webp" alt="のれん" /></div>
+          <div class="gallery-item"><img src="/src/assets/images/gallery/gallery-06.webp" alt="地域住民" /></div>
+          <div class="gallery-item"><img src="/src/assets/images/gallery/gallery-07.webp" alt="外国人観光客" /></div>
+        </div>
+      </section>
+
+    </div><!-- /page-guide -->
+
+    <!-- ============================================================
+         PAGE: アクセス
+    ============================================================ -->
+    <div class="page" id="page-access">
+
+      <section class="section access-section" data-temp="0.32">
+        <div class="container">
+          <div class="section__label" data-i18n="access.label">場所</div>
+          <h2 class="section__title" data-i18n="access.title">アクセス</h2>
+          <div class="access-grid">
+            <div class="access-info">
+              <p class="access-info__name" data-i18n="access.name">湯島の湯</p>
+              <dl class="access-details">
+                <dt data-i18n="access.dt_address">住所</dt>
+                <dd data-i18n="access.address">〒113-0034 東京都文京区湯島2丁目1-15</dd>
+                <dt data-i18n="access.dt_hours">営業時間</dt>
+                <dd data-i18n="access.hours">15:00 〜 23:00</dd>
+                <dt data-i18n="access.dt_closed">定休日</dt>
+                <dd data-i18n="access.closed">火曜日</dd>
+                <dt data-i18n="access.dt_price">入浴料</dt>
+                <dd data-i18n="access.price">大人 ¥600 ／ 子ども ¥300</dd>
+              </dl>
+              <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn--primary" data-i18n="access.map_btn">Google マップで開く</a>
+            </div>
+            <div class="access-map">
+              <!-- Google マップ埋め込み: src に埋め込みURLを設定してください -->
+              <!-- <iframe src="YOUR_GOOGLE_MAPS_EMBED_URL" width="100%" height="100%" style="border:0" allowfullscreen loading="lazy"></iframe> -->
+              <div class="access-map__placeholder">
+                <p style="font-size:2.5rem">📍</p>
+                <p>東京都文京区湯島2丁目1-15</p>
+                <p class="access-map__note">Google マップ埋め込みを設定中</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /page-access -->
+
+    <!-- ============================================================
+         PAGE: アバウト
+    ============================================================ -->
+    <div class="page" id="page-about">
+
+      <section class="section problem-section" id="problem" data-temp="0.12">
+        <div class="container">
+          <div class="section__label" data-i18n="problem.label">課題</div>
+          <h2 class="section__title section__title--light" data-i18n="problem.title">見えない壁</h2>
+          <div class="problem-section__stats">
+            <div class="counter-card">
+              <span class="counter-card__num" data-counter data-target="3500" data-suffix="万">0</span>
+              <span class="counter-card__label" data-i18n="problem.stat1_label">訪日外国人数/年</span>
+            </div>
+            <div class="counter-card counter-card--accent">
+              <span class="counter-card__num" data-i18n="problem.stat2_num">2%未満</span>
+              <span class="counter-card__label" data-i18n="problem.stat2_label">外国人の銭湯利用率</span>
+            </div>
+            <div class="counter-card">
+              <span class="counter-card__num" data-counter data-target="68" data-suffix="%">0</span>
+              <span class="counter-card__label" data-i18n="problem.stat3_label">「行ってみたい」と答えた外国人</span>
+            </div>
+          </div>
+          <div class="problem-text-grid">
+            <div class="problem-text-card problem-text-card--sento">
+              <div class="problem-text-card__tag">♨️ &nbsp;銭湯の課題</div>
+              <p>銭湯の課題として、<em>利用者が減っていること</em>があげられる。また、昨今では外国人客の利用者が増えているものの、マナーを知らない外国人の利用によるトラブルも生じており、<strong>外国人への啓発が必要</strong>となっている。</p>
+            </div>
+            <div class="problem-text-card problem-text-card--foreign">
+              <div class="problem-text-card__tag">🌏 &nbsp;外国人の課題</div>
+              <p>銭湯の入り方がわからない、タトゥーが禁止されているとの<em>思い込み</em>から、銭湯に関心があっても<strong>利用を躊躇するケースが多い</strong>とも報告されている。</p>
+            </div>
+          </div>
+          <div class="problem-conclusion">
+            <div class="problem-conclusion__line" aria-hidden="true"></div>
+            <p class="problem-conclusion__text">本企画により、銭湯および外国人の<strong>両方の課題への解決</strong>につながると考える。</p>
+            <cite class="problem-conclusion__cite">Forbes JAPAN Web-News, 2025</cite>
+          </div>
+        </div>
+        <div class="problem-section__bg-pattern" aria-hidden="true"></div>
+      </section>
+
+      <section class="section solution-section" id="solution" data-temp="0.62">
+        <div class="container">
+          <div class="section__label" data-i18n="solution.label">YU-NITYの取り組み</div>
+          <h2 class="section__title" data-i18n="solution.title">三つの橋を架ける</h2>
+          <div class="solution-section__cards">
+            <svg class="solution-section__path" viewBox="0 0 900 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true">
+              <path class="solution-path" d="M 100 40 C 250 40 350 40 450 40 C 550 40 650 40 800 40" fill="none" stroke-width="2" stroke-dasharray="700" stroke-dashoffset="700"/>
+            </svg>
+            <div class="solution-card" data-solution-card data-seal="壱">
+              <div class="solution-card__icon">🔗</div>
+              <h3 class="solution-card__title" data-i18n="solution.card1_title">マッチング</h3>
+              <p class="solution-card__body" data-i18n="solution.card1_body">銭湯に興味を持つ外国人観光客と、地域の銭湯・住民をつなぐマッチングの仕組みを作ります。</p>
+            </div>
+            <div class="solution-card" data-solution-card data-seal="弐">
+              <div class="solution-card__icon">🗺️</div>
+              <h3 class="solution-card__title" data-i18n="solution.card2_title">ガイド付き訪問</h3>
+              <p class="solution-card__body" data-i18n="solution.card2_body">文化的背景の説明から入浴マナーまで、安心して楽しめるガイドプログラムを提供します。</p>
+            </div>
+            <div class="solution-card" data-solution-card data-seal="参">
+              <div class="solution-card__icon">🎉</div>
+              <h3 class="solution-card__title" data-i18n="solution.card3_title">交流イベント</h3>
+              <p class="solution-card__body" data-i18n="solution.card3_body">銭湯を舞台にした交流イベントを企画し、地域住民と外国人が共に語り合う場を創出します。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section team-section" id="team" data-temp="0.72">
+        <div class="container">
+          <div class="section__label" data-i18n="team.label">チーム</div>
+          <h2 class="section__title" data-i18n="team.title">YU-NITYメンバー</h2>
+          <div class="team-grid">
+            <div class="team-card">
+              <div class="team-card__photo"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="多田圭佑" /></div>
+              <div class="team-card__info"><h3 class="team-card__name">多田 圭佑</h3><p class="team-card__role">代表</p></div>
+            </div>
+            <div class="team-card">
+              <div class="team-card__photo"><img src="https://randomuser.me/api/portraits/men/45.jpg" alt="大戸拓知" /></div>
+              <div class="team-card__info"><h3 class="team-card__name">大戸 拓知</h3><p class="team-card__role">企画・運営</p></div>
+            </div>
+            <div class="team-card">
+              <div class="team-card__photo"><img src="https://randomuser.me/api/portraits/men/28.jpg" alt="神尾光季" /></div>
+              <div class="team-card__info"><h3 class="team-card__name">神尾 光季</h3><p class="team-card__role">リサーチ</p></div>
+            </div>
+            <div class="team-card">
+              <div class="team-card__photo"><img src="https://randomuser.me/api/portraits/men/55.jpg" alt="森田優晟" /></div>
+              <div class="team-card__info"><h3 class="team-card__name">森田 優晟</h3><p class="team-card__role">デザイン</p></div>
+            </div>
+            <div class="team-card">
+              <div class="team-card__photo"><img src="https://randomuser.me/api/portraits/men/41.jpg" alt="菅原諒" /></div>
+              <div class="team-card__info"><h3 class="team-card__name">菅原 諒</h3><p class="team-card__role">広報</p></div>
+            </div>
+            <div class="team-card">
+              <div class="team-card__photo"><img src="https://randomuser.me/api/portraits/men/67.jpg" alt="桑原遼太" /></div>
+              <div class="team-card__info"><h3 class="team-card__name">桑原 遼太</h3><p class="team-card__role">イベント運営</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /page-about -->
+
+    <!-- ============================================================
+         PAGE: ブログ
+    ============================================================ -->
+    <div class="page" id="page-blog">
+
+      <section class="section blog-section" data-temp="0.3">
+        <div class="container">
+          <div class="section__label" data-i18n="blog.label">活動報告</div>
+          <h2 class="section__title" data-i18n="blog.title">ブログ</h2>
+          <div class="blog-grid">
+            <article class="blog-card">
+              <div class="blog-card__meta">
+                <span class="blog-card__tag">活動報告</span>
+                <time class="blog-card__date">2025.06.01</time>
+              </div>
+              <h3 class="blog-card__title">外国人の方へのインタビューを実施しました</h3>
+              <p class="blog-card__excerpt">実際に銭湯を利用した外国人の方々にインタビューを行い、その体験談を記録しました。</p>
+            </article>
+            <article class="blog-card">
+              <div class="blog-card__meta">
+                <span class="blog-card__tag">イベント</span>
+                <time class="blog-card__date">2025.05.20</time>
+              </div>
+              <h3 class="blog-card__title">地域の銭湯へ見学に行ってきました</h3>
+              <p class="blog-card__excerpt">今回は地域の銭湯にお邪魔し、店主の方にお話を伺いながら施設を見学しました。</p>
+            </article>
+            <article class="blog-card">
+              <div class="blog-card__meta">
+                <span class="blog-card__tag">お知らせ</span>
+                <time class="blog-card__date">2025.05.10</time>
+              </div>
+              <h3 class="blog-card__title">外国人向けパンフレットを作成しました</h3>
+              <p class="blog-card__excerpt">銭湯の入り方・マナーをわかりやすく解説した多言語パンフレットを作成しました。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /page-blog -->
+
+    <!-- FOOTER -->
+    <footer class="footer" id="footer">
+      <div class="container footer__inner">
+        <div class="footer__brand">
+          <span class="footer__logo">YU-NITY</span>
+          <p class="footer__tagline">銭湯でつながる世界</p>
+          <div class="footer__sns">
+            <a href="#" class="footer__sns-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="#" class="footer__sns-link" aria-label="X (Twitter)">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="footer__sns-link" aria-label="LINE">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer__nav">
+          <h3 class="footer__nav-title">ページ</h3>
+          <ul class="footer__nav-list">
+            <li><button class="footer__nav-link" data-tab="home">ホーム</button></li>
+            <li><button class="footer__nav-link" data-tab="guide">銭湯ガイド</button></li>
+            <li><button class="footer__nav-link" data-tab="about">アバウト</button></li>
+            <li><button class="footer__nav-link" data-tab="access">アクセス</button></li>
+            <li><button class="footer__nav-link" data-tab="blog">ブログ</button></li>
+          </ul>
+        </nav>
+
+        <div class="footer__contact">
+          <h3 class="footer__nav-title">お問い合わせ</h3>
+          <p class="footer__contact-text">yunity.project<br>@example.com</p>
+          <a href="#survey" class="footer__cta-link" data-tab="home">アンケートに参加する →</a>
+        </div>
+
+        <p class="footer__copy" data-i18n="footer.copy">© 2025 YU-NITY Project. All rights reserved.</p>
+      </div>
+      <button class="footer__back-top" id="back-to-top" aria-label="back to top">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+      </button>
+    </footer>
+
+    <!-- WATER-CURTAIN PAGE TRANSITION -->
+    <div id="noren" class="noren" aria-hidden="true">
+      <div class="noren__water"></div>
+      <div class="noren__crest">湯</div>
+    </div>
+
+    <!-- TEXTURE OVERLAYS (washi grain + sumi vignette) -->
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="texture-overlay" aria-hidden="true"></div>
+
+    <!-- SVG liquid-displacement filter (applied to hero tagline, gated by JS) -->
+    <svg class="svg-defs" width="0" height="0" aria-hidden="true" focusable="false">
+      <defs>
+        <filter id="liquid">
+          <feTurbulence type="fractalNoise" baseFrequency="0.011 0.018" numOctaves="2" seed="7" result="noise">
+            <animate attributeName="baseFrequency" dur="16s" values="0.011 0.018;0.015 0.022;0.011 0.018" repeatCount="indefinite" />
+          </feTurbulence>
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </defs>
+    </svg>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

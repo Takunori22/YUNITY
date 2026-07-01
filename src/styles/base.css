@@ -1,0 +1,173 @@
+/* ============================================================
+   BASE — Reset, Custom Properties, Typography Tokens
+============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Colors — 和色 (Washoku) Japanese traditional palette */
+  --color-teal:    #48929B; /* 浅葱 (Asagi) — 銭湯タイルの青緑 */
+  --color-coral:   #C53D43; /* 紅 (Kurenai) — 鳥居・漆の赤 */
+  --color-yuzu:    #C8960C; /* 山吹 (Yamabuki) — 金箔の黄金色 */
+  --color-indigo:  #1C1F2E; /* 藍 (Ai) — 深夜の藍染め */
+  --color-navy:    #252A40; /* 紺 (Kon) — 暗い藍紺 */
+  --color-cream:   #F9F3E8; /* 生成 (Kinari) — 和紙の白 */
+  --color-offwhite:#EDE8DE; /* 白練 (Shiraneri) — 練り絹の白 */
+  --color-charcoal:#2C2828; /* 墨 (Sumi) — 墨汁の黒 */
+  --color-white:   #ffffff;
+
+  /* Gradient accents — gradients are now reserved for the survey climax only.
+     Hero flattened to read cool/quiet; cards demoted to flat fills. */
+  --grad-hero:     linear-gradient(135deg, rgba(28,31,46,0.92) 0%, rgba(197,61,67,0.12) 100%);
+  --grad-teal:     linear-gradient(135deg, #48929B, #5EADB7);
+  --grad-coral:    linear-gradient(135deg, #C53D43, #D4635A);
+  --grad-yuzu:     linear-gradient(135deg, #C8960C, #DAA827);
+  --grad-card:     rgba(255,255,255,0.04);  /* flat-fill demotion (was a gradient) */
+
+  /* ── 湯気と余白 — Steam & Margin design tokens ── */
+  --ink:           var(--color-charcoal);   /* semantic alias: accents read as "ink" */
+  --seal:          var(--color-coral);       /* 朱印 vermilion for index numerals */
+  --accent-pop:    var(--color-coral);       /* single interaction-accent (one 紅 pop) */
+  --temp-cool:     var(--color-indigo);      /* through-line: cool hero … */
+  --temp-warm:     var(--color-yuzu);        /* … warm survey */
+
+  --grain-opacity: 0.05;                     /* washi feTurbulence overlay strength */
+  --vignette:      radial-gradient(ellipse at center, transparent 70%, rgba(14,16,24,0.06) 100%);
+
+  /* ── Liquid Sentō — temperature journey ──
+     --temp (0 cold night … 1 warm steam) is driven at runtime by
+     temperature.js; CSS derives bg + accents from it via color-mix. */
+  --temp:          0;
+  --bath-night:    #0E1018;   /* 藍の夜 — cold, before the bath */
+  --bath-cool:     #122A30;   /* 浅葱の湯 — entering the water */
+  --bath-warm:     #2A1A1C;   /* 夕暮れの湯 — warm depths */
+  --bath-hot:      #3A1E16;   /* 紅・山吹の湯 — the survey climax */
+  /* current water tone, interpolated cool→hot by --temp */
+  --bath-now: color-mix(in oklab,
+                color-mix(in oklab, var(--bath-night), var(--bath-cool) calc(min(var(--temp) * 2, 1) * 100%)),
+                color-mix(in oklab, var(--bath-warm), var(--bath-hot) calc(max(var(--temp) * 2 - 1, 0) * 100%))
+                calc(var(--temp) * 100%));
+  /* accent that warms with depth: 浅葱 → 山吹 → 紅 */
+  --accent-now: color-mix(in oklab, var(--color-teal),
+                  color-mix(in oklab, var(--color-yuzu), var(--color-coral) calc(var(--temp) * 100%))
+                  calc(min(var(--temp) * 1.4, 1) * 100%));
+
+  --text-display:  clamp(3.5rem, 12vw, 8.5rem); /* oversized Mincho display scale */
+  --ease-ink:      cubic-bezier(0.16, 1, 0.3, 1); /* settle-never-bounce house easing */
+  --noren-duration: 0.7s;                    /* single source of truth for the curtain */
+
+  /* Typography — Liquid Sentō: aged Mincho display + rounded humanist body */
+  --font-display: 'Zen Old Mincho', serif;
+  --font-body:    'Zen Maru Gothic', 'Noto Sans SC', 'Noto Sans KR', sans-serif;
+  --font-latin:   'Fraunces', Georgia, serif;
+
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.25rem;
+  --text-xl:   1.5rem;
+  --text-2xl:  2rem;
+  --text-3xl:  3rem;
+  --text-4xl:  4.5rem;
+  --text-5xl:  7rem;
+
+  /* Spacing */
+  --space-xs:  0.5rem;
+  --space-sm:  1rem;
+  --space-md:  2rem;
+  --space-lg:  4rem;
+  --space-xl:  8rem;
+
+  /* Misc */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 2rem;
+  --radius-full: 9999px;
+
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.35);
+  --shadow-glow-teal: 0 0 40px rgba(72, 146, 155, 0.4);   /* 浅葱 glow */
+  --shadow-glow-coral: 0 0 40px rgba(197, 61, 67, 0.4);   /* 紅 glow */
+
+  --transition-fast: 0.2s ease;
+  --transition-med:  0.4s ease;
+  --transition-slow: 0.7s var(--ease-ink);  /* inherits the house ink easing */
+
+  --nav-height: 72px;
+  --container-max: 1200px;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--color-charcoal);
+  background-color: var(--color-cream);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, video {
+  max-width: 100%;
+  display: block;
+}
+
+/* ── WebGL water background (the 湯) ── */
+#water-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  display: block;
+  pointer-events: none;
+}
+
+/* Fallback: no-WebGL / reduced motion → plain cream */
+body.no-water {
+  background:
+    radial-gradient(120% 80% at 18% -5%, rgba(72, 146, 155, 0.06) 0%, transparent 55%),
+    radial-gradient(110% 85% at 92% 105%, rgba(200, 150, 12, 0.05) 0%, transparent 60%),
+    var(--color-cream);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }   /* tab swaps & anchors jump instantly */
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Single-flag overrides (set in main.js): kill texture & curtain motion */
+body.reduced {
+  --grain-opacity: 0;
+}
+body.reduced .vignette,
+body.reduced #noren {
+  display: none !important;
+}

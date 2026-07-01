@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <clipPath id="c2"><circle cx="100" cy="100" r="100"/></clipPath>
+    <radialGradient id="bg2" cx="50%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#2E6070"/>
+      <stop offset="100%" stop-color="#1A3C48"/>
+    </radialGradient>
+  </defs>
+  <g clip-path="url(#c2)">
+    <rect width="200" height="200" fill="url(#bg2)"/>
+    <!-- Casual shirt -->
+    <path d="M20 200 L20 162 Q44 149 70 151 L84 163 L100 158 L116 163 L130 151 Q156 149 180 162 L180 200 Z" fill="#2A5060"/>
+    <!-- Collar detail -->
+    <path d="M90 156 L100 158 L110 156 L108 168 L100 172 L92 168 Z" fill="#48929B" opacity="0.8"/>
+    <!-- Neck -->
+    <rect x="88" y="149" width="24" height="12" rx="2" fill="#F2B880"/>
+    <!-- Ears -->
+    <ellipse cx="63" cy="120" rx="6" ry="8" fill="#F2B880"/>
+    <ellipse cx="137" cy="120" rx="6" ry="8" fill="#F2B880"/>
+    <!-- Face -->
+    <ellipse cx="100" cy="116" rx="37" ry="41" fill="#F5BC84"/>
+    <!-- Hair - slightly textured/messy dark brown -->
+    <path d="M63 112 Q65 76 100 68 Q135 76 137 112 Q128 84 100 81 Q72 84 63 112 Z" fill="#251408"/>
+    <path d="M63 112 Q61 98 64 88 Q67 79 72 74 Q65 88 63 112 Z" fill="#251408"/>
+    <path d="M137 112 Q139 98 136 88 Q133 79 128 74 Q135 88 137 112 Z" fill="#251408"/>
+    <!-- Messy hair wisps on top -->
+    <path d="M88 72 Q92 64 96 70" stroke="#251408" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M100 68 Q104 60 108 66" stroke="#251408" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M108 70 Q113 63 116 69" stroke="#251408" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- Sideburns -->
+    <path d="M63 113 Q62 121 63 127" stroke="#251408" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M137 113 Q138 121 137 127" stroke="#251408" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <!-- Eyebrows - relaxed -->
+    <path d="M82 105 Q88 102 95 104" stroke="#251408" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M105 104 Q112 102 118 105" stroke="#251408" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <!-- Eyes - slightly wider/friendly -->
+    <ellipse cx="88" cy="114" rx="6" ry="6" fill="#1C1008"/>
+    <ellipse cx="112" cy="114" rx="6" ry="6" fill="#1C1008"/>
+    <circle cx="90" cy="112" r="1.8" fill="white"/>
+    <circle cx="114" cy="112" r="1.8" fill="white"/>
+    <!-- Nose -->
+    <path d="M97 123 Q100 128 103 123" stroke="#C87848" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <!-- Mouth - friendly smile -->
+    <path d="M90 133 Q100 139 110 133" stroke="#B06040" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M90 133 Q100 139 110 133" stroke="#B06040" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>
