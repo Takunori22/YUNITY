@@ -10,12 +10,12 @@
 
 ## Global Constraints
 
-- このプロジェクトディレクトリはgitリポジトリではない。各タスクの最後に`git commit`は行わず、`npm run build`が通ることと目視確認をもって完了とする。
-- 自動テストは存在しない(`package.json`に test スクリプトなし)。各タスクの検証は「`npm run build`が成功する」「`npm run dev`でブラウザ確認する」の2点で代替する。
+- 【更新】実行フェーズ開始時にgit init済み・`site-restructure`ブランチで作業中。各タスクは`git commit`する(当初の「gitなし」前提は解消済み)。
+- 自動テストは存在しない(`package.json`に test スクリプトなし)。各タスクの検証は「`npm run build`が成功する」「実際にPlaywright MCPでブラウザ確認する」の2点で代替する(後者は必須、省略不可)。
 - `data-i18n`属性は`el.textContent`を書き換えるのみ(`src/i18n/index.js:38-48`)。インラインHTML(`<strong>`等)は差し込めないため、新規コピーは常に「要素まるごと1文」を1つのi18nキーに対応させる形で書く(既存の`counter-card__label`等と同じ流儀)。
 - 新規テキストは日本語(ja)を基準に作成し、`en` / `zh` / `ko` も同じ意味内容で全文翻訳して4ファイルすべてに追加する。1言語でも キーが欠けると`setLanguage()`が `textContent` を更新できず前の言語の文字列が残るので、4ファイルのキー集合は必ず一致させる。
 - セクション要素には既存の温度演出(`temperature.js`)に乗せるため`data-temp="0.0〜1.0"`属性を必ず付与する(値の意味は既存コードの通り、0=冷たい藍夜〜1=紅の湯気)。
-- 新規セクションは「暗い(WebGL水が透ける)」か「明るい(frosted steam-glass panel)」かを決める。暗い場合は`src/styles/layout.css`のダークセクションリスト(`.hero, .problem-section, .survey-section, .gallery-section {`)1箇所に追記する。明るい場合は、①透過シェル定義リスト(`.concept-section, .solution-section, ...`)、②`> .container`のフロストパネル定義リスト、③`body.no-water`側の上書きリストの計3箇所に追記する。追記を忘れると新セクションが素の透明背景のまま可読性が崩れる。
+- 新規セクションは「暗い(WebGL水が透ける)」か「明るい(frosted steam-glass panel)」かを決める。暗い場合は`src/styles/layout.css`のダークセクションリスト(`.hero, .survey-section, .gallery-section {`)1箇所に追記する。明るい場合は以下の**4箇所**に追記する: ①透過シェル定義リスト(`.concept-section, .access-section, ...`)、②`> .container`のフロストパネル定義リスト、③`body.no-water`側の上書きリスト、④`@media (max-width: 768px)`内の「Perf: lighter backdrop blur」モバイル軽量化リスト(`.sento-section > .container, .concept-section > .container, ...`)。**④はTask 5完了時点で発見した箇所で、Task 4完了時点では3箇所と誤認していた。Task 6以降は必ず4箇所すべてに追記すること。**追記を忘れると新セクションが素の透明背景のまま可読性が崩れる、または モバイルで重いbackdrop-filterのままになる。
 
 ---
 
