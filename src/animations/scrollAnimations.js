@@ -47,6 +47,18 @@ export function initScrollAnimations() {
   registerAll(".sento-story-section .section__body", { y: 20 }, 0.08);
   registerAll(".feature-row",                        { y: 36 }, 0.12);
 
+  // ── Manner page (dedicated) ─────────────────────────
+  registerAll(".manner-page-header .section__label", { y: 20 });
+  registerAll(".manner-page-header .section__title", { y: 28 });
+  registerAll(".manner-page-header .section__body",  { y: 20, delay: 0.1 });
+  registerAll(".step-card",                           { y: 32 }, 0.06);
+  registerAll(".manner-rules-section .section__label",{ y: 20 });
+  registerAll(".manner-rules-section .section__title",{ y: 28 });
+  registerAll(".manner-rules-grid .manner-highlight-card", { y: 28 }, 0.06);
+  registerAll(".manner-faq-section .section__label",  { y: 20 });
+  registerAll(".manner-faq-section .section__title",  { y: 28 });
+  registerAll(".faq-item",                            { y: 24 }, 0.08);
+
   // ── Gallery ──────────────────────────────────────────
   registerAll(".gallery-section .section__label",  { y: 20 });
   registerAll(".gallery-section .section__title",  { y: 28 });

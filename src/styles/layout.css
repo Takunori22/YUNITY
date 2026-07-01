@@ -333,6 +333,140 @@
   }
 }
 
+/* ---- Manner page (dedicated) ---- */
+.manner-page-header,
+.manner-steps-section,
+.manner-rules-section,
+.manner-faq-section {
+  background-color: #f0ece4;
+}
+
+.manner-page-header .section__title,
+.manner-steps-section .section__title,
+.manner-rules-section .section__title,
+.manner-faq-section .section__title {
+  color: rgba(72, 146, 155, 0.65);
+  -webkit-text-stroke: 1.5px var(--color-charcoal);
+}
+
+.manner-page-header .section__body {
+  margin-top: var(--space-sm);
+}
+
+.step-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.step-card {
+  position: relative;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.step-card[data-seal]::before {
+  content: attr(data-seal);
+  position: absolute;
+  top: -0.7rem;
+  right: 1.1rem;
+  width: 2.3rem;
+  height: 2.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--color-cream);
+  background: var(--seal);
+  border-radius: 7px 7px 7px 0;
+  box-shadow: 0 4px 14px rgba(197, 61, 67, 0.35);
+}
+
+.step-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--color-navy);
+  margin-bottom: var(--space-xs);
+}
+
+.step-card__body {
+  font-size: var(--text-sm);
+  color: var(--color-charcoal);
+  line-height: 1.7;
+}
+
+.manner-rules-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+
+.faq-list {
+  margin-top: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(44, 40, 40, 0.10);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-md);
+}
+
+.faq-item__question {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  color: var(--color-navy);
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-item__question::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item__question::before {
+  content: "＋";
+  display: inline-block;
+  margin-right: 0.6rem;
+  color: var(--color-teal);
+}
+
+.faq-item[open] .faq-item__question::before {
+  content: "－";
+}
+
+.faq-item__answer {
+  font-size: var(--text-sm);
+  color: rgba(44, 40, 40, 0.75);
+  line-height: 1.8;
+  margin-top: var(--space-sm);
+}
+
+@media (max-width: 900px) {
+  .step-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .manner-rules-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .step-grid,
+  .manner-rules-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ---- Gallery ---- */
 .gallery-section {
   background-color: var(--color-navy);
@@ -777,7 +911,11 @@
 .sento-story-section,
 .access-section,
 .team-section,
-.about-teaser-section {
+.about-teaser-section,
+.manner-page-header,
+.manner-steps-section,
+.manner-rules-section,
+.manner-faq-section {
   background: transparent;
   background-color: transparent;
 }
@@ -789,7 +927,11 @@
 .sento-story-section > .container,
 .access-section > .container,
 .team-section > .container,
-.about-teaser-section > .container {
+.about-teaser-section > .container,
+.manner-page-header > .container,
+.manner-steps-section > .container,
+.manner-rules-section > .container,
+.manner-faq-section > .container {
   background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(18px) saturate(1.08);
   -webkit-backdrop-filter: blur(18px) saturate(1.08);
@@ -808,7 +950,11 @@ body.no-water .sento-page-header > .container,
 body.no-water .sento-story-section > .container,
 body.no-water .access-section > .container,
 body.no-water .team-section > .container,
-body.no-water .about-teaser-section > .container {
+body.no-water .about-teaser-section > .container,
+body.no-water .manner-page-header > .container,
+body.no-water .manner-steps-section > .container,
+body.no-water .manner-rules-section > .container,
+body.no-water .manner-faq-section > .container {
   background: var(--color-cream);
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
@@ -841,7 +987,11 @@ body.no-water .about-teaser-section > .container {
   .access-section > .container,
   .team-section > .container,
   .manner-section > .container,
-  .about-teaser-section > .container {
+  .about-teaser-section > .container,
+  .manner-page-header > .container,
+  .manner-steps-section > .container,
+  .manner-rules-section > .container,
+  .manner-faq-section > .container {
     backdrop-filter: blur(10px) saturate(1.05);
     -webkit-backdrop-filter: blur(10px) saturate(1.05);
     background: rgba(255, 255, 255, 0.94);

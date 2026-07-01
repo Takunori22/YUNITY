@@ -20,6 +20,17 @@ export const REVEAL_SELECTORS = [
   ".sento-page-header .section__title",
   ".sento-story-section .section__body",
   ".feature-row",
+  // Manner page (dedicated)
+  ".manner-page-header .section__label",
+  ".manner-page-header .section__title",
+  ".manner-page-header .section__body",
+  ".step-card",
+  ".manner-rules-section .section__label",
+  ".manner-rules-section .section__title",
+  ".manner-rules-grid .manner-highlight-card",
+  ".manner-faq-section .section__label",
+  ".manner-faq-section .section__title",
+  ".faq-item",
   // Gallery
   ".gallery-section .section__label",
   ".gallery-section .section__title",
