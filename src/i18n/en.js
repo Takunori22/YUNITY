@@ -11,15 +11,6 @@ export default {
     subtitle: "A project promoting multicultural exchange between foreign visitors and local residents through Japan's public bathhouse culture.",
     cta: "Share Your Voice",
   },
-  concept: {
-    label: "What is Sento?",
-    title: "Japan's Culture of the Bath",
-    body: "A sento is far more than a place to bathe. It is a community gathering space where neighbors meet without pretense, sharing honest conversation in the tradition of \"hadaka no tsukiai\" — naked friendship. Rooted in the Edo period, sento holds an authentic Japan that visitors rarely encounter.",
-    stat1_num: "3,000+",
-    stat1_label: "Sento across Japan",
-    stat2_num: "400 Years",
-    stat2_label: "of History",
-  },
   gallery: {
     label: "Gallery",
     title: "Step Into the World of Sento",
