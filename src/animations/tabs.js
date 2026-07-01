@@ -82,7 +82,9 @@ export function initTabs(onTabSwitch) {
   // Event delegation — handles nav tabs and any [data-tab] button
   document.addEventListener("click", (e) => {
     const btn = e.target.closest("[data-tab]");
-    if (btn) activateTab(btn.dataset.tab);
+    if (!btn) return;
+    if (btn.tagName === "A") e.preventDefault();
+    activateTab(btn.dataset.tab);
   });
 
   // Browser back/forward — no curtain, just swap

@@ -5,8 +5,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 // ============================================================
 //  survey.js — the「ご記帳」guestbook climax
-//  Sumi brushstroke draw-on (reuses the solution-path
-//  strokeDashoffset technique), magnetic CTA, washi frame.
+//  Sumi brushstroke draw-on (SVG strokeDashoffset technique),
+//  magnetic CTA, washi frame.
 // ============================================================
 
 let brushPath = null;

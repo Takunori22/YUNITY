@@ -42,7 +42,7 @@ export const REVEAL_SELECTORS = [
   // Manner teaser (home)
   ".manner-section .section__label",
   ".manner-section .section__title",
-  ".manner-highlight-card",
+  ".manner-section .manner-highlight-card",
   // About story (dedicated page)
   ".about-story-section .section__label",
   ".about-story-section .section__title",

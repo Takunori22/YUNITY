@@ -72,7 +72,7 @@ export function initScrollAnimations() {
   // ── Manner teaser (home) ────────────────────────────
   registerAll(".manner-section .section__label",  { y: 20 });
   registerAll(".manner-section .section__title",  { y: 28 });
-  registerAll(".manner-highlight-card",           { y: 32 }, 0.08);
+  registerAll(".manner-section .manner-highlight-card", { y: 32 }, 0.08);
 
   // ── About story (dedicated page) ────────────────────
   registerAll(".about-story-section .section__label", { y: 20 });

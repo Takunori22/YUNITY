@@ -926,7 +926,7 @@
 .sento-features-section {
   background: transparent !important;
   background-color: transparent !important;
-  animation: none !important;   /* drop the old problem gradient-shift */
+  animation: none !important;   /* dark sections have no background animation */
 }
 
 /* Light-content sections: transparent shell … */
@@ -991,10 +991,6 @@ body.no-water .manner-faq-section > .container {
 /* ============================================================
    RESPONSIVE
 ============================================================ */
-
-/* ---- Tablet (≤1024px) ---- */
-@media (max-width: 1024px) {
-}
 
 /* ---- Mobile-L / Tablet-S (≤768px) ---- */
 @media (max-width: 768px) {
