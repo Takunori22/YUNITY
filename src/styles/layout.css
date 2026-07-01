@@ -219,6 +219,8 @@
 
 .about-teaser__avatars {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: var(--space-sm);
   margin: var(--space-lg) 0;
 }
