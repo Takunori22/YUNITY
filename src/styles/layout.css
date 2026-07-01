@@ -712,10 +712,6 @@ body.no-water .team-section > .container {
     grid-column: 1 / -1;
   }
 
-  .gallery-item {
-    width: clamp(220px, 80vw, 400px);
-    height: 50vh;
-  }
 }
 
 /* ---- Mobile (≤480px) ---- */
