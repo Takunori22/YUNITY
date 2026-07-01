@@ -60,6 +60,12 @@ export default {
     teaser_card4_body: "시설마다 규정이 다르니 사전에 확인해 주세요.",
     teaser_cta: "매너 가이드 자세히 보기 →",
   },
+  about: {
+    teaser_label: "소개",
+    teaser_title: "센토에서 시작되는 다문화 공생.",
+    teaser_body: "YU-NITY는 일본의 센토 문화를 통해 외국인 관광객과 지역 주민을 잇는 학생 주도 프로젝트팀입니다.",
+    teaser_cta: "팀 소개 보기 →",
+  },
   access: {
     label:      "위치",
     title:      "오시는 길",

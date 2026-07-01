@@ -60,6 +60,12 @@ export default {
     teaser_card4_body: "Policies vary by bathhouse, so check in advance.",
     teaser_cta: "See the full manner guide →",
   },
+  about: {
+    teaser_label: "About",
+    teaser_title: "Multicultural exchange starts at the sento.",
+    teaser_body: "YU-NITY is a student-led project team connecting foreign visitors and local residents through Japan's sento culture.",
+    teaser_cta: "Meet the team →",
+  },
   access: {
     label:      "Location",
     title:      "Access",

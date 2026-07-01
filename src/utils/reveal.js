@@ -37,6 +37,11 @@ export const REVEAL_SELECTORS = [
   ".team-card",
   // Survey
   ".survey-section__inner > *",
+  // About teaser (home)
+  ".about-teaser-section .section__label",
+  ".about-teaser-section .section__title",
+  ".about-teaser-section .section__body",
+  ".about-teaser__avatars img",
 ].join(", ");
 
 // Force everything visible & untransformed (reduced-motion path).

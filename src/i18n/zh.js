@@ -60,6 +60,12 @@ export default {
     teaser_card4_body: "各店铺规定不同，请事先咨询。",
     teaser_cta: "查看完整礼仪指南 →",
   },
+  about: {
+    teaser_label: "关于我们",
+    teaser_title: "从钱汤开始的多元文化共生。",
+    teaser_body: "YU-NITY是一支学生发起的项目团队，通过日本钱汤文化连接外国游客与当地居民。",
+    teaser_cta: "认识我们的团队 →",
+  },
   access: {
     label:      "地点",
     title:      "交通",

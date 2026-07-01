@@ -71,6 +71,12 @@ export function initScrollAnimations() {
   // ── Survey ───────────────────────────────────────────
   registerAll(".survey-section__inner > *",        { y: 28 }, 0.12);
 
+  // ── About teaser (home) ─────────────────────────────
+  registerAll(".about-teaser-section .section__label", { y: 20 });
+  registerAll(".about-teaser-section .section__title", { y: 28 });
+  registerAll(".about-teaser-section .section__body",  { y: 20, delay: 0.1 });
+  registerAll(".about-teaser__avatars img",             { y: 24, delay: 0.15 }, 0.05);
+
   // ── 初期チェック（ロード時・anchor 遷移時にビュー内の要素を即表示）──
   checkVisible();
   requestAnimationFrame(() => {

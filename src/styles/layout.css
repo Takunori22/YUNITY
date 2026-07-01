@@ -207,6 +207,35 @@
   }
 }
 
+/* ---- About teaser (home) ---- */
+.about-teaser-section {
+  background-color: var(--color-cream);
+}
+
+.about-teaser-section .section__title {
+  color: rgba(72, 146, 155, 0.65);
+  -webkit-text-stroke: 1.5px var(--color-charcoal);
+}
+
+.about-teaser__avatars {
+  display: flex;
+  gap: var(--space-sm);
+  margin: var(--space-lg) 0;
+}
+
+.about-teaser__avatars img {
+  width: clamp(48px, 8vw, 72px);
+  height: clamp(48px, 8vw, 72px);
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  border: 2px solid var(--color-white);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+}
+
+.about-teaser__cta {
+  text-align: center;
+}
+
 /* ---- Concept ---- */
 .concept-section {
   background-color: #f0ece4;
@@ -710,7 +739,8 @@
 .manner-section,
 .concept-section,
 .access-section,
-.team-section {
+.team-section,
+.about-teaser-section {
   background: transparent;
   background-color: transparent;
 }
@@ -720,7 +750,8 @@
 .manner-section > .container,
 .concept-section > .container,
 .access-section > .container,
-.team-section > .container {
+.team-section > .container,
+.about-teaser-section > .container {
   background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(18px) saturate(1.08);
   -webkit-backdrop-filter: blur(18px) saturate(1.08);
@@ -737,7 +768,8 @@ body.no-water .sento-section > .container,
 body.no-water .manner-section > .container,
 body.no-water .concept-section > .container,
 body.no-water .access-section > .container,
-body.no-water .team-section > .container {
+body.no-water .team-section > .container,
+body.no-water .about-teaser-section > .container {
   background: var(--color-cream);
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
@@ -768,7 +800,8 @@ body.no-water .team-section > .container {
   .concept-section > .container,
   .access-section > .container,
   .team-section > .container,
-  .manner-section > .container {
+  .manner-section > .container,
+  .about-teaser-section > .container {
     backdrop-filter: blur(10px) saturate(1.05);
     -webkit-backdrop-filter: blur(10px) saturate(1.05);
     background: rgba(255, 255, 255, 0.94);

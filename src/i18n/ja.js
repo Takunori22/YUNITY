@@ -60,6 +60,12 @@ export default {
     teaser_card4_body: "対応は施設ごとに異なるので、事前にご確認を。",
     teaser_cta: "マナーを詳しく見る →",
   },
+  about: {
+    teaser_label: "アバウト",
+    teaser_title: "銭湯から始まる、多文化共生。",
+    teaser_body: "YU-NITYは、銭湯文化を通じて訪日外国人と地域住民をつなぐ、学生発のプロジェクトチームです。",
+    teaser_cta: "アバウトページへ →",
+  },
   access: {
     label:      "場所",
     title:      "アクセス",
