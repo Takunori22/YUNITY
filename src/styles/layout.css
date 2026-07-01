@@ -552,6 +552,31 @@
   }
 }
 
+/* ---- About page (dedicated) ---- */
+.about-story-section {
+  background-color: #f0ece4;
+}
+
+.about-story-section .section__title {
+  color: rgba(72, 146, 155, 0.65);
+  -webkit-text-stroke: 1.5px var(--color-charcoal);
+}
+
+.about-story-section .section__body {
+  margin-bottom: var(--space-md);
+}
+
+.about-story-section .section__body:last-child {
+  margin-bottom: 0;
+}
+
+.team-card__bio {
+  font-size: var(--text-xs);
+  color: rgba(44, 40, 40, 0.65);
+  line-height: 1.6;
+  margin-top: 0.4rem;
+}
+
 /* ---- Team ---- */
 .team-section {
   background-color: var(--color-cream);
@@ -910,6 +935,7 @@
 .sento-page-header,
 .sento-story-section,
 .access-section,
+.about-story-section,
 .team-section,
 .about-teaser-section,
 .manner-page-header,
@@ -926,6 +952,7 @@
 .sento-page-header > .container,
 .sento-story-section > .container,
 .access-section > .container,
+.about-story-section > .container,
 .team-section > .container,
 .about-teaser-section > .container,
 .manner-page-header > .container,
@@ -949,6 +976,7 @@ body.no-water .manner-section > .container,
 body.no-water .sento-page-header > .container,
 body.no-water .sento-story-section > .container,
 body.no-water .access-section > .container,
+body.no-water .about-story-section > .container,
 body.no-water .team-section > .container,
 body.no-water .about-teaser-section > .container,
 body.no-water .manner-page-header > .container,
@@ -985,6 +1013,7 @@ body.no-water .manner-faq-section > .container {
   .sento-page-header > .container,
   .sento-story-section > .container,
   .access-section > .container,
+  .about-story-section > .container,
   .team-section > .container,
   .manner-section > .container,
   .about-teaser-section > .container,

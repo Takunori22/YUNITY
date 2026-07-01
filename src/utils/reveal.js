@@ -43,6 +43,10 @@ export const REVEAL_SELECTORS = [
   ".manner-section .section__label",
   ".manner-section .section__title",
   ".manner-highlight-card",
+  // About story (dedicated page)
+  ".about-story-section .section__label",
+  ".about-story-section .section__title",
+  ".about-story-section .section__body",
   // Team
   ".team-section .section__label",
   ".team-section .section__title",

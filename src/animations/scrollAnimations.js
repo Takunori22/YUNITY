@@ -74,6 +74,11 @@ export function initScrollAnimations() {
   registerAll(".manner-section .section__title",  { y: 28 });
   registerAll(".manner-highlight-card",           { y: 32 }, 0.08);
 
+  // ── About story (dedicated page) ────────────────────
+  registerAll(".about-story-section .section__label", { y: 20 });
+  registerAll(".about-story-section .section__title", { y: 28 });
+  registerAll(".about-story-section .section__body",  { y: 20 }, 0.08);
+
   // ── Team ─────────────────────────────────────────────
   register(document.querySelector(".team-section > .container"), { y: 20 });
   registerAll(".team-section .section__label",     { y: 20, delay: 0.15 });
