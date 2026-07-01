@@ -79,11 +79,14 @@ export function initTabs(onTabSwitch) {
       .to(".noren__water", { yPercent: -100, duration: D, ease }, "<");
   }
 
-  // Event delegation — handles nav tabs and any [data-tab] button
+  // Event delegation — handles nav tabs and any [data-tab] button.
+  // Only suppress default navigation for placeholder "#" anchors — a real
+  // fragment href (e.g. the footer's href="#survey" data-tab="home" link)
+  // must still get its native same-page scroll.
   document.addEventListener("click", (e) => {
     const btn = e.target.closest("[data-tab]");
     if (!btn) return;
-    if (btn.tagName === "A") e.preventDefault();
+    if (btn.tagName === "A" && btn.getAttribute("href") === "#") e.preventDefault();
     activateTab(btn.dataset.tab);
   });
 
