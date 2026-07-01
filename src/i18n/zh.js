@@ -24,6 +24,15 @@ export default {
     label: "图片集",
     title: "走进钱汤的世界",
   },
+  sento: {
+    teaser_label: "钱汤介绍",
+    teaser_title: "日本引以为傲的浴汤文化",
+    teaser_body: "钱汤不仅仅是洗浴设施。它是社区居民聚集、坦诚交流的日本独特文化空间。",
+    teaser_name: "这次为大家介绍东京文京区的「大黒湯」。",
+    teaser_cta: "前往钱汤介绍页面 →",
+    teaser_map_area: "东京都文京区",
+    teaser_map_note: "谷歌地图嵌入设置中",
+  },
   team: {
     label: "团队",
     title: "认识YU-NITY",

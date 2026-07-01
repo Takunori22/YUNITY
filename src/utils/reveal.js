@@ -23,6 +23,10 @@ export const REVEAL_SELECTORS = [
   ".gallery-section .section__label",
   ".gallery-section .section__title",
   ".gallery-tile",
+  // Sento teaser (home)
+  ".sento-section .section__label",
+  ".sento-section__text > *",
+  ".sento-section__map",
   // Team
   ".team-section .section__label",
   ".team-section .section__title",

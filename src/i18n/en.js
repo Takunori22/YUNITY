@@ -24,6 +24,15 @@ export default {
     label: "Gallery",
     title: "Step Into the World of Sento",
   },
+  sento: {
+    teaser_label: "Sento Guide",
+    teaser_title: "Japan's Culture of the Bath",
+    teaser_body: "A sento is far more than a place to bathe. It is a community gathering space where neighbors meet without pretense, sharing honest conversation.",
+    teaser_name: "This time, we introduce Daikokuyu in Bunkyo, Tokyo.",
+    teaser_cta: "Visit the Sento Guide →",
+    teaser_map_area: "Bunkyo, Tokyo",
+    teaser_map_note: "Google Maps embed coming soon",
+  },
   team: {
     label: "Team",
     title: "Meet YU-NITY",

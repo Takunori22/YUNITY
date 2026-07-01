@@ -24,6 +24,15 @@ export default {
     label: "ギャラリー",
     title: "銭湯の世界へ",
   },
+  sento: {
+    teaser_label: "銭湯紹介",
+    teaser_title: "日本が誇る、湯の文化",
+    teaser_body: "銭湯は単なる入浴施設ではありません。地域のコミュニティが集まり、裸の付き合いで本音を語り合える、日本独自の文化的空間です。",
+    teaser_name: "今回ご紹介するのは、東京・文京区の「大黒湯」。",
+    teaser_cta: "銭湯紹介ページへ →",
+    teaser_map_area: "東京都文京区",
+    teaser_map_note: "Google マップ埋め込みを設定中",
+  },
   team: {
     label: "チーム",
     title: "YU-NITYメンバー",

@@ -52,6 +52,11 @@ export function initScrollAnimations() {
   registerAll(".gallery-section .section__title",  { y: 28 });
   registerAll(".gallery-tile",                     { y: 32 }, 0.06);
 
+  // ── Sento teaser (home) ─────────────────────────────────────────────
+  registerAll(".sento-section .section__label", { y: 20 });
+  registerAll(".sento-section__text > *",        { x: -40 }, 0.08);
+  registerAll(".sento-section__map",             { x: 40 });
+
   // ── Team ─────────────────────────────────────────────
   register(document.querySelector(".team-section > .container"), { y: 20 });
   registerAll(".team-section .section__label",     { y: 20, delay: 0.15 });

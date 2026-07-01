@@ -24,6 +24,15 @@ export default {
     label: "갤러리",
     title: "센토의 세계로",
   },
+  sento: {
+    teaser_label: "센토 소개",
+    teaser_title: "일본이 자랑하는 목욕 문화",
+    teaser_body: "센토는 단순한 목욕 시설이 아닙니다. 지역 주민들이 모여 스스럼없이 마음을 나누는 일본 고유의 문화 공간입니다.",
+    teaser_name: "이번에 소개할 곳은 도쿄 분쿄구의 「다이코쿠유」입니다.",
+    teaser_cta: "센토 소개 페이지로 →",
+    teaser_map_area: "도쿄도 분쿄구",
+    teaser_map_note: "구글 맵 embed 준비 중",
+  },
   team: {
     label: "팀",
     title: "YU-NITY 소개",
