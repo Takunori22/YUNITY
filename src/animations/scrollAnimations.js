@@ -41,11 +41,11 @@ function checkVisible() {
 }
 
 export function initScrollAnimations() {
-  // ── Concept ──────────────────────────────────────────
-  registerAll(".concept-section .section__label", { y: 20 });
-  registerAll(".concept-section__visual",          { x: -50 });
-  registerAll(".concept-section__text > *",        { x: 40 }, 0.1);
-
+  // ── Sento page (dedicated) ──────────────────────────────────────────────
+  registerAll(".sento-page-header .section__label", { y: 20 });
+  registerAll(".sento-page-header .section__title", { y: 28 });
+  registerAll(".sento-story-section .section__body", { y: 20 }, 0.08);
+  registerAll(".feature-row",                        { y: 36 }, 0.12);
 
   // ── Gallery ──────────────────────────────────────────
   registerAll(".gallery-section .section__label",  { y: 20 });

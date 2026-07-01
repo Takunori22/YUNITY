@@ -238,66 +238,99 @@
   text-align: center;
 }
 
-/* ---- Concept ---- */
-.concept-section {
+/* ---- Sento page (dedicated) ---- */
+.sento-page-header,
+.sento-story-section {
   background-color: #f0ece4;
 }
 
-.concept-section .section__title {
+.sento-page-header .section__title,
+.sento-story-section .section__title {
   color: rgba(72, 146, 155, 0.65);
   -webkit-text-stroke: 1.5px var(--color-charcoal);
 }
 
-.concept-section .section__body {
-  color: var(--color-charcoal);
+.sento-story-section .section__body {
+  margin-bottom: var(--space-md);
 }
 
-.concept-section__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-lg);
+.sento-story-section .section__body:last-child {
+  margin-bottom: 0;
+}
+
+.sento-features-section {
+  background-color: transparent !important;
+}
+
+.feature-row {
+  display: flex;
   align-items: center;
-  margin-top: var(--space-md);
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
 }
 
-.concept-section__img-wrap {
-  aspect-ratio: 4/3;
+.feature-row:last-child {
+  margin-bottom: 0;
+}
+
+.feature-row:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.feature-row__media {
+  position: relative;
+  flex: 0 0 42%;
+  aspect-ratio: 4 / 3;
   border-radius: var(--radius-md);
   overflow: hidden;
-  position: relative;
-  background: var(--color-navy);
+  background: linear-gradient(135deg, var(--color-navy), rgba(72, 146, 155, 0.18));
+  border: 1px solid rgba(255,255,255,0.08);
 }
 
-.concept-section__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.concept-section__img-placeholder {
+.feature-row__media::before {
+  content: attr(data-index);
   position: absolute;
-  inset: 0;
-  display: none;
-  align-items: center;
-  justify-content: center;
+  top: 0.75rem;
+  left: 0.9rem;
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  letter-spacing: 0.1em;
+  color: rgba(238, 234, 228, 0.55);
 }
 
-.concept-section__img-placeholder svg {
-  width: 100%;
-  height: 100%;
+.feature-row__text {
+  flex: 1;
 }
 
-.concept-section__stats {
-  display: flex;
-  gap: var(--space-sm);
-  margin-top: var(--space-sm);
+.feature-row__title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--color-cream);
+  margin-bottom: var(--space-xs);
 }
 
-.concept-section__tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-xs);
-  margin-top: var(--space-md);
+.feature-row__body {
+  font-size: var(--text-base);
+  line-height: 1.8;
+  color: rgba(238, 234, 228, 0.8);
+}
+
+.access-info__disclaimer {
+  font-size: var(--text-xs);
+  color: rgba(44, 40, 40, 0.5);
+  margin-top: -0.5rem;
+  margin-bottom: var(--space-md);
+}
+
+@media (max-width: 768px) {
+  .feature-row,
+  .feature-row:nth-child(even) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .feature-row__media {
+    flex: none;
+  }
 }
 
 /* ---- Gallery ---- */
@@ -730,7 +763,8 @@
 /* Dark sections: let the WebGL water be the background */
 .hero,
 .survey-section,
-.gallery-section {
+.gallery-section,
+.sento-features-section {
   background: transparent !important;
   background-color: transparent !important;
   animation: none !important;   /* drop the old problem gradient-shift */
@@ -739,7 +773,8 @@
 /* Light-content sections: transparent shell … */
 .sento-section,
 .manner-section,
-.concept-section,
+.sento-page-header,
+.sento-story-section,
 .access-section,
 .team-section,
 .about-teaser-section {
@@ -750,7 +785,8 @@
 /* … with a frosted steam-glass panel holding the content */
 .sento-section > .container,
 .manner-section > .container,
-.concept-section > .container,
+.sento-page-header > .container,
+.sento-story-section > .container,
 .access-section > .container,
 .team-section > .container,
 .about-teaser-section > .container {
@@ -768,7 +804,8 @@
 /* Steam-glass panels off under reduced motion / no backdrop support → solid */
 body.no-water .sento-section > .container,
 body.no-water .manner-section > .container,
-body.no-water .concept-section > .container,
+body.no-water .sento-page-header > .container,
+body.no-water .sento-story-section > .container,
 body.no-water .access-section > .container,
 body.no-water .team-section > .container,
 body.no-water .about-teaser-section > .container {
@@ -799,7 +836,8 @@ body.no-water .about-teaser-section > .container {
 
   /* Perf: lighter backdrop blur + more opaque glass on mobile GPUs */
   .sento-section > .container,
-  .concept-section > .container,
+  .sento-page-header > .container,
+  .sento-story-section > .container,
   .access-section > .container,
   .team-section > .container,
   .manner-section > .container,
@@ -809,10 +847,6 @@ body.no-water .about-teaser-section > .container {
     background: rgba(255, 255, 255, 0.94);
     padding: clamp(1.5rem, 5vw, 2.5rem);
     border-radius: var(--radius-md);
-  }
-
-  .concept-section__grid {
-    grid-template-columns: 1fr;
   }
 
   .access-grid {

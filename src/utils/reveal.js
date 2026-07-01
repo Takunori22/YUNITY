@@ -15,10 +15,11 @@ export const REVEAL_SELECTORS = [
   ".hero__subtitle",
   ".hero__cta",
   ".hero__scroll-indicator",
-  // Concept
-  ".concept-section .section__label",
-  ".concept-section__visual",
-  ".concept-section__text > *",
+  // Sento page (dedicated)
+  ".sento-page-header .section__label",
+  ".sento-page-header .section__title",
+  ".sento-story-section .section__body",
+  ".feature-row",
   // Gallery
   ".gallery-section .section__label",
   ".gallery-section .section__title",
