@@ -25,12 +25,6 @@
   100% { transform: translateY(-120px) scale(0.4); opacity: 0; }
 }
 
-@keyframes gradientShift {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
 @keyframes pulseGlow {
   0%, 100% { box-shadow: 0 0 20px rgba(72,146,155,0.3); }
   50%       { box-shadow: 0 0 40px rgba(72,146,155,0.55); }
@@ -40,27 +34,6 @@
 @keyframes tideBreath {
   0%, 100% { opacity: 0.7; transform: translateX(-50%) translateY(0); }
   50%      { opacity: 1;   transform: translateX(-50%) translateY(-5%); }
-}
-
-/* Counter elastic-landing ring flash (紅) */
-@keyframes counterPop {
-  0%   { box-shadow: 0 0 0 0 rgba(197,61,67,0); }
-  30%  { box-shadow: 0 0 0 4px rgba(197,61,67,0.45); }
-  100% { box-shadow: 0 0 0 0 rgba(197,61,67,0); }
-}
-.counter-card--pop { animation: counterPop 0.6s ease-out; }
-
-/* Problem section animated background */
-.problem-section {
-  background: linear-gradient(
-    -45deg,
-    #1C1F2E,
-    #252A40,
-    #1C1F2E,
-    #2A1E22
-  );
-  background-size: 400% 400%;
-  animation: gradientShift 16s ease infinite;
 }
 
 /* Hero CTA: no CSS bounce — it would fight the GSAP magnetic transform.
