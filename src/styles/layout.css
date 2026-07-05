@@ -28,16 +28,10 @@
   font-family: var(--font-display);
   font-size: clamp(var(--text-2xl), 5vw, var(--text-4xl));
   font-weight: 500;
-  color: rgba(72, 146, 155, 0.65);        /* teal — ボーダー(charcoal)と異なる色 */
-  -webkit-text-stroke: 1px var(--color-charcoal);
+  color: rgba(72, 146, 155, 0.65);
   line-height: 1.3;
   letter-spacing: 0.08em;
   margin-bottom: var(--space-md);
-}
-
-.section__title--light {
-  color: rgba(72, 146, 155, 0.65);
-  -webkit-text-stroke: 1.5px var(--color-charcoal);
 }
 
 .section__body {
@@ -127,11 +121,6 @@
   background-color: #f0ece4;
 }
 
-.sento-section .section__title {
-  color: rgba(72, 146, 155, 0.65);
-  -webkit-text-stroke: 1.5px var(--color-charcoal);
-}
-
 .sento-section__grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -156,11 +145,6 @@
 /* ---- Manner teaser (home) ---- */
 .manner-section {
   background-color: var(--color-cream);
-}
-
-.manner-section .section__title {
-  color: rgba(72, 146, 155, 0.65);
-  -webkit-text-stroke: 1.5px var(--color-charcoal);
 }
 
 .manner-highlight-grid {
@@ -212,11 +196,6 @@
   background-color: var(--color-cream);
 }
 
-.about-teaser-section .section__title {
-  color: rgba(72, 146, 155, 0.65);
-  -webkit-text-stroke: 1.5px var(--color-charcoal);
-}
-
 .about-teaser__avatars {
   display: flex;
   flex-wrap: wrap;
@@ -242,12 +221,6 @@
 .sento-page-header,
 .sento-story-section {
   background-color: #f0ece4;
-}
-
-.sento-page-header .section__title,
-.sento-story-section .section__title {
-  color: rgba(72, 146, 155, 0.65);
-  -webkit-text-stroke: 1.5px var(--color-charcoal);
 }
 
 .sento-story-section .section__body {
@@ -339,14 +312,6 @@
 .manner-rules-section,
 .manner-faq-section {
   background-color: #f0ece4;
-}
-
-.manner-page-header .section__title,
-.manner-steps-section .section__title,
-.manner-rules-section .section__title,
-.manner-faq-section .section__title {
-  color: rgba(72, 146, 155, 0.65);
-  -webkit-text-stroke: 1.5px var(--color-charcoal);
 }
 
 .manner-page-header .section__body {
@@ -478,11 +443,6 @@
   margin-bottom: var(--space-md);
 }
 
-.gallery-section .section__title {
-  color: rgba(72, 146, 155, 0.65);
-  -webkit-text-stroke: 1.5px var(--color-charcoal);
-}
-
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -555,11 +515,6 @@
 /* ---- About page (dedicated) ---- */
 .about-story-section {
   background-color: #f0ece4;
-}
-
-.about-story-section .section__title {
-  color: rgba(72, 146, 155, 0.65);
-  -webkit-text-stroke: 1.5px var(--color-charcoal);
 }
 
 .about-story-section .section__body {
@@ -833,11 +788,6 @@
 .access-section {
   background-color: var(--color-cream);
   min-height: 70vh;
-}
-
-.access-section .section__title {
-  color: rgba(72, 146, 155, 0.65);
-  -webkit-text-stroke: 1px var(--color-charcoal);
 }
 
 .access-grid {
