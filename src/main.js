@@ -176,8 +176,15 @@ async function main() {
   if (!prefersReducedMotion) {
     initHero();
     initScrollAnimations();
-    await initParticles();
-    initSurveyParticles();
+    // Particles are purely decorative. A throw here (e.g. a tsParticles
+    // engine/plugin version mismatch) must never abort main() and leave the
+    // nav, tabs and anchor links below unwired.
+    try {
+      await initParticles();
+      initSurveyParticles();
+    } catch (err) {
+      console.warn("[particles] disabled:", err);
+    }
   } else {
     // Make all animated elements visible without animation
     revealAll(gsap);
