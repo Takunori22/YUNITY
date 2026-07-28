@@ -116,79 +116,46 @@
   opacity: 0.6;
 }
 
-/* ---- Sento teaser (home) ---- */
-.sento-section {
-  background-color: #f0ece4;
-}
-
-.sento-section__grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: var(--space-lg);
-  align-items: center;
-}
-
+/* ---- Sento teaser (home) — 枠組みは .split が持つ ---- */
 .sento-section__name {
   font-family: var(--font-display);
   font-size: var(--text-lg);
-  color: var(--color-charcoal);
+  color: var(--color-cream);
   margin-top: var(--space-sm);
-  margin-bottom: var(--space-md);
 }
 
-@media (max-width: 768px) {
-  .sento-section__grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ---- Manner teaser (home) ---- */
-.manner-section {
-  background-color: var(--color-cream);
-}
-
-.manner-highlight-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+/* ---- Manner — 心得の縦リスト（ホームのティーザーと個別ルールで共用） ----
+   写真を大きく取るため、カードを並べる代わりに絵文字つきの行で積む。 */
+.manner-rules-list {
+  display: flex;
+  flex-direction: column;
   gap: var(--space-sm);
-  margin: var(--space-lg) 0;
+  margin-top: var(--space-xs);
 }
 
-.manner-highlight-card {
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(44, 40, 40, 0.10);
-  border-radius: var(--radius-md);
-  padding: var(--space-md) var(--space-sm);
-  text-align: center;
+.manner-rule {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: flex-start;
 }
 
-.manner-highlight-card__icon {
-  font-size: 2rem;
-  line-height: 1;
-  margin-bottom: var(--space-xs);
+.manner-rule__icon {
+  flex: 0 0 auto;
+  font-size: 1.4rem;
+  line-height: 1.35;
 }
 
-.manner-highlight-card__title {
+.manner-rule__title {
   font-family: var(--font-display);
   font-size: var(--text-base);
-  color: var(--color-charcoal);
-  margin-bottom: 0.35rem;
+  color: var(--color-cream);
+  margin-bottom: 0.15rem;
 }
 
-.manner-highlight-card__body {
+.manner-rule__body {
   font-size: var(--text-sm);
-  color: rgba(44, 40, 40, 0.7);
-  line-height: 1.6;
-}
-
-.manner-section__cta {
-  text-align: center;
-}
-
-@media (max-width: 768px) {
-  .manner-highlight-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  color: rgba(238, 234, 228, 0.78);
+  line-height: 1.7;
 }
 
 /* ---- About teaser (home) ---- */
@@ -217,179 +184,158 @@
   text-align: center;
 }
 
-/* ---- Sento page (dedicated) ---- */
-.sento-page-header,
-.sento-story-section {
-  background-color: #f0ece4;
-}
-
-.sento-story-section .section__body {
-  margin-bottom: var(--space-md);
-}
-
-.sento-story-section .section__body:last-child {
-  margin-bottom: 0;
-}
-
+/* ---- Sento page (dedicated) ----
+   見出し・特徴・アクセスはいずれも .split を使う。ここは中身の調整だけ。 */
 .sento-features-section {
   background-color: transparent !important;
-}
-
-.feature-row {
-  display: flex;
-  align-items: center;
-  gap: var(--space-lg);
-  margin-bottom: var(--space-xl);
-}
-
-.feature-row:last-child {
-  margin-bottom: 0;
-}
-
-.feature-row:nth-child(even) {
-  flex-direction: row-reverse;
-}
-
-.feature-row__media {
-  position: relative;
-  flex: 0 0 42%;
-  aspect-ratio: 4 / 3;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  background: linear-gradient(135deg, var(--color-navy), rgba(72, 146, 155, 0.18));
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.feature-row__media::before {
-  content: attr(data-index);
-  position: absolute;
-  top: 0.75rem;
-  left: 0.9rem;
-  font-family: var(--font-display);
-  font-size: var(--text-sm);
-  letter-spacing: 0.1em;
-  color: rgba(238, 234, 228, 0.55);
-}
-
-.feature-row__text {
-  flex: 1;
-}
-
-.feature-row__title {
-  font-family: var(--font-display);
-  font-size: var(--text-xl);
-  color: var(--color-cream);
-  margin-bottom: var(--space-xs);
-}
-
-.feature-row__body {
-  font-size: var(--text-base);
-  line-height: 1.8;
-  color: rgba(238, 234, 228, 0.8);
+  padding: 0;
 }
 
 .access-info__disclaimer {
   font-size: var(--text-xs);
-  color: rgba(44, 40, 40, 0.5);
-  margin-top: -0.5rem;
-  margin-bottom: var(--space-md);
+  color: rgba(238, 234, 228, 0.45);
+  margin-top: -0.25rem;
 }
 
-@media (max-width: 768px) {
-  .feature-row,
-  .feature-row:nth-child(even) {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .feature-row__media {
-    flex: none;
-  }
+/* ============================================================
+   STEP MOSAIC — 入浴の流れ（六つのステップ）
+   写真をタイル全面に敷き、下から藍のグラデを重ね、その上に朱印の漢数字と
+   説明を載せる。ギャラリーと同じく余白ゼロ・画面幅いっぱい。
+   写真が入る前もグラデ地で成立し、<img> を 1 枚足せば背景が写真に変わる。
+============================================================ */
+.manner-steps-section {
+  padding: 0;
 }
 
-/* ---- Manner page (dedicated) ---- */
-.manner-page-header,
-.manner-steps-section,
-.manner-rules-section,
-.manner-faq-section {
-  background-color: #f0ece4;
+/* 見出し帯もタイル側と同じ藍に揃える。ここだけ水面のままだと、上下を
+   暗いセクションに挟まれて明るい帯が浮き、見出しの文字も沈む。 */
+.manner-steps__header {
+  position: relative;
+  padding: var(--space-lg) clamp(1rem, 4vw, 2rem) var(--space-md);
+  /* 直前のページ見出し (0.62) より濃くして、帯の切り替わりを感じさせる。 */
+  background: rgba(var(--wood-rgb), 0.7);
 }
 
-.manner-page-header .section__body {
-  margin-top: var(--space-sm);
+.manner-steps__header .section__title {
+  color: var(--color-cream);
 }
 
 .step-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-md);
-  margin-top: var(--space-lg);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
 }
 
 .step-card {
+  --veil: 0.93;   /* 足元の濃さ。上に向かって淡くなる（::after 参照） */
   position: relative;
-  background: var(--color-white);
-  border-radius: var(--radius-md);
-  padding: var(--space-md);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  border: 1px solid rgba(0,0,0,0.06);
+  min-height: clamp(280px, 44vh, 480px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: clamp(1.5rem, 3vw, 3rem);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(135deg, var(--color-navy), rgba(72, 146, 155, 0.18));
 }
 
+/* 2 列のとき市松に振って、上下左右どの隣とも濃さが揃わないようにする。 */
+.step-card:nth-child(4n+2),
+.step-card:nth-child(4n+3) {
+  --veil: 0.97;
+}
+
+.step-card:nth-child(3n+2) {
+  background: linear-gradient(135deg, var(--color-navy), rgba(200, 150, 12, 0.16));
+}
+
+.step-card:nth-child(3n+3) {
+  background: linear-gradient(135deg, var(--color-navy), rgba(197, 61, 67, 0.14));
+}
+
+.step-card img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 写真の有無にかかわらず敷く。文字を必ず読ませるための木肌。 */
+.step-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    rgba(var(--wood-rgb), var(--veil)) 0%,
+    rgba(var(--wood-rgb), calc(var(--veil) - 0.33)) 45%,
+    rgba(var(--wood-rgb), calc(var(--veil) - 0.81)) 100%
+  );
+}
+
+/* 朱印の漢数字。順序を持つ内容なのでここは番号が意味を持つ。 */
 .step-card[data-seal]::before {
   content: attr(data-seal);
   position: absolute;
-  top: -0.7rem;
-  right: 1.1rem;
-  width: 2.3rem;
-  height: 2.3rem;
+  top: clamp(1rem, 2vw, 1.75rem);
+  left: clamp(1.25rem, 2.4vw, 2rem);
+  z-index: 2;
+  width: clamp(2.4rem, 3.4vw, 3.2rem);
+  height: clamp(2.4rem, 3.4vw, 3.2rem);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-display);
-  font-size: var(--text-lg);
+  font-size: clamp(var(--text-lg), 2vw, var(--text-2xl));
   color: var(--color-cream);
   background: var(--seal);
-  border-radius: 7px 7px 7px 0;
-  box-shadow: 0 4px 14px rgba(197, 61, 67, 0.35);
+  border-radius: 8px 8px 8px 0;
+  box-shadow: 0 6px 20px rgba(197, 61, 67, 0.4);
+}
+
+.step-card__title,
+.step-card__body {
+  position: relative;
+  z-index: 2;
 }
 
 .step-card__title {
   font-family: var(--font-display);
-  font-size: var(--text-lg);
-  color: var(--color-navy);
+  font-size: clamp(var(--text-lg), 2vw, var(--text-2xl));
+  color: var(--color-cream);
   margin-bottom: var(--space-xs);
 }
 
 .step-card__body {
   font-size: var(--text-sm);
-  color: var(--color-charcoal);
-  line-height: 1.7;
+  color: rgba(238, 234, 228, 0.85);
+  line-height: 1.8;
+  max-width: 42ch;
 }
 
-.manner-rules-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-sm);
-  margin-top: var(--space-lg);
-}
-
+/* ---- FAQ — 藍の面に載るので枠と文字を明るい側へ ---- */
 .faq-list {
-  margin-top: var(--space-lg);
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: var(--space-xs);
+  margin-top: var(--space-xs);
 }
 
 .faq-item {
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(44, 40, 40, 0.10);
-  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-sm);
   padding: var(--space-sm) var(--space-md);
 }
 
 .faq-item__question {
   font-family: var(--font-display);
   font-size: var(--text-base);
-  color: var(--color-navy);
+  color: var(--color-cream);
   cursor: pointer;
   list-style: none;
 }
@@ -402,7 +348,7 @@
   content: "＋";
   display: inline-block;
   margin-right: 0.6rem;
-  color: var(--color-teal);
+  color: color-mix(in oklab, var(--color-teal), white 38%);
 }
 
 .faq-item[open] .faq-item__question::before {
@@ -411,92 +357,265 @@
 
 .faq-item__answer {
   font-size: var(--text-sm);
-  color: rgba(44, 40, 40, 0.75);
+  color: rgba(238, 234, 228, 0.78);
   line-height: 1.8;
   margin-top: var(--space-sm);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .step-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .manner-rules-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .step-grid,
-  .manner-rules-grid {
     grid-template-columns: 1fr;
   }
+
+  /* 1 列になると市松が崩れて同じ濃さが縦に続くので、前後の交互に振り直す。 */
+  .step-card:nth-child(odd) {
+    --veil: 0.93;
+  }
+
+  .step-card:nth-child(even) {
+    --veil: 0.97;
+  }
 }
 
-/* ---- Gallery ---- */
+/* ---- Gallery — モザイク + スクロールパララックス ----
+   タイルの大小は 8 枚周期のパターン (:nth-child(8n+N)) で作る。
+   写真の枚数が増減してもパターンが循環するので崩れない。
+
+   --speed : スクロールでそのタイルが縦に動く総量 (px)。大きいタイルほど
+             遅く動いて奥に見える。galleryParallax.js が読んで --py を駆動する。
+   --py    : パララックスの現在オフセット。transform ではなく CSS の
+             translate プロパティに載せているので、.gallery-tile に既に
+             掛かっている reveal 側の gsap transform (y / scale) と衝突しない。
+   隣り合うタイルの --speed 差は必ず gap より小さく取ること。重なる。 */
 .gallery-section {
   background-color: var(--color-navy);
   overflow: hidden;
-  padding: var(--space-lg) 0 0;
+  padding: 0;
 }
 
-.gallery-section__header {
-  margin-bottom: var(--space-md);
+/* ============================================================
+   LEAD HEADING — 墨字を中央に 1 行、下に筆で引いた線を添える見出し
+   ギャラリーの上と下の 2 箇所で使う。上下の余白は同値にして、前後の
+   セクションとの間合いを対称に保つ。
+============================================================ */
+.lead-heading {
+  --heading-size: clamp(var(--text-xl), 5vw, 4rem);
+  padding: var(--space-lg) var(--space-md);
+  margin-bottom: 0;
+  text-align: center;
 }
 
+/* 見出しと下線をまとめて包む。幅は文字幅に縮み、中央寄せは親の text-align が持つ。 */
+.lead-heading__wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.lead-heading .section__title {
+  font-size: var(--heading-size);
+  margin-bottom: 0;
+  color: var(--ink);   /* 墨 */
+}
+
+/* 下線。galleryParallax.js が scaleX を 0 → 1 に動かして、筆で引くように見せる。
+   既定は等倍なので、JS が動かない環境や reduced-motion では最初から引かれた状態。
+   （CSS 変数を GSAP で補間する手も試したが値が動かなかったので transform で持つ） */
+.lead-heading__rule {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  margin-top: clamp(0.3rem, 0.8vw, 1rem);
+  height: clamp(2px, 0.32vw, 5px);
+  background: var(--ink);
+  transform-origin: left center;
+}
+
+/* 英語の見出しは "Step Into the World of Sento" と 28 文字あり、和文と同じ
+   級数・字送りでは 1 行に収まらない。英語のときだけ一段落として字送りも詰める。
+   中国語・韓国語は 7〜11 文字なので和文の指定のままで収まる。 */
+html[lang="en"] .lead-heading {
+  --heading-size: clamp(1.2rem, 4.2vw, 3.5rem);
+}
+
+html[lang="en"] .lead-heading .section__title {
+  letter-spacing: 0.02em;
+}
+
+/* 画面幅いっぱいに敷き詰める。左右パディングもタイル間の gap も持たない。 */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  padding: 0 var(--space-md) var(--space-lg);
+  gap: 0;
+  padding: 0;
 }
 
-@media (min-width: 600px) {
-  .gallery-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .gallery-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    padding: 0 var(--space-lg) var(--space-xl);
-  }
-}
-
+/* タイルは「窓」。中身 (__inner) が窓より縦に大きく、そのはみ出し分
+   (--overscan) の範囲内でスクロールに合わせて動く。枠そのものは動かないので、
+   gap が 0 でも隣同士が重なりようがない。写真を入れると窓から覗く形になる。 */
 .gallery-tile {
   position: relative;
-  aspect-ratio: 4 / 5;
-  border-radius: var(--radius-md);
   overflow: hidden;
+  /* gap が 0 なので、タイルの割りを見せているのはこの線だけ。
+     消すとモザイクの大小が背景に溶ける。 */
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  transition: border-color var(--transition-med);
+}
+
+/* ブレークポイントは排他的に切る (min-width だけで重ねない)。
+   span も --speed もタイルごとの上書きなので、min-width を積み重ねると
+   下のブレークポイントの :nth-child 指定が上に漏れて崩れる。 */
+
+/* ── モバイル: 2 列。1 と 6 が全幅の大タイル ── */
+@media (max-width: 599px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: clamp(76px, 20vw, 124px);
+  }
+
+  .gallery-tile {
+    --speed: 96;
+    --speed-scale: 0.6;
+    grid-column: span 1;
+    grid-row: span 3;
+  }
+
+  .gallery-tile:nth-child(8n+1),
+  .gallery-tile:nth-child(8n+6) {
+    grid-column: span 2;
+    grid-row: span 4;
+    --speed: 48;
+  }
+}
+
+/* ── タブレット: 4 列。3 と 6 が全幅のパノラマ ──
+   1 2 / 3 / 4 5 / 6 / 7 8 */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: clamp(92px, 12vw, 150px);
+  }
+
+  .gallery-tile {
+    --speed: 110;
+    --speed-scale: 0.85;
+    grid-column: span 2;
+    grid-row: span 3;
+  }
+
+  .gallery-tile:nth-child(8n+1),
+  .gallery-tile:nth-child(8n+4),
+  .gallery-tile:nth-child(8n+7) {
+    --speed: 140;
+  }
+
+  /* 1 2 を背の高いペアにして、直後の 3 の細い横長との落差でリズムを作る。
+     4 列だと横並びのペアは必ず同じ幅になるので、変化は高さで付ける。 */
+  .gallery-tile:nth-child(8n+1),
+  .gallery-tile:nth-child(8n+2) {
+    grid-row: span 4;
+  }
+
+  .gallery-tile:nth-child(8n+3) {
+    grid-column: span 4;
+    grid-row: span 2;
+    --speed: 60;
+  }
+
+  .gallery-tile:nth-child(8n+6) {
+    grid-column: span 4;
+    --speed: 60;
+  }
+}
+
+/* ── デスクトップ: 6 列。1 が主役の大タイル、5 が横長パノラマ ──
+   1(4x4) | 2(2x2) / 3(2x2)
+   4(2x3) | 5(4x3)
+   6(2x3) | 7(2x3) | 8(2x3)   ← 過不足なく敷き詰まる */
+@media (min-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: clamp(110px, 11vw, 190px);
+  }
+
+  .gallery-tile {
+    --speed: 100;
+    --speed-scale: 1;
+    grid-column: span 2;
+    grid-row: span 3;
+  }
+
+  .gallery-tile:nth-child(8n+1) {
+    grid-column: span 4;
+    grid-row: span 4;
+    --speed: 60;
+  }
+
+  .gallery-tile:nth-child(8n+2),
+  .gallery-tile:nth-child(8n+3) {
+    grid-row: span 2;
+    --speed: 150;
+  }
+
+  .gallery-tile:nth-child(8n+5) {
+    grid-column: span 4;
+    --speed: 60;
+  }
+
+  .gallery-tile:nth-child(8n+6),
+  .gallery-tile:nth-child(8n) {
+    --speed: 150;
+  }
+}
+
+/* 窓より上下に --overscan/2 ずつはみ出させ、その中で --py が動く。
+   はみ出し量は移動量 (--speed × --speed-scale) より 24px 大きく取ってあるので、
+   端まで動いても窓に隙間が出ない。 */
+.gallery-tile__inner {
+  --py: 0px;
+  --overscan: calc((var(--speed) * var(--speed-scale) + 24) * 1px);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(var(--overscan) / -2);
+  height: calc(100% + var(--overscan));
+  translate: 0 var(--py);
   background: linear-gradient(135deg, var(--color-navy), rgba(72, 146, 155, 0.18));
-  border: 1px solid rgba(255, 255, 255, 0.08);
   transition: transform var(--transition-med);
 }
 
-.gallery-tile:nth-child(3n+2) {
+.gallery-tile:nth-child(3n+2) .gallery-tile__inner {
   background: linear-gradient(135deg, var(--color-navy), rgba(200, 150, 12, 0.16));
 }
 
-.gallery-tile:nth-child(3n+3) {
+.gallery-tile:nth-child(3n+3) .gallery-tile__inner {
   background: linear-gradient(135deg, var(--color-navy), rgba(197, 61, 67, 0.14));
 }
 
-.gallery-tile::before {
+.gallery-tile__inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* プレースホルダ（通し番号と COMING SOON）は写真が入っていないタイルにだけ出す。
+   <img> を 1 枚足せば両方とも自動的に消える。 */
+.gallery-tile:not(:has(img))::before {
   content: attr(data-index);
   position: absolute;
-  top: 0.75rem;
-  left: 0.9rem;
+  top: clamp(0.6rem, 1.2vw, 1rem);
+  left: clamp(0.75rem, 1.4vw, 1.25rem);
+  z-index: 1;
   font-family: var(--font-display);
-  font-size: var(--text-sm);
+  font-size: clamp(var(--text-sm), 1.6vw, var(--text-xl));
   letter-spacing: 0.1em;
   color: rgba(238, 234, 228, 0.55);
 }
 
-.gallery-tile::after {
+.gallery-tile:not(:has(img))::after {
   content: "COMING SOON";
   position: absolute;
   inset: 0;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -506,9 +625,290 @@
   color: rgba(238, 234, 228, 0.35);
 }
 
+/* タイルが密着しているので、影を落とすと隣を汚す。ホバーは枠線を起こして
+   中身を少し寄せるだけにする（拡大は窓の中で完結する）。 */
 @media (hover: hover) {
   .gallery-tile:hover {
-    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.22);
+  }
+
+  .gallery-tile:hover .gallery-tile__inner {
+    transform: scale(1.04);
+  }
+}
+
+/* ============================================================
+   SPLIT — 斜めに分割した全幅セクション
+   写真とテキストを左右に置き、境界を斜めに切る。ギャラリーと同じく
+   余白を持たず画面幅いっぱいに広がる。銭湯紹介の 4 箇所で使い回す。
+
+   --media-w : 写真側の幅。テキスト側は必ずその残り (100% - --media-w) に
+               収まるので、斜めがどちら向きでも文字が写真に重ならない。
+   --slant   : 境界の傾き。上端と下端の水平方向のずれ幅。
+   --split-h : セクションの高さ。
+
+   向きは .split--media-left / .split--media-right で切り替える。
+============================================================ */
+.split {
+  --media-w: 66%;
+  --slant: 7vw;
+  --split-h: 78vh;
+  --veil: 0.66;   /* 木肌の膜の濃さ。隣り合う面で少しずつ振る（下の設定を参照） */
+  position: relative;
+  display: flex;
+  min-height: var(--split-h);
+  overflow: hidden;
+  padding: 0;
+}
+
+/* ガラスパネルを外した分、文字は水面に直接載る。湯の色は場所によって明るく
+   なるので、明るい文字が飛ばないよう藍を一枚挟む。半透明なので水の動きは
+   透けたまま。セクション本体の background は Liquid Sentō 側が
+   transparent !important で押さえているため、敷けるのは疑似要素だけ。 */
+.split::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(var(--wood-rgb), var(--veil));
+  pointer-events: none;
+}
+
+.split--media-left {
+  justify-content: flex-end;
+}
+
+.split--media-right {
+  justify-content: flex-start;
+}
+
+.split__media {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: var(--media-w);
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-navy), rgba(72, 146, 155, 0.18));
+}
+
+.split--media-left .split__media {
+  left: 0;
+  clip-path: polygon(0 0, 100% 0, calc(100% - var(--slant)) 100%, 0 100%);
+}
+
+.split--media-right .split__media {
+  right: 0;
+  clip-path: polygon(var(--slant) 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* 色を振って単調な繰り返しに見えないようにする（ギャラリーと同じ考え方）。 */
+.split--warm .split__media {
+  background: linear-gradient(135deg, var(--color-navy), rgba(200, 150, 12, 0.16));
+}
+
+.split--coral .split__media {
+  background: linear-gradient(135deg, var(--color-navy), rgba(197, 61, 67, 0.14));
+}
+
+.split__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* プレースホルダ（通し番号と COMING SOON）は写真が入っていない枠にだけ出す。
+   <img> を 1 枚足せば両方とも自動的に消える。ギャラリーと同じ方式。 */
+.split__media:not(:has(img)):not(:has(iframe))::before {
+  content: attr(data-index);
+  position: absolute;
+  top: clamp(1rem, 2vw, 1.75rem);
+  left: clamp(1rem, 2vw, 1.75rem);
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-sm), 1.6vw, var(--text-xl));
+  letter-spacing: 0.1em;
+  color: rgba(238, 234, 228, 0.55);
+}
+
+.split__media:not(:has(img)):not(:has(iframe))::after {
+  content: "COMING SOON";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: rgba(238, 234, 228, 0.35);
+}
+
+.split__body {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 calc(100% - var(--media-w));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(1.5rem, 3.4vw, 3.5rem);
+}
+
+/* 水の上に直に載るので、文字は明るい側に振る。
+   見出しは既定だと最大 4.5rem あり、1/3 幅の欄には収まらないので詰める。 */
+.split__body .section__title,
+.split__body .split__title {
+  color: var(--color-cream);
+}
+
+.split__body .section__title {
+  font-size: clamp(var(--text-lg), 2.3vw, var(--text-2xl));
+  letter-spacing: 0.04em;   /* 既定の 0.08em は 1/3 幅の欄では折り返しを増やす */
+  margin-bottom: var(--space-sm);
+}
+
+.split__body .section__body,
+.split__body .split__text {
+  color: rgba(238, 234, 228, 0.82);
+  font-size: var(--text-base);
+  line-height: 1.9;
+  max-width: none;   /* 既定の 680px 制限は欄幅で足りている */
+}
+
+.split__body .section__body + .section__body {
+  margin-top: var(--space-sm);
+}
+
+/* ── 各セクションの比率・高さ・膜の濃さ ──
+   --veil はスクロールで出会う順に濃→淡→濃と振ってある。同じ濃さの面が続くと
+   一枚の長い板に見えてしまうので、隣同士は必ず違う値にすること。 */
+.sento-section {
+  --media-w: 66%;
+  --split-h: 72vh;
+  --veil: 0.62;
+}
+
+.sento-page-header {
+  --media-w: 66%;
+  --split-h: 86vh;
+  --veil: 0.60;
+}
+
+.split--feature {
+  --media-w: 50%;
+  --split-h: 58vh;
+}
+
+/* 特徴 3 つは同じ親に並ぶので、交互に振れば前後のセクションとも噛み合う。 */
+.split--feature:nth-child(odd) {
+  --veil: 0.68;
+}
+
+.split--feature:nth-child(even) {
+  --veil: 0.60;
+}
+
+.access-section {
+  --media-w: 50%;
+  --split-h: 76vh;
+  --veil: 0.60;
+}
+
+/* マナー側は銭湯紹介と斜めの向きを対にして、ホームで視線が左右に振れるようにする。
+   心得を並べる欄は行数が多いので、写真をやや控えて文字幅を確保する。 */
+.manner-section {
+  --media-w: 58%;
+  --split-h: 78vh;
+  --veil: 0.70;
+}
+
+.manner-page-header {
+  --media-w: 62%;
+  --split-h: 80vh;
+  --veil: 0.62;
+}
+
+.manner-rules-section {
+  --media-w: 45%;
+  --split-h: 92vh;
+  --veil: 0.60;
+}
+
+.manner-faq-section {
+  --media-w: 45%;
+  --split-h: 82vh;
+  --veil: 0.68;
+}
+
+.split__title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-xs);
+}
+
+.split__body .btn {
+  align-self: flex-start;
+  margin-top: var(--space-md);
+}
+
+/* 番号は枠の左上に置いているが、右寄せの枠は左上が斜めに切り落とされる。
+   その場合だけ右上に寄せ直す。 */
+.split--media-right .split__media:not(:has(img)):not(:has(iframe))::before {
+  left: auto;
+  right: clamp(1rem, 2vw, 1.75rem);
+}
+
+/* ── マップ枠：グラデを敷かず、埋め込みをそのまま見せる ── */
+.split__media--map {
+  background: rgba(var(--wood-rgb), 0.4);
+}
+
+/* マップ枠は中に自前のプレースホルダ (.access-map__placeholder) を持つので、
+   CSS 側の COMING SOON は出さない。二重になる。
+   クラスを 2 つ重ねているのは詳細度のため — 上の :not(:has(...)) 付きの
+   ルールの方が強く、単一クラスでは打ち消せない。 */
+.split__media.split__media--map::before,
+.split__media.split__media--map::after {
+  content: none;
+}
+
+.split__media--map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* ── モバイル：斜めは横並びが前提なので、縦積みに倒して
+      境界の傾きを水平方向に振り直す。余白ゼロは維持する。 ── */
+@media (max-width: 768px) {
+  .split {
+    --slant-y: 5vh;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .split__media {
+    position: relative;
+    width: 100%;
+    height: clamp(220px, 42vh, 380px);
+  }
+
+  .split--media-left .split__media {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--slant-y)), 0 100%);
+  }
+
+  .split--media-right .split__media {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - var(--slant-y)));
+  }
+
+  /* 写真が先、テキストが後（DOM 順が逆でも見た目を揃える）。 */
+  .split--media-right .split__media {
+    order: -1;
+  }
+
+  .split__body {
+    flex: 1 1 auto;
+    padding: var(--space-md) var(--space-md) var(--space-lg);
   }
 }
 
@@ -785,24 +1185,12 @@
 }
 
 /* ---- Access section ---- */
-.access-section {
-  background-color: var(--color-cream);
-  min-height: 70vh;
-}
-
-.access-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-lg);
-  align-items: start;
-  margin-top: var(--space-lg);
-}
-
+/* ---- Access — 枠組みは .split が持つ。ここは中身だけ ---- */
 .access-info__name {
   font-family: var(--font-display);
   font-size: var(--text-2xl);
   font-weight: 600;
-  color: var(--color-charcoal);
+  color: var(--color-cream);
   margin-bottom: var(--space-md);
   letter-spacing: 0.06em;
 }
@@ -811,37 +1199,26 @@
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 0.75rem var(--space-md);
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
 }
 
 .access-details dt {
   font-size: var(--text-sm);
   font-weight: 700;
-  color: var(--color-teal);
+  /* 藍の面に載るようになったので、浅葱のままでは沈む。明度を上げる。 */
+  color: color-mix(in oklab, var(--color-teal), white 38%);
   letter-spacing: 0.08em;
   white-space: nowrap;
 }
 
 .access-details dd {
   font-size: var(--text-base);
-  color: var(--color-charcoal);
+  color: rgba(238, 234, 228, 0.85);
   line-height: 1.6;
 }
 
-.access-map {
-  aspect-ratio: 4 / 3;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  background: var(--color-navy);
-}
-
-.access-map iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  display: block;
-}
-
+/* マップのプレースホルダ。埋め込みを入れるときはこの div を
+   <iframe> に置き換えるだけでよい。 */
 .access-map__placeholder {
   width: 100%;
   height: 100%;
@@ -869,22 +1246,27 @@
 ============================================================ */
 .page { background: transparent; }
 
-/* Dark sections: let the WebGL water be the background */
+/* Dark sections: let the WebGL water be the background.
+   銭湯紹介は全幅の斜め分割 (.split) になったので、ガラスパネル側ではなく
+   こちら側。写真が画面端まで届き、テキストは水の上に直に載る。 */
 .hero,
 .survey-section,
 .gallery-section,
-.sento-features-section {
+.sento-features-section,
+.sento-section,
+.sento-page-header,
+.access-section,
+.manner-section,
+.manner-page-header,
+.manner-steps-section,
+.manner-rules-section,
+.manner-faq-section {
   background: transparent !important;
   background-color: transparent !important;
   animation: none !important;   /* dark sections have no background animation */
 }
 
 /* Light-content sections: transparent shell … */
-.sento-section,
-.manner-section,
-.sento-page-header,
-.sento-story-section,
-.access-section,
 .about-story-section,
 .team-section,
 .about-teaser-section,
@@ -896,19 +1278,11 @@
   background-color: transparent;
 }
 
-/* … with a frosted steam-glass panel holding the content */
-.sento-section > .container,
-.manner-section > .container,
-.sento-page-header > .container,
-.sento-story-section > .container,
-.access-section > .container,
+/* … with a frosted steam-glass panel holding the content.
+   銭湯紹介とマナーは .split / モザイクに移ったのでここには並ばない。 */
 .about-story-section > .container,
 .team-section > .container,
-.about-teaser-section > .container,
-.manner-page-header > .container,
-.manner-steps-section > .container,
-.manner-rules-section > .container,
-.manner-faq-section > .container {
+.about-teaser-section > .container {
   background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(18px) saturate(1.08);
   -webkit-backdrop-filter: blur(18px) saturate(1.08);
@@ -921,18 +1295,9 @@
 }
 
 /* Steam-glass panels off under reduced motion / no backdrop support → solid */
-body.no-water .sento-section > .container,
-body.no-water .manner-section > .container,
-body.no-water .sento-page-header > .container,
-body.no-water .sento-story-section > .container,
-body.no-water .access-section > .container,
 body.no-water .about-story-section > .container,
 body.no-water .team-section > .container,
-body.no-water .about-teaser-section > .container,
-body.no-water .manner-page-header > .container,
-body.no-water .manner-steps-section > .container,
-body.no-water .manner-rules-section > .container,
-body.no-water .manner-faq-section > .container {
+body.no-water .about-teaser-section > .container {
   background: var(--color-cream);
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
@@ -954,32 +1319,17 @@ body.no-water .manner-faq-section > .container {
     padding: 0 var(--space-sm);
   }
 
-  /* Perf: lighter backdrop blur + more opaque glass on mobile GPUs */
-  .sento-section > .container,
-  .sento-page-header > .container,
-  .sento-story-section > .container,
-  .access-section > .container,
+  /* Perf: lighter backdrop blur + more opaque glass on mobile GPUs.
+     銭湯紹介とマナーは .split / モザイクに移ってガラスパネルを持たないので、
+     ここには並ばない。 */
   .about-story-section > .container,
   .team-section > .container,
-  .manner-section > .container,
-  .about-teaser-section > .container,
-  .manner-page-header > .container,
-  .manner-steps-section > .container,
-  .manner-rules-section > .container,
-  .manner-faq-section > .container {
+  .about-teaser-section > .container {
     backdrop-filter: blur(10px) saturate(1.05);
     -webkit-backdrop-filter: blur(10px) saturate(1.05);
     background: rgba(255, 255, 255, 0.94);
     padding: clamp(1.5rem, 5vw, 2.5rem);
     border-radius: var(--radius-md);
-  }
-
-  .access-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .access-map {
-    aspect-ratio: 16 / 9;
   }
 
   /* Survey: reduce fixed height so form doesn't dwarf the screen */

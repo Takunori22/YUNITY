@@ -84,74 +84,91 @@
 
       <!-- Gallery -->
       <section class="gallery-section" id="gallery" data-temp="0.18">
-        <div class="gallery-section__header container">
-          <div class="section__label" data-i18n="gallery.label">ギャラリー</div>
-          <h2 class="section__title" data-i18n="gallery.title">銭湯の世界へ</h2>
+        <div class="lead-heading container">
+          <!-- 下線は h2 の外に置く。i18n が h2 の textContent を丸ごと
+               書き換えるので、中に入れると言語切替で消えてしまう。 -->
+          <div class="lead-heading__wrap">
+            <h2 class="section__title" data-i18n="gallery.title">銭湯の世界へ</h2>
+            <span class="lead-heading__rule" aria-hidden="true"></span>
+          </div>
         </div>
-        <!-- 実写真を追加する際は各 .gallery-tile に <img src="..." alt="..."> を追加し、
-             components.css の .gallery-tile::after (プレースホルダ文言) を削除する -->
+        <!-- 実写真を追加する際は各 .gallery-tile__inner の中に
+             <img src="..." alt="..."> を 1 行足すだけでよい。
+             プレースホルダ（:not(:has(img)) で出している番号と COMING SOON）は
+             img が入った時点で自動的に消える。CSS / JS の変更は不要。
+             タイルの大小は 8 枚周期のパターン (.gallery-tile:nth-child(8n+N))
+             なので、枚数を増減しても崩れない。 -->
         <div class="gallery-grid" id="gallery-grid">
-          <div class="gallery-tile" data-index="01"></div>
-          <div class="gallery-tile" data-index="02"></div>
-          <div class="gallery-tile" data-index="03"></div>
-          <div class="gallery-tile" data-index="04"></div>
-          <div class="gallery-tile" data-index="05"></div>
-          <div class="gallery-tile" data-index="06"></div>
-          <div class="gallery-tile" data-index="07"></div>
-          <div class="gallery-tile" data-index="08"></div>
+          <figure class="gallery-tile" data-index="01"><div class="gallery-tile__inner"><img src="./images/placeholder.jpg" alt="銭湯の風景（仮）" /></div></figure>
+          <figure class="gallery-tile" data-index="02"><div class="gallery-tile__inner"><img src="./images/placeholder.jpg" alt="銭湯の風景（仮）" /></div></figure>
+          <figure class="gallery-tile" data-index="03"><div class="gallery-tile__inner"><img src="./images/placeholder.jpg" alt="銭湯の風景（仮）" /></div></figure>
+          <figure class="gallery-tile" data-index="04"><div class="gallery-tile__inner"><img src="./images/placeholder.jpg" alt="銭湯の風景（仮）" /></div></figure>
+          <figure class="gallery-tile" data-index="05"><div class="gallery-tile__inner"><img src="./images/placeholder.jpg" alt="銭湯の風景（仮）" /></div></figure>
+          <figure class="gallery-tile" data-index="06"><div class="gallery-tile__inner"><img src="./images/placeholder.jpg" alt="銭湯の風景（仮）" /></div></figure>
+          <figure class="gallery-tile" data-index="07"><div class="gallery-tile__inner"><img src="./images/placeholder.jpg" alt="銭湯の風景（仮）" /></div></figure>
+          <figure class="gallery-tile" data-index="08"><div class="gallery-tile__inner"><img src="./images/placeholder.jpg" alt="銭湯の風景（仮）" /></div></figure>
+        </div>
+
+        <!-- この下に続く「銭湯紹介」と「マナー」への導入見出し -->
+        <div class="lead-heading container">
+          <div class="lead-heading__wrap">
+            <h2 class="section__title" data-i18n="lead.culture">日本の銭湯文化とマナー</h2>
+            <span class="lead-heading__rule" aria-hidden="true"></span>
+          </div>
         </div>
       </section>
 
       <!-- 銭湯紹介 (Home teaser) -->
-      <section class="section sento-section" id="sento-teaser" data-temp="0.35">
-        <div class="container sento-section__grid">
-          <div class="sento-section__text">
-            <div class="section__label" data-i18n="sento.teaser_label">銭湯紹介</div>
-            <h2 class="section__title" data-i18n="sento.teaser_title">日本が誇る、湯の文化</h2>
-            <p class="section__body" data-i18n="sento.teaser_body">銭湯は単なる入浴施設ではありません。地域のコミュニティが集まり、裸の付き合いで本音を語り合える、日本独自の文化的空間です。</p>
-            <p class="sento-section__name" data-i18n="sento.teaser_name">今回ご紹介するのは、東京・文京区の「大黒湯」。</p>
-            <a href="#" class="btn btn--primary" data-tab="sento" data-i18n="sento.teaser_cta">銭湯紹介ページへ →</a>
-          </div>
-          <div class="sento-section__map access-map">
-            <div class="access-map__placeholder">
-              <p style="font-size:2.5rem">📍</p>
-              <p data-i18n="sento.teaser_map_area">東京都文京区</p>
-              <p class="access-map__note" data-i18n="sento.teaser_map_note">Google マップ埋め込みを設定中</p>
-            </div>
-          </div>
+      <!-- 写真を入れるときは .split__media の中に <img src="..." alt="..."> を
+           1 行足すだけでよい。プレースホルダは自動的に消える。 -->
+      <section class="sento-section split split--media-left" id="sento-teaser" data-temp="0.35">
+        <div class="split__media" data-index="01"><img src="./images/placeholder.jpg" alt="銭湯の湯船（仮）" /></div>
+        <div class="split__body">
+          <div class="section__label" data-i18n="sento.teaser_label">銭湯紹介</div>
+          <h2 class="section__title" data-i18n="sento.teaser_title">日本が誇る、湯の文化</h2>
+          <p class="section__body" data-i18n="sento.teaser_body">銭湯は単なる入浴施設ではありません。地域のコミュニティが集まり、裸の付き合いで本音を語り合える、日本独自の文化的空間です。</p>
+          <p class="sento-section__name" data-i18n="sento.teaser_name">今回ご紹介するのは、東京・文京区の「大黒湯」。</p>
+          <a href="#" class="btn btn--primary" data-tab="sento" data-i18n="sento.teaser_cta">銭湯紹介ページへ →</a>
         </div>
       </section>
 
-      <!-- マナー (Home teaser) -->
-      <section class="section manner-section" id="manner-teaser" data-temp="0.55">
-        <div class="container">
+      <!-- マナー (Home teaser) — 銭湯紹介と斜めの向きを対にする -->
+      <section class="manner-section split split--media-right" id="manner-teaser" data-temp="0.55">
+        <div class="split__media" data-index="02"><img src="./images/placeholder.jpg" alt="入浴の様子（仮）" /></div>
+        <div class="split__body">
           <div class="section__label" data-i18n="manner.teaser_label">マナー</div>
           <h2 class="section__title" data-i18n="manner.teaser_title">気持ちよく、みんなで入る。</h2>
-          <div class="manner-highlight-grid">
-            <div class="manner-highlight-card">
-              <div class="manner-highlight-card__icon">🧼</div>
-              <h3 class="manner-highlight-card__title" data-i18n="manner.teaser_card1_title">洗ってから浴槽へ</h3>
-              <p class="manner-highlight-card__body" data-i18n="manner.teaser_card1_body">湯船に入る前に、かけ湯とからだ洗いを。</p>
+          <div class="manner-rules-list">
+            <div class="manner-rule">
+              <div class="manner-rule__icon">🧼</div>
+              <div>
+                <h3 class="manner-rule__title" data-i18n="manner.teaser_card1_title">洗ってから浴槽へ</h3>
+                <p class="manner-rule__body" data-i18n="manner.teaser_card1_body">湯船に入る前に、かけ湯とからだ洗いを。</p>
+              </div>
             </div>
-            <div class="manner-highlight-card">
-              <div class="manner-highlight-card__icon">🖤</div>
-              <h3 class="manner-highlight-card__title" data-i18n="manner.teaser_card2_title">タオルは湯船の外に</h3>
-              <p class="manner-highlight-card__body" data-i18n="manner.teaser_card2_body">浴槽の中にタオルを浸けないのがマナーです。</p>
+            <div class="manner-rule">
+              <div class="manner-rule__icon">🖤</div>
+              <div>
+                <h3 class="manner-rule__title" data-i18n="manner.teaser_card2_title">タオルは湯船の外に</h3>
+                <p class="manner-rule__body" data-i18n="manner.teaser_card2_body">浴槽の中にタオルを浸けないのがマナーです。</p>
+              </div>
             </div>
-            <div class="manner-highlight-card">
-              <div class="manner-highlight-card__icon">🤫</div>
-              <h3 class="manner-highlight-card__title" data-i18n="manner.teaser_card3_title">会話は控えめに</h3>
-              <p class="manner-highlight-card__body" data-i18n="manner.teaser_card3_body">静かな時間を、みんなで気持ちよく。</p>
+            <div class="manner-rule">
+              <div class="manner-rule__icon">🤫</div>
+              <div>
+                <h3 class="manner-rule__title" data-i18n="manner.teaser_card3_title">会話は控えめに</h3>
+                <p class="manner-rule__body" data-i18n="manner.teaser_card3_body">静かな時間を、みんなで気持ちよく。</p>
+              </div>
             </div>
-            <div class="manner-highlight-card">
-              <div class="manner-highlight-card__icon">🎨</div>
-              <h3 class="manner-highlight-card__title" data-i18n="manner.teaser_card4_title">タトゥーも相談を</h3>
-              <p class="manner-highlight-card__body" data-i18n="manner.teaser_card4_body">対応は施設ごとに異なるので、事前にご確認を。</p>
+            <div class="manner-rule">
+              <div class="manner-rule__icon">🎨</div>
+              <div>
+                <h3 class="manner-rule__title" data-i18n="manner.teaser_card4_title">タトゥーも相談を</h3>
+                <p class="manner-rule__body" data-i18n="manner.teaser_card4_body">対応は施設ごとに異なるので、事前にご確認を。</p>
+              </div>
             </div>
           </div>
-          <div class="manner-section__cta">
-            <a href="#" class="btn btn--secondary" data-tab="manner" data-i18n="manner.teaser_cta">マナーを詳しく見る →</a>
-          </div>
+          <a href="#" class="btn btn--secondary" data-tab="manner" data-i18n="manner.teaser_cta">マナーを詳しく見る →</a>
         </div>
       </section>
 
@@ -206,75 +223,69 @@
     ============================================================ -->
     <div class="page" id="page-sento">
 
-      <section class="section sento-page-header" data-temp="0.3">
-        <div class="container">
+      <!-- 見出しと物語を 1 枚に統合。左 2/3 が写真、右が大黒湯の紹介。 -->
+      <section class="sento-page-header split split--media-left" data-temp="0.3">
+        <div class="split__media" data-index="01"><img src="./images/placeholder.jpg" alt="大黒湯の外観（仮）" /></div>
+        <div class="split__body">
           <div class="section__label" data-i18n="sento.page_label">銭湯紹介</div>
           <h1 class="section__title" data-i18n="sento.page_title">大黒湯 — 文京区に息づく、昔ながらの湯</h1>
-        </div>
-      </section>
-
-      <section class="section sento-story-section" data-temp="0.35">
-        <div class="container">
           <p class="section__body" data-i18n="sento.story_p1">文京区の路地に佇む「大黒湯」は、地域の暮らしに寄り添いながら、何十年も湯を焚き続けてきた銭湯です。</p>
           <p class="section__body" data-i18n="sento.story_p2">番台越しに交わされるあいさつ、常連客同士の何気ない会話——ここには、都会の喧騒を忘れさせる、あたたかな時間が流れています。</p>
           <p class="section__body" data-i18n="sento.story_p3">訪れる人を選ばない懐の深さこそ、大黒湯が守り続けてきた誇りです。</p>
         </div>
       </section>
 
-      <section class="section sento-features-section" data-temp="0.42">
-        <div class="container">
-          <div class="feature-row">
-            <div class="feature-row__media" data-index="01"></div>
-            <div class="feature-row__text">
-              <h3 class="feature-row__title" data-i18n="sento.feature1_title">唐破風の屋根が出迎える玄関</h3>
-              <p class="feature-row__body" data-i18n="sento.feature1_body">堂々とした唐破風造りの屋根は、大黒湯のシンボル。一歩くぐれば、昭和の面影が今も色濃く残ります。</p>
-            </div>
+      <!-- 3 つの特徴。写真と文が左右交互に入れ替わり、斜めの向きも反転する。 -->
+      <section class="sento-features-section" data-temp="0.42">
+        <div class="split split--feature split--media-right">
+          <div class="split__media" data-index="02"><img src="./images/placeholder.jpg" alt="唐破風の屋根（仮）" /></div>
+          <div class="split__body">
+            <h3 class="split__title" data-i18n="sento.feature1_title">唐破風の屋根が出迎える玄関</h3>
+            <p class="split__text" data-i18n="sento.feature1_body">堂々とした唐破風造りの屋根は、大黒湯のシンボル。一歩くぐれば、昭和の面影が今も色濃く残ります。</p>
           </div>
-          <div class="feature-row">
-            <div class="feature-row__media" data-index="02"></div>
-            <div class="feature-row__text">
-              <h3 class="feature-row__title" data-i18n="sento.feature2_title">番台からはじまる、ひとときの交流</h3>
-              <p class="feature-row__body" data-i18n="sento.feature2_body">受付では、ご主人やスタッフとの何気ないやり取りが待っています。初めての方には入浴の流れも丁寧に教えてもらえます。</p>
-            </div>
+        </div>
+        <div class="split split--feature split--media-left split--warm">
+          <div class="split__media" data-index="03"><img src="./images/placeholder.jpg" alt="番台（仮）" /></div>
+          <div class="split__body">
+            <h3 class="split__title" data-i18n="sento.feature2_title">番台からはじまる、ひとときの交流</h3>
+            <p class="split__text" data-i18n="sento.feature2_body">受付では、ご主人やスタッフとの何気ないやり取りが待っています。初めての方には入浴の流れも丁寧に教えてもらえます。</p>
           </div>
-          <div class="feature-row">
-            <div class="feature-row__media" data-index="03"></div>
-            <div class="feature-row__text">
-              <h3 class="feature-row__title" data-i18n="sento.feature3_title">浴室を彩る、雄大な銭湯絵</h3>
-              <p class="feature-row__body" data-i18n="sento.feature3_body">湯気の向こうに広がる富士山の銭湯絵。湯船に浸かりながら見上げる一枚は、大黒湯ならではの贅沢なひとときです。</p>
-            </div>
+        </div>
+        <div class="split split--feature split--media-right split--coral">
+          <div class="split__media" data-index="04"><img src="./images/placeholder.jpg" alt="浴室の銭湯絵（仮）" /></div>
+          <div class="split__body">
+            <h3 class="split__title" data-i18n="sento.feature3_title">浴室を彩る、雄大な銭湯絵</h3>
+            <p class="split__text" data-i18n="sento.feature3_body">湯気の向こうに広がる富士山の銭湯絵。湯船に浸かりながら見上げる一枚は、大黒湯ならではの贅沢なひとときです。</p>
           </div>
         </div>
       </section>
 
-      <section class="section access-section" data-temp="0.5">
-        <div class="container">
+      <!-- 左に詳細、右にマップ。埋め込むときは .access-map__placeholder を
+           <iframe src="..."> に置き換えるだけでよい。 -->
+      <section class="access-section split split--media-right" data-temp="0.5">
+        <div class="split__media split__media--map">
+          <div class="access-map__placeholder">
+            <p style="font-size:2.5rem">📍</p>
+            <p data-i18n="access.map_address">東京都文京区</p>
+            <p class="access-map__note" data-i18n="access.map_note_text">Google マップ埋め込みを設定中</p>
+          </div>
+        </div>
+        <div class="split__body">
           <div class="section__label" data-i18n="access.label">場所</div>
           <h2 class="section__title" data-i18n="access.title">アクセス</h2>
-          <div class="access-grid">
-            <div class="access-info">
-              <p class="access-info__name" data-i18n="access.name">大黒湯</p>
-              <dl class="access-details">
-                <dt data-i18n="access.dt_address">住所</dt>
-                <dd data-i18n="access.address">東京都文京区〇〇 2-0-0（住所は仮の情報です）</dd>
-                <dt data-i18n="access.dt_hours">営業時間</dt>
-                <dd data-i18n="access.hours">15:30 〜 24:00</dd>
-                <dt data-i18n="access.dt_closed">定休日</dt>
-                <dd data-i18n="access.closed">金曜日</dd>
-                <dt data-i18n="access.dt_price">入浴料</dt>
-                <dd data-i18n="access.price">大人 ¥520 ／ 子ども ¥200</dd>
-              </dl>
-              <p class="access-info__disclaimer" data-i18n="access.disclaimer">※営業時間・料金は仮の情報です。正式な情報に差し替えてください。</p>
-              <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn--primary" data-i18n="access.map_btn">Google マップで開く</a>
-            </div>
-            <div class="access-map">
-              <div class="access-map__placeholder">
-                <p style="font-size:2.5rem">📍</p>
-                <p data-i18n="access.map_address">東京都文京区</p>
-                <p class="access-map__note" data-i18n="access.map_note_text">Google マップ埋め込みを設定中</p>
-              </div>
-            </div>
-          </div>
+          <p class="access-info__name" data-i18n="access.name">大黒湯</p>
+          <dl class="access-details">
+            <dt data-i18n="access.dt_address">住所</dt>
+            <dd data-i18n="access.address">東京都文京区〇〇 2-0-0（住所は仮の情報です）</dd>
+            <dt data-i18n="access.dt_hours">営業時間</dt>
+            <dd data-i18n="access.hours">15:30 〜 24:00</dd>
+            <dt data-i18n="access.dt_closed">定休日</dt>
+            <dd data-i18n="access.closed">金曜日</dd>
+            <dt data-i18n="access.dt_price">入浴料</dt>
+            <dd data-i18n="access.price">大人 ¥520 ／ 子ども ¥200</dd>
+          </dl>
+          <p class="access-info__disclaimer" data-i18n="access.disclaimer">※営業時間・料金は仮の情報です。正式な情報に差し替えてください。</p>
+          <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn--primary" data-i18n="access.map_btn">Google マップで開く</a>
         </div>
       </section>
 
@@ -285,88 +296,112 @@
     ============================================================ -->
     <div class="page" id="page-manner">
 
-      <section class="section manner-page-header" data-temp="0.3">
-        <div class="container">
+      <section class="manner-page-header split split--media-right" data-temp="0.3">
+        <div class="split__media" data-index="01"><img src="./images/placeholder.jpg" alt="銭湯の脱衣所（仮）" /></div>
+        <div class="split__body">
           <div class="section__label" data-i18n="manner.page_label">マナー</div>
           <h1 class="section__title" data-i18n="manner.page_title">気持ちよく、みんなで入る。</h1>
           <p class="section__body" data-i18n="manner.page_intro">銭湯は、見知らぬ人同士が同じ湯を分かち合う場所。ちょっとした心づかいが、みんなが気持ちよく過ごせる時間をつくります。</p>
         </div>
       </section>
 
-      <section class="section manner-steps-section" data-temp="0.4">
-        <div class="container">
+      <!-- 入浴の流れ。写真を各タイルの全面に敷く場所。
+           <img src="..." alt="..."> を .step-card の中に 1 行足すだけでよい。
+           藍のグラデは写真の上に重なるので、文字はそのまま読める。 -->
+      <section class="manner-steps-section" data-temp="0.4">
+        <div class="manner-steps__header">
           <div class="section__label" data-i18n="manner.steps_label">入浴の流れ</div>
           <h2 class="section__title" data-i18n="manner.steps_title">六つのステップ</h2>
-          <div class="step-grid">
-            <div class="step-card" data-seal="壱">
-              <h3 class="step-card__title" data-i18n="manner.step1_title">受付</h3>
-              <p class="step-card__body" data-i18n="manner.step1_body">番台やフロントで入浴料を払います。タオルや石鹸は貸し出している施設も多いので、心配な方は聞いてみましょう。</p>
-            </div>
-            <div class="step-card" data-seal="弐">
-              <h3 class="step-card__title" data-i18n="manner.step2_title">脱衣所</h3>
-              <p class="step-card__body" data-i18n="manner.step2_body">衣類はロッカーや棚にきちんとたたんで収納します。貴重品はロッカーの鍵をかけて管理しましょう。</p>
-            </div>
-            <div class="step-card" data-seal="参">
-              <h3 class="step-card__title" data-i18n="manner.step3_title">洗い場</h3>
-              <p class="step-card__body" data-i18n="manner.step3_body">湯船に入る前に、必ず椅子に座って体を洗い流します。かけ湯だけでもよいので、湯を浴びてから浴槽へ。</p>
-            </div>
-            <div class="step-card" data-seal="肆">
-              <h3 class="step-card__title" data-i18n="manner.step4_title">湯船</h3>
-              <p class="step-card__body" data-i18n="manner.step4_body">タオルは湯船の外に置き、静かに肩まで浸かります。泳いだり潜ったりはせず、ゆったりと過ごしましょう。</p>
-            </div>
-            <div class="step-card" data-seal="伍">
-              <h3 class="step-card__title" data-i18n="manner.step5_title">上がり湯</h3>
-              <p class="step-card__body" data-i18n="manner.step5_body">湯船から上がったら、かけ湯で汗を軽く流します。体を拭いてから脱衣所に戻ると、床が濡れずに済みます。</p>
-            </div>
-            <div class="step-card" data-seal="陸">
-              <h3 class="step-card__title" data-i18n="manner.step6_title">退出後</h3>
-              <p class="step-card__body" data-i18n="manner.step6_body">ロッカーの鍵を返却し、忘れ物がないか確認して退出しましょう。湯上がりの一杯も銭湯の楽しみのひとつです。</p>
-            </div>
+        </div>
+        <div class="step-grid">
+          <div class="step-card" data-seal="壱">
+            <img src="./images/placeholder.jpg" alt="受付の様子（仮）" />
+            <h3 class="step-card__title" data-i18n="manner.step1_title">受付</h3>
+            <p class="step-card__body" data-i18n="manner.step1_body">番台やフロントで入浴料を払います。タオルや石鹸は貸し出している施設も多いので、心配な方は聞いてみましょう。</p>
+          </div>
+          <div class="step-card" data-seal="弐">
+            <img src="./images/placeholder.jpg" alt="脱衣所の様子（仮）" />
+            <h3 class="step-card__title" data-i18n="manner.step2_title">脱衣所</h3>
+            <p class="step-card__body" data-i18n="manner.step2_body">衣類はロッカーや棚にきちんとたたんで収納します。貴重品はロッカーの鍵をかけて管理しましょう。</p>
+          </div>
+          <div class="step-card" data-seal="参">
+            <img src="./images/placeholder.jpg" alt="洗い場の様子（仮）" />
+            <h3 class="step-card__title" data-i18n="manner.step3_title">洗い場</h3>
+            <p class="step-card__body" data-i18n="manner.step3_body">湯船に入る前に、必ず椅子に座って体を洗い流します。かけ湯だけでもよいので、湯を浴びてから浴槽へ。</p>
+          </div>
+          <div class="step-card" data-seal="肆">
+            <img src="./images/placeholder.jpg" alt="湯船の様子（仮）" />
+            <h3 class="step-card__title" data-i18n="manner.step4_title">湯船</h3>
+            <p class="step-card__body" data-i18n="manner.step4_body">タオルは湯船の外に置き、静かに肩まで浸かります。泳いだり潜ったりはせず、ゆったりと過ごしましょう。</p>
+          </div>
+          <div class="step-card" data-seal="伍">
+            <img src="./images/placeholder.jpg" alt="上がり湯の様子（仮）" />
+            <h3 class="step-card__title" data-i18n="manner.step5_title">上がり湯</h3>
+            <p class="step-card__body" data-i18n="manner.step5_body">湯船から上がったら、かけ湯で汗を軽く流します。体を拭いてから脱衣所に戻ると、床が濡れずに済みます。</p>
+          </div>
+          <div class="step-card" data-seal="陸">
+            <img src="./images/placeholder.jpg" alt="退出後の様子（仮）" />
+            <h3 class="step-card__title" data-i18n="manner.step6_title">退出後</h3>
+            <p class="step-card__body" data-i18n="manner.step6_body">ロッカーの鍵を返却し、忘れ物がないか確認して退出しましょう。湯上がりの一杯も銭湯の楽しみのひとつです。</p>
           </div>
         </div>
       </section>
 
-      <section class="section manner-rules-section" data-temp="0.5">
-        <div class="container">
+      <section class="manner-rules-section split split--media-left" data-temp="0.5">
+        <div class="split__media" data-index="08"><img src="./images/placeholder.jpg" alt="浴室の様子（仮）" /></div>
+        <div class="split__body">
           <div class="section__label" data-i18n="manner.rules_label">個別ルール</div>
           <h2 class="section__title" data-i18n="manner.rules_title">知っておきたいこと</h2>
-          <div class="manner-rules-grid">
-            <div class="manner-highlight-card">
-              <div class="manner-highlight-card__icon">🎨</div>
-              <h3 class="manner-highlight-card__title" data-i18n="manner.rule1_title">タトゥーについて</h3>
-              <p class="manner-highlight-card__body" data-i18n="manner.rule1_body">対応は施設ごとに異なります。シールで隠せば入浴できる施設も多いので、事前に確認しましょう。</p>
+          <div class="manner-rules-list">
+            <div class="manner-rule">
+              <div class="manner-rule__icon">🎨</div>
+              <div>
+                <h3 class="manner-rule__title" data-i18n="manner.rule1_title">タトゥーについて</h3>
+                <p class="manner-rule__body" data-i18n="manner.rule1_body">対応は施設ごとに異なります。シールで隠せば入浴できる施設も多いので、事前に確認しましょう。</p>
+              </div>
             </div>
-            <div class="manner-highlight-card">
-              <div class="manner-highlight-card__icon">📷</div>
-              <h3 class="manner-highlight-card__title" data-i18n="manner.rule2_title">写真・動画の撮影</h3>
-              <p class="manner-highlight-card__body" data-i18n="manner.rule2_body">脱衣所・浴室での撮影は他のお客様のプライバシーを守るため禁止です。</p>
+            <div class="manner-rule">
+              <div class="manner-rule__icon">📷</div>
+              <div>
+                <h3 class="manner-rule__title" data-i18n="manner.rule2_title">写真・動画の撮影</h3>
+                <p class="manner-rule__body" data-i18n="manner.rule2_body">脱衣所・浴室での撮影は他のお客様のプライバシーを守るため禁止です。</p>
+              </div>
             </div>
-            <div class="manner-highlight-card">
-              <div class="manner-highlight-card__icon">🖤</div>
-              <h3 class="manner-highlight-card__title" data-i18n="manner.rule3_title">タオルは湯船の外へ</h3>
-              <p class="manner-highlight-card__body" data-i18n="manner.rule3_body">衛生のため、タオルを湯船の中に浸けないようにしましょう。</p>
+            <div class="manner-rule">
+              <div class="manner-rule__icon">🖤</div>
+              <div>
+                <h3 class="manner-rule__title" data-i18n="manner.rule3_title">タオルは湯船の外へ</h3>
+                <p class="manner-rule__body" data-i18n="manner.rule3_body">衛生のため、タオルを湯船の中に浸けないようにしましょう。</p>
+              </div>
             </div>
-            <div class="manner-highlight-card">
-              <div class="manner-highlight-card__icon">🏊</div>
-              <h3 class="manner-highlight-card__title" data-i18n="manner.rule4_title">泳がない・潜らない</h3>
-              <p class="manner-highlight-card__body" data-i18n="manner.rule4_body">浴槽は静かに浸かる場所です。泳いだり水しぶきをあげたりするのは控えましょう。</p>
+            <div class="manner-rule">
+              <div class="manner-rule__icon">🏊</div>
+              <div>
+                <h3 class="manner-rule__title" data-i18n="manner.rule4_title">泳がない・潜らない</h3>
+                <p class="manner-rule__body" data-i18n="manner.rule4_body">浴槽は静かに浸かる場所です。泳いだり水しぶきをあげたりするのは控えましょう。</p>
+              </div>
             </div>
-            <div class="manner-highlight-card">
-              <div class="manner-highlight-card__icon">🤫</div>
-              <h3 class="manner-highlight-card__title" data-i18n="manner.rule5_title">私語は控えめに</h3>
-              <p class="manner-highlight-card__body" data-i18n="manner.rule5_body">大きな声での会話は避け、静かな時間をみんなで共有しましょう。</p>
+            <div class="manner-rule">
+              <div class="manner-rule__icon">🤫</div>
+              <div>
+                <h3 class="manner-rule__title" data-i18n="manner.rule5_title">私語は控えめに</h3>
+                <p class="manner-rule__body" data-i18n="manner.rule5_body">大きな声での会話は避け、静かな時間をみんなで共有しましょう。</p>
+              </div>
             </div>
-            <div class="manner-highlight-card">
-              <div class="manner-highlight-card__icon">🍺</div>
-              <h3 class="manner-highlight-card__title" data-i18n="manner.rule6_title">飲酒後の入浴は控える</h3>
-              <p class="manner-highlight-card__body" data-i18n="manner.rule6_body">酔った状態での入浴は体調を崩す原因になります。時間をおいてから訪れましょう。</p>
+            <div class="manner-rule">
+              <div class="manner-rule__icon">🍺</div>
+              <div>
+                <h3 class="manner-rule__title" data-i18n="manner.rule6_title">飲酒後の入浴は控える</h3>
+                <p class="manner-rule__body" data-i18n="manner.rule6_body">酔った状態での入浴は体調を崩す原因になります。時間をおいてから訪れましょう。</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section manner-faq-section" data-temp="0.58">
-        <div class="container">
+      <section class="manner-faq-section split split--media-right" data-temp="0.58">
+        <div class="split__media" data-index="09"><img src="./images/placeholder.jpg" alt="湯上がりの一杯（仮）" /></div>
+        <div class="split__body">
           <div class="section__label" data-i18n="manner.faq_label">よくある誤解</div>
           <h2 class="section__title" data-i18n="manner.faq_title">Q&A</h2>
           <div class="faq-list">

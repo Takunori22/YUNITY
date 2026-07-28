@@ -15,6 +15,9 @@ export default {
     label: "갤러리",
     title: "센토의 세계로",
   },
+  lead: {
+    culture: "일본의 센토 문화와 매너",
+  },
   sento: {
     teaser_label: "센토 소개",
     teaser_title: "일본이 자랑하는 목욕 문화",

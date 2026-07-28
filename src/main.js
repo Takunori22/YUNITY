@@ -6,6 +6,7 @@ import { loadSlim } from "@tsparticles/slim";
 import { initI18n, setLanguage } from "./i18n/index.js";
 import { initHero } from "./animations/hero.js";
 import { initScrollAnimations } from "./animations/scrollAnimations.js";
+import { initGalleryParallax, initGalleryHeading } from "./animations/galleryParallax.js";
 import { initTabs } from "./animations/tabs.js";
 import { initSurvey, recomputeBrush } from "./animations/survey.js";
 import { initTemperature } from "./animations/temperature.js";
@@ -176,6 +177,8 @@ async function main() {
   if (!prefersReducedMotion) {
     initHero();
     initScrollAnimations();
+    initGalleryParallax();
+    initGalleryHeading();
     // Particles are purely decorative. A throw here (e.g. a tsParticles
     // engine/plugin version mismatch) must never abort main() and leave the
     // nav, tabs and anchor links below unwired.

@@ -42,37 +42,32 @@ function checkVisible() {
 
 export function initScrollAnimations() {
   // ── Sento page (dedicated) ──────────────────────────────────────────────
-  registerAll(".sento-page-header .section__label", { y: 20 });
-  registerAll(".sento-page-header .section__title", { y: 28 });
-  registerAll(".sento-story-section .section__body", { y: 20 }, 0.08);
-  registerAll(".feature-row",                        { y: 36 }, 0.12);
+  // 斜め分割 (.split) の写真枠は最初から出したまま、文字側だけを順に起こす。
+  // 写真枠は絶対配置 + clip-path なので、scale を掛けると斜めの形が崩れる。
+  registerAll(".sento-page-header .split__body > *", { y: 24 }, 0.08);
+  registerAll(".split--feature .split__body > *",     { y: 24 }, 0.08);
 
   // ── Manner page (dedicated) ─────────────────────────
-  registerAll(".manner-page-header .section__label", { y: 20 });
-  registerAll(".manner-page-header .section__title", { y: 28 });
-  registerAll(".manner-page-header .section__body",  { y: 20, delay: 0.1 });
-  registerAll(".step-card",                           { y: 32 }, 0.06);
-  registerAll(".manner-rules-section .section__label",{ y: 20 });
-  registerAll(".manner-rules-section .section__title",{ y: 28 });
-  registerAll(".manner-rules-grid .manner-highlight-card", { y: 28 }, 0.06);
-  registerAll(".manner-faq-section .section__label",  { y: 20 });
-  registerAll(".manner-faq-section .section__title",  { y: 28 });
-  registerAll(".faq-item",                            { y: 24 }, 0.08);
+  // ステップのタイルは gap 0 で密着しているので、タイルごと縮めて出すと
+  // 一瞬すき間が見える。タイルは出したまま、中の文字だけを起こす。
+  registerAll(".manner-page-header .split__body > *",  { y: 24 }, 0.08);
+  registerAll(".step-card__title",                      { y: 22 }, 0.05);
+  registerAll(".step-card__body",                       { y: 22 }, 0.05);
+  registerAll(".manner-rules-section .split__body > *", { y: 24 }, 0.08);
+  registerAll(".manner-faq-section .split__body > *",   { y: 24 }, 0.08);
 
   // ── Gallery ──────────────────────────────────────────
-  registerAll(".gallery-section .section__label",  { y: 20 });
-  registerAll(".gallery-section .section__title",  { y: 28 });
+  // 見出しと下線をまとめて起こす（下線だけ先に見えると間が抜ける）。
+  registerAll(".lead-heading__wrap",               { y: 28 });
   registerAll(".gallery-tile",                     { y: 32 }, 0.06);
 
   // ── Sento teaser (home) ─────────────────────────────────────────────
-  registerAll(".sento-section .section__label", { y: 20 });
-  registerAll(".sento-section__text > *",        { x: -40 }, 0.08);
-  registerAll(".sento-section__map",             { x: 40 });
+  // 写真が左、文字が右。右から滑り込ませて斜めの流れに沿わせる。
+  registerAll(".sento-section .split__body > *", { x: 40 }, 0.08);
 
   // ── Manner teaser (home) ────────────────────────────
-  registerAll(".manner-section .section__label",  { y: 20 });
-  registerAll(".manner-section .section__title",  { y: 28 });
-  registerAll(".manner-section .manner-highlight-card", { y: 32 }, 0.08);
+  // 写真が右、文字が左。左から滑り込ませて銭湯紹介と逆向きにする。
+  registerAll(".manner-section .split__body > *", { x: -40 }, 0.08);
 
   // ── About story (dedicated page) ────────────────────
   registerAll(".about-story-section .section__label", { y: 20 });

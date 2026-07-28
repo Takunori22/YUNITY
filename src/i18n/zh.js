@@ -15,6 +15,9 @@ export default {
     label: "图片集",
     title: "走进钱汤的世界",
   },
+  lead: {
+    culture: "日本的钱汤文化与礼仪",
+  },
   sento: {
     teaser_label: "钱汤介绍",
     teaser_title: "日本引以为傲的浴汤文化",

@@ -15,6 +15,9 @@ export default {
     label: "ギャラリー",
     title: "銭湯の世界へ",
   },
+  lead: {
+    culture: "日本の銭湯文化とマナー",
+  },
   sento: {
     teaser_label: "銭湯紹介",
     teaser_title: "日本が誇る、湯の文化",

@@ -35,6 +35,10 @@
   --temp-cool:     var(--color-indigo);      /* through-line: cool hero … */
   --temp-warm:     var(--color-yuzu);        /* … warm survey */
 
+  /* 木肌 — 羽目板・番台・下駄箱の色。写真の上に敷く膜として使うので、
+     rgb 成分だけ持たせて alpha は使う場所ごとに変える。 */
+  --wood-rgb:      51, 34, 26;
+
   --grain-opacity: 0.05;                     /* washi feTurbulence overlay strength */
   --vignette:      radial-gradient(ellipse at center, transparent 70%, rgba(14,16,24,0.06) 100%);
 

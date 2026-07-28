@@ -15,6 +15,9 @@ export default {
     label: "Gallery",
     title: "Step Into the World of Sento",
   },
+  lead: {
+    culture: "Bathhouse Culture & Etiquette",
+  },
   sento: {
     teaser_label: "Sento Guide",
     teaser_title: "Japan's Culture of the Bath",

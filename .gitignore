@@ -3,3 +3,9 @@ dist/
 .DS_Store
 .superpowers/
 .playwright-mcp/
+.claude/
+
+# 動作確認用に撮ったスクリーンショット（ルート直下のみ。成果物ではない）
+/*.png
+/*.jpeg
+/*.jpg
