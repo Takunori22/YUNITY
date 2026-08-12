@@ -1,177 +1,274 @@
 /* ============================================================
-   BASE — Reset, Custom Properties, Typography Tokens
+   BASE — リセット / デザイントークン / 文字組みのプリミティブ
+   ハンドオフ: design_handoff_yunity_redesign/README.md
 ============================================================ */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 :root {
-  /* Colors — 和色 (Washoku) Japanese traditional palette */
-  --color-teal:    #48929B; /* 浅葱 (Asagi) — 銭湯タイルの青緑 */
-  --color-coral:   #C53D43; /* 紅 (Kurenai) — 鳥居・漆の赤 */
-  --color-yuzu:    #C8960C; /* 山吹 (Yamabuki) — 金箔の黄金色 */
-  --color-indigo:  #1C1F2E; /* 藍 (Ai) — 深夜の藍染め */
-  --color-navy:    #252A40; /* 紺 (Kon) — 暗い藍紺 */
-  --color-cream:   #F9F3E8; /* 生成 (Kinari) — 和紙の白 */
-  --color-offwhite:#EDE8DE; /* 白練 (Shiraneri) — 練り絹の白 */
-  --color-charcoal:#2C2828; /* 墨 (Sumi) — 墨汁の黒 */
-  --color-white:   #ffffff;
+  /* ── 色 ────────────────────────────────────────────── */
+  --paper: #f7f3ea;          /* 地色（生成り） */
+  --ink: #2a2724;            /* 文字（墨） */
+  --ink-75: rgba(42, 39, 36, 0.75);
+  --ink-70: rgba(42, 39, 36, 0.7);
+  --ink-60: rgba(42, 39, 36, 0.6);
+  --ink-45: rgba(42, 39, 36, 0.45);
+  --ink-35: rgba(42, 39, 36, 0.35);
+  --ink-20: rgba(42, 39, 36, 0.2);
+  --ink-18: rgba(42, 39, 36, 0.18);
+  --ink-16: rgba(42, 39, 36, 0.16);
+  --ink-13: rgba(42, 39, 36, 0.13);
+  --ink-12: rgba(42, 39, 36, 0.12);
 
-  /* Gradient accents — gradients are now reserved for the survey climax only.
-     Hero flattened to read cool/quiet; cards demoted to flat fills. */
-  --grad-hero:     linear-gradient(135deg, rgba(28,31,46,0.92) 0%, rgba(197,61,67,0.12) 100%);
-  --grad-teal:     linear-gradient(135deg, #48929B, #5EADB7);
-  --grad-coral:    linear-gradient(135deg, #C53D43, #D4635A);
-  --grad-yuzu:     linear-gradient(135deg, #C8960C, #DAA827);
-  --grad-card:     rgba(255,255,255,0.04);  /* flat-fill demotion (was a gradient) */
+  --asagi: #3f7e86;          /* 浅葱（機能色） */
+  --asagi-lt: #8fc2c8;       /* 浅葱（暗地の上） */
+  --kurenai: #9e3238;        /* 紅 */
+  --kurenai-lt: #d07c80;     /* 紅（暗地の上） */
+  --yamabuki: #b5860b;       /* 山吹（ルールの点のみ） */
 
-  /* ── 湯気と余白 — Steam & Margin design tokens ── */
-  --ink:           var(--color-charcoal);   /* semantic alias: accents read as "ink" */
-  --seal:          var(--color-coral);       /* 朱印 vermilion for index numerals */
-  --accent-pop:    var(--color-coral);       /* single interaction-accent (one 紅 pop) */
-  --temp-cool:     var(--color-indigo);      /* through-line: cool hero … */
-  --temp-warm:     var(--color-yuzu);        /* … warm survey */
+  --ai: #1c1f2e;             /* 藍 */
+  --ai-2: #232838;           /* 藍（プレースホルダ地） */
 
-  /* 木肌 — 羽目板・番台・下駄箱の色。写真の上に敷く膜として使うので、
-     rgb 成分だけ持たせて alpha は使う場所ごとに変える。 */
-  --wood-rgb:      51, 34, 26;
+  --ph-light: #e8e2d5;       /* 写真プレースホルダ（明） */
+  --ph-stripe: rgba(42, 39, 36, 0.055);
+  --ph-stripe-dark: rgba(255, 255, 255, 0.055);
 
-  --grain-opacity: 0.05;                     /* washi feTurbulence overlay strength */
-  --vignette:      radial-gradient(ellipse at center, transparent 70%, rgba(14,16,24,0.06) 100%);
+  /* 暗地の上の文字 */
+  --paper-85: rgba(247, 243, 234, 0.85);
+  --paper-82: rgba(247, 243, 234, 0.82);
+  --paper-65: rgba(247, 243, 234, 0.65);
+  --paper-55: rgba(247, 243, 234, 0.55);
+  --paper-45: rgba(247, 243, 234, 0.45);
 
-  /* ── Liquid Sentō — temperature journey ──
-     --temp (0 cold night … 1 warm steam) is driven at runtime by
-     temperature.js; CSS derives bg + accents from it via color-mix. */
-  --temp:          0;
-  --bath-night:    #0E1018;   /* 藍の夜 — cold, before the bath */
-  --bath-cool:     #122A30;   /* 浅葱の湯 — entering the water */
-  --bath-warm:     #2A1A1C;   /* 夕暮れの湯 — warm depths */
-  --bath-hot:      #3A1E16;   /* 紅・山吹の湯 — the survey climax */
-  /* current water tone, interpolated cool→hot by --temp */
-  --bath-now: color-mix(in oklab,
-                color-mix(in oklab, var(--bath-night), var(--bath-cool) calc(min(var(--temp) * 2, 1) * 100%)),
-                color-mix(in oklab, var(--bath-warm), var(--bath-hot) calc(max(var(--temp) * 2 - 1, 0) * 100%))
-                calc(var(--temp) * 100%));
-  /* accent that warms with depth: 浅葱 → 山吹 → 紅 */
-  --accent-now: color-mix(in oklab, var(--color-teal),
-                  color-mix(in oklab, var(--color-yuzu), var(--color-coral) calc(var(--temp) * 100%))
-                  calc(min(var(--temp) * 1.4, 1) * 100%));
+  /* ── 書体 ──────────────────────────────────────────── */
+  --font-display: "Shippori Mincho", serif;
+  --font-body: "Zen Kaku Gothic New", "Noto Sans SC", "Noto Sans KR", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
 
-  --text-display:  clamp(3.5rem, 12vw, 8.5rem); /* oversized Mincho display scale */
-  --ease-ink:      cubic-bezier(0.16, 1, 0.3, 1); /* settle-never-bounce house easing */
-  --noren-duration: 0.7s;                    /* single source of truth for the curtain */
+  /* ── 余白 ──────────────────────────────────────────── */
+  --container-max: 1400px;
+  --gutter: 48px;
+  --header-h: 80px;
+  --section-gap: 120px;
+  --grid-gap: 88px;
 
-  /* Typography — Liquid Sentō: aged Mincho display + rounded humanist body */
-  --font-display: 'Zen Old Mincho', serif;
-  --font-body:    'Zen Maru Gothic', 'Noto Sans SC', 'Noto Sans KR', sans-serif;
-  --font-latin:   'Fraunces', Georgia, serif;
-
-  --text-xs:   0.75rem;
-  --text-sm:   0.875rem;
-  --text-base: 1rem;
-  --text-lg:   1.25rem;
-  --text-xl:   1.5rem;
-  --text-2xl:  2rem;
-  --text-3xl:  3rem;
-  --text-4xl:  4.5rem;
-  --text-5xl:  7rem;
-
-  /* Spacing */
-  --space-xs:  0.5rem;
-  --space-sm:  1rem;
-  --space-md:  2rem;
-  --space-lg:  4rem;
-  --space-xl:  8rem;
-
-  /* Misc */
-  --radius-sm: 0.5rem;
-  --radius-md: 1rem;
-  --radius-lg: 2rem;
-  --radius-full: 9999px;
-
-  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.35);
-  --shadow-glow-teal: 0 0 40px rgba(72, 146, 155, 0.4);   /* 浅葱 glow */
-  --shadow-glow-coral: 0 0 40px rgba(197, 61, 67, 0.4);   /* 紅 glow */
-
-  --transition-fast: 0.2s ease;
-  --transition-med:  0.4s ease;
-  --transition-slow: 0.7s var(--ease-ink);  /* inherits the house ink easing */
-
-  --nav-height: 72px;
-  --container-max: 1200px;
+  /* ── 動き ──────────────────────────────────────────── */
+  --ease-settle: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-curtain: cubic-bezier(0.65, 0, 0.35, 1);
+  --noren-rise: 380ms;
 }
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
 }
 
 body {
   font-family: var(--font-body);
   font-weight: 400;
-  color: var(--color-charcoal);
-  background-color: var(--color-cream);
-  overflow-x: hidden;
+  color: var(--ink);
+  background: var(--paper);
   -webkit-font-smoothing: antialiased;
+  text-wrap: pretty;
+  overflow-x: clip;
 }
 
-img, video {
+img,
+video {
+  display: block;
   max-width: 100%;
-  display: block;
-}
-
-/* ── WebGL water background (the 湯) ── */
-#water-canvas {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  display: block;
-  pointer-events: none;
-}
-
-/* Fallback: no-WebGL / reduced motion → plain cream */
-body.no-water {
-  background:
-    radial-gradient(120% 80% at 18% -5%, rgba(72, 146, 155, 0.06) 0%, transparent 55%),
-    radial-gradient(110% 85% at 92% 105%, rgba(200, 150, 12, 0.05) 0%, transparent 60%),
-    var(--color-cream);
 }
 
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
 
 button {
-  cursor: pointer;
-  border: none;
-  background: none;
   font-family: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 ul {
   list-style: none;
 }
 
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }   /* tab swaps & anchors jump instantly */
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
+/* ── ページ（タブ切替） ────────────────────────────── */
+.page {
+  display: none;
+}
+.page.active {
+  display: block;
 }
 
-/* Single-flag overrides (set in main.js): kill texture & curtain motion */
-body.reduced {
-  --grain-opacity: 0;
+/* ── コンテナ / セクション ─────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
 }
-body.reduced .vignette,
-body.reduced #noren {
-  display: none !important;
+
+.section {
+  padding-top: var(--section-gap);
+}
+/* ヒーロー・ページ見出しの直後 */
+.section--first {
+  padding-top: 110px;
+}
+.section--tight {
+  padding-top: 96px;
+}
+/* 上罫で区切るセクション */
+.section--divided {
+  padding-top: 130px;
+}
+.section--divided > .container > .grid {
+  padding-top: 60px;
+  border-top: 1px solid var(--ink-18);
+}
+
+/* ============================================================
+   文字組みのプリミティブ
+============================================================ */
+
+/* モノスペースの小見出し・番号ラベル */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  color: var(--ink-45);
+  margin-bottom: 20px;
+}
+.eyebrow--teal {
+  color: var(--asagi);
+}
+.eyebrow--light {
+  color: var(--asagi-lt);
+}
+.eyebrow--on-red {
+  color: rgba(247, 243, 234, 0.72);
+}
+
+/* セクション見出し（明朝） */
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.2vw, 46px);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 1.45;
+  white-space: pre-line;
+  margin: 0 0 26px;
+}
+.section-title--sm {
+  font-size: clamp(26px, 2.7vw, 36px);
+  line-height: 1.5;
+}
+/* 追従カラムの見出し。250px の狭いカラムに入るので、翻訳語が
+   1語で入りきらないときのために折り返しを許す。 */
+.section-title--xs {
+  font-size: clamp(24px, 2.4vw, 32px);
+  line-height: 1.5;
+  margin-bottom: 28px;
+  overflow-wrap: break-word;
+}
+
+/* 導入の明朝リード */
+.lede {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.95;
+  letter-spacing: 0.06em;
+  white-space: pre-line;
+  margin: 0;
+}
+.lede--sm {
+  font-size: 24px;
+}
+
+/* 導入まわりの本文（15px） */
+.lede-body {
+  font-size: 15px;
+  line-height: 2.15;
+  color: var(--ink-75);
+  margin: 0 0 20px;
+}
+.lede-body:last-child {
+  margin-bottom: 0;
+}
+
+/* 本文 */
+.body-text {
+  font-size: 14px;
+  line-height: 2.1;
+  color: var(--ink-70);
+  margin: 0;
+}
+.body-text--lg {
+  font-size: 15px;
+  line-height: 2.2;
+  color: rgba(42, 39, 36, 0.74);
+}
+.body-text--light {
+  color: var(--paper-85);
+  font-size: 15px;
+  line-height: 2.15;
+}
+
+/* ローマ字表記 */
+.romaji {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--ink-45);
+  margin: 0 0 32px;
+}
+.romaji--light {
+  color: var(--paper-65);
+}
+
+/* 注記 */
+.note {
+  font-size: 11px;
+  line-height: 1.8;
+  color: rgba(42, 39, 36, 0.5);
+  margin: 0 0 28px;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --gutter: 24px;
+    --header-h: 60px;
+    --section-gap: 84px;
+    --grid-gap: 44px;
+  }
+  .section--first {
+    padding-top: 76px;
+  }
+  .section--tight {
+    padding-top: 68px;
+  }
+  .section--divided {
+    padding-top: 88px;
+  }
+  .section--divided > .container > .grid {
+    padding-top: 44px;
+  }
+  .lede {
+    font-size: 22px;
+    line-height: 1.85;
+  }
+  .lede--sm {
+    font-size: 21px;
+  }
 }

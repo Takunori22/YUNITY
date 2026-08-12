@@ -5,9 +5,11 @@ import ko from "./ko.js";
 
 const translations = { ja, en, zh, ko };
 
+// 和文フォントに中国語・韓国語の字形は入っていないので、
+// その言語を選んだときだけ Noto を足す。
 const fontMap = {
-  zh: "https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;500;700&display=swap",
-  ko: "https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700&display=swap",
+  zh: "https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap",
+  ko: "https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap",
 };
 
 function loadFont(lang) {
@@ -36,55 +38,30 @@ export function setLanguage(lang) {
   document.documentElement.lang = lang;
 
   document.querySelectorAll("[data-i18n]").forEach((el) => {
-    const key = el.dataset.i18n;
-    const text = key.split(".").reduce((obj, k) => obj?.[k], translations[lang]);
-    if (text != null) {
-      if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
-        el.placeholder = text;
-      } else {
-        el.textContent = text;
-      }
-    }
+    const text = el.dataset.i18n
+      .split(".")
+      .reduce((obj, key) => obj?.[key], translations[lang]);
+    if (text != null) el.textContent = text;
   });
 
-  // Update Google Form iframe src and CTA link
+  // アンケートの回答先
   const formUrl = translations[lang].survey?.formUrl;
-  const iframe = document.querySelector(".survey-iframe");
-  if (iframe && formUrl) iframe.src = formUrl;
-  const ctaLink = document.getElementById("survey-cta-link");
-  if (ctaLink && formUrl) ctaLink.href = formUrl;
+  const cta = document.getElementById("survey-cta");
+  if (cta && formUrl) cta.href = formUrl;
 
-  // Update active state on language buttons
   document.querySelectorAll("[data-lang-btn]").forEach((btn) => {
     btn.classList.toggle("active", btn.dataset.langBtn === lang);
   });
 
   loadFont(lang);
-
-  // setLanguage overwrites textContent — let decorations recompute geometry
-  window.__onLangChange?.();
 }
 
 export function initI18n() {
-  const lang = detectDefaultLang();
-  const firstVisit = !localStorage.getItem("yunity-lang");
+  setLanguage(detectDefaultLang());
 
-  if (firstVisit) {
-    showLangOverlay();
-  } else {
-    setLanguage(lang);
-    hideLangOverlay();
-  }
-}
-
-function showLangOverlay() {
-  const overlay = document.getElementById("lang-overlay");
-  if (overlay) overlay.classList.remove("hidden");
-}
-
-function hideLangOverlay() {
-  const overlay = document.getElementById("lang-overlay");
-  if (overlay) overlay.classList.add("hidden");
+  document.querySelectorAll("[data-lang-btn]").forEach((btn) => {
+    btn.addEventListener("click", () => setLanguage(btn.dataset.langBtn));
+  });
 }
 
 export function getCurrentLang() {

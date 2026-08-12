@@ -1,44 +1,67 @@
 /* ============================================================
-   ANIMATIONS — CSS Keyframes
+   ANIMATIONS — リビール / ドリフト / スクロール合図
+   動きが許可されているときだけ main.js が body に .js-motion を付ける。
+   その1クラスに全部ぶら下げているので、reduced-motion では
+   要素は最初から表示状態のまま何も起こらない。
 ============================================================ */
 
-@keyframes scrollLinePulse {
-  0%, 100% { opacity: 1; transform: scaleY(1); }
-  50% { opacity: 0.3; transform: scaleY(0.6); }
+body.js-motion [data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 34px, 0);
+}
+/* 到達後の transform は none。translate3d(0,0,0) のままだと
+   包含ブロックが残り、中の position:sticky が効かなくなる。 */
+body.js-motion [data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+  transition: opacity 1.05s var(--ease-settle), transform 1.05s var(--ease-settle);
 }
 
-/* Hero waterline gentle sway */
-@keyframes waterlineSway {
-  0%, 100% { transform: translateY(0) scaleX(1); opacity: 0.55; }
-  50%      { transform: translateY(-6px) scaleX(1.02); opacity: 0.75; }
+/* 全画面写真のゆっくりした寄り */
+.ph[data-drift] {
+  animation: drift 22s ease-in-out infinite alternate;
+}
+.ph[data-drift="24"] {
+  animation-duration: 24s;
 }
 
-/* Liquid reflection wobble for the hero tagline (SVG displacement is animated
-   separately; this adds a faint vertical breathing) */
-@keyframes liquidBreath {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-3px); }
+@keyframes drift {
+  0% {
+    transform: scale(1.06) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: scale(1.14) translate3d(0, -1.5%, 0);
+  }
 }
 
-@keyframes floatUp {
-  0% { transform: translateY(0) scale(1); opacity: 0.6; }
-  100% { transform: translateY(-120px) scale(0.4); opacity: 0; }
+@keyframes cue {
+  0%,
+  100% {
+    transform: scaleY(0.25);
+    opacity: 0.35;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
 }
 
-@keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 0 20px rgba(72,146,155,0.3); }
-  50%       { box-shadow: 0 0 40px rgba(72,146,155,0.55); }
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .ph[data-drift] {
+    animation: none;
+  }
+  .hero__cue {
+    animation: none;
+    opacity: 0.6;
+  }
+  .noren {
+    display: none;
+  }
 }
-
-/* Survey warm tide glow breathing */
-@keyframes tideBreath {
-  0%, 100% { opacity: 0.7; transform: translateX(-50%) translateY(0); }
-  50%      { opacity: 1;   transform: translateX(-50%) translateY(-5%); }
-}
-
-/* Hero CTA: no CSS bounce — it would fight the GSAP magnetic transform.
-   The magnetic pull (survey.js) provides the interactive motion instead. */
-
-/* 初期非表示は CSS ではなく GSAP の gsap.set() で管理する
-   CSS opacity:0 を残すと GSAP が TO 値を 0 と読み変化なしになるため廃止 */
-
