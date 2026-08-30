@@ -5,7 +5,7 @@
 //  そのまま上へ抜ける。GSAP は使わず CSS transition + タイマーで組む。
 // ============================================================
 
-const VALID_TABS = ["home", "sento", "manner", "about"];
+const VALID_TABS = ["home", "sento", "manner", "about", "survey"];
 const STEP_HASH = /^step-[1-6]$/;
 
 const D = 380; // 立ち上がり / 抜けの時間

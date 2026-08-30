@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/src/styles/pages.css" />
     <link rel="stylesheet" href="/src/styles/animations.css" />
     <link rel="stylesheet" href="/src/styles/lang-gate.css" />
+    <link rel="stylesheet" href="/src/styles/survey.css" />
   </head>
   <body>
 
@@ -60,6 +61,10 @@
           <button class="site-nav__tab" data-tab="about">
             <span class="site-nav__ja" data-i18n="nav.about">アバウト</span>
             <span class="site-nav__en">ABOUT</span>
+          </button>
+          <button class="site-nav__tab" data-tab="survey">
+            <span class="site-nav__ja" data-i18n="nav.survey">アンケート</span>
+            <span class="site-nav__en">SURVEY</span>
           </button>
 
           <!-- ドロワー時のみ表示。デスクトップでは .site-header__inner 直下の
@@ -113,7 +118,7 @@
             </p>
             <div class="hero__actions" data-reveal data-delay="340">
               <button class="btn btn--paper" data-tab="manner" data-i18n="home.hero_cta_primary">入浴の作法を読む</button>
-              <a class="btn btn--underline btn--on-dark" href="#survey" data-i18n="home.hero_cta_secondary">アンケートに答える</a>
+              <button class="btn btn--underline btn--on-dark" data-tab="survey" data-i18n="home.hero_cta_secondary">アンケートに答える</button>
             </div>
           </div>
         </div>
@@ -285,14 +290,14 @@
       </section>
 
       <!-- アンケート帯 -->
-      <section class="survey" id="survey">
+      <section class="survey" id="survey-teaser">
         <div class="container survey__inner">
           <div data-reveal>
             <div class="eyebrow eyebrow--on-red" data-i18n="home.survey_eyebrow">03 — SURVEY / 約3分</div>
             <h2 class="survey__title" data-i18n="home.survey_title">声を聞かせてください</h2>
             <p class="body-text body-text--light survey__body" data-i18n="home.survey_body">皆さんのご意見が、YU-NITYの活動をつくります。ぜひアンケートにご協力ください。</p>
           </div>
-          <a class="btn btn--paper" id="survey-cta" href="#" target="_blank" rel="noopener noreferrer" data-reveal data-delay="120" data-i18n="home.survey_cta">回答する</a>
+          <button class="btn btn--paper" data-tab="survey" data-reveal data-delay="120" data-i18n="home.survey_cta">回答する</button>
         </div>
       </section>
 
@@ -797,6 +802,13 @@
       </section>
 
     </div><!-- /page-about -->
+
+    <!-- ============================================================
+         PAGE: アンケート
+    ============================================================ -->
+    <div class="page" id="page-survey">
+      <section class="survey-form" id="survey-form-root" aria-live="polite"></section>
+    </div>
 
     <!-- ============================================================
          FOOTER

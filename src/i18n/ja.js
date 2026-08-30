@@ -174,10 +174,6 @@ export default {
     member6_bio: "現場での交流イベントを、楽しく安全に運営します。",
   },
 
-  survey: {
-    formUrl: "https://forms.gle/eRkf3yYtsHTEPZaX9",
-  },
-
   footer: {
     tagline: "銭湯でつながる世界",
     copy: "© 2025 YU-NITY PROJECT. ALL RIGHTS RESERVED.",

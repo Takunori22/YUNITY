@@ -177,10 +177,6 @@ export default {
     member6_bio: "I run our on-site exchange events — safely, and with plenty of fun.",
   },
 
-  survey: {
-    formUrl: "https://forms.gle/eRkf3yYtsHTEPZaX9",
-  },
-
   footer: {
     tagline: "Connecting worlds through sento",
     copy: "© 2025 YU-NITY PROJECT. ALL RIGHTS RESERVED.",

@@ -1,0 +1,6 @@
+/* アンケートウィザード。詳細は Task 6 で追加。 */
+#page-survey .survey-form {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 140px 24px 120px;
+}

@@ -161,10 +161,6 @@ export default {
     member6_bio: "负责现场交流活动的运营，兼顾趣味与安全。",
   },
 
-  survey: {
-    formUrl: "https://forms.gle/eRkf3yYtsHTEPZaX9",
-  },
-
   footer: {
     tagline: "以钱汤连接世界",
     copy: "© 2025 YU-NITY PROJECT. ALL RIGHTS RESERVED.",

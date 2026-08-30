@@ -172,10 +172,6 @@ export default {
     member6_bio: "현장 교류 이벤트를 즐겁고 안전하게 운영합니다.",
   },
 
-  survey: {
-    formUrl: "https://forms.gle/eRkf3yYtsHTEPZaX9",
-  },
-
   footer: {
     tagline: "센토로 연결하는 세계",
     copy: "© 2025 YU-NITY PROJECT. ALL RIGHTS RESERVED.",

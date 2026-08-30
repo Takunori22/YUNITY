@@ -46,11 +46,6 @@ export function setLanguage(lang) {
     if (text != null) el.textContent = text;
   });
 
-  // アンケートの回答先
-  const formUrl = translations[lang].survey?.formUrl;
-  const cta = document.getElementById("survey-cta");
-  if (cta && formUrl) cta.href = formUrl;
-
   document.querySelectorAll("[data-lang-btn]").forEach((btn) => {
     btn.classList.toggle("active", btn.dataset.langBtn === lang);
   });
