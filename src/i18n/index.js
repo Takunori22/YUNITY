@@ -3,8 +3,19 @@ import en from "./en.js";
 import fr from "./fr.js";
 import zh from "./zh.js";
 import ko from "./ko.js";
+import surveyJa from "./survey/ja.js";
+import surveyEn from "./survey/en.js";
+import surveyFr from "./survey/fr.js";
+import surveyZh from "./survey/zh.js";
+import surveyKo from "./survey/ko.js";
 
 const translations = { ja, en, fr, zh, ko };
+
+translations.ja.surveyForm = surveyJa;
+translations.en.surveyForm = surveyEn;
+translations.fr.surveyForm = surveyFr;
+translations.zh.surveyForm = surveyZh;
+translations.ko.surveyForm = surveyKo;
 
 // 和文フォントに中国語・韓国語の字形は入っていないので、
 // その言語を選んだときだけ Noto を足す。
