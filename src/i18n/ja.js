@@ -5,6 +5,7 @@ export default {
     sento: "銭湯紹介",
     manner: "マナー",
     about: "アバウト",
+    survey: "アンケート",
   },
 
   home: {
@@ -20,7 +21,7 @@ export default {
 
     stat1_value: "6",
     stat1_label: "入浴のステップ",
-    stat2_value: "4",
+    stat2_value: "5",
     stat2_label: "対応言語",
     stat3_value: "¥520",
     stat3_label: "大人の入浴料（東京）",

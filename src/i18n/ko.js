@@ -5,6 +5,7 @@ export default {
     sento: "센토 소개",
     manner: "매너",
     about: "소개",
+    survey: "설문",
   },
 
   home: {
@@ -20,7 +21,7 @@ export default {
 
     stat1_value: "6",
     stat1_label: "입욕 단계",
-    stat2_value: "4",
+    stat2_value: "5",
     stat2_label: "지원 언어",
     stat3_value: "¥520",
     stat3_label: "성인 입욕료 (도쿄)",

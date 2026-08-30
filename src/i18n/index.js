@@ -1,9 +1,10 @@
 import ja from "./ja.js";
 import en from "./en.js";
+import fr from "./fr.js";
 import zh from "./zh.js";
 import ko from "./ko.js";
 
-const translations = { ja, en, zh, ko };
+const translations = { ja, en, fr, zh, ko };
 
 // 和文フォントに中国語・韓国語の字形は入っていないので、
 // その言語を選んだときだけ Noto を足す。
@@ -28,6 +29,7 @@ function detectDefaultLang() {
   const browser = navigator.language.toLowerCase();
   if (browser.startsWith("ja")) return "ja";
   if (browser.startsWith("zh")) return "zh";
+  if (browser.startsWith("fr")) return "fr";
   if (browser.startsWith("ko")) return "ko";
   return "en";
 }

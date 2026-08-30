@@ -5,6 +5,7 @@ export default {
     sento: "钱汤介绍",
     manner: "礼仪",
     about: "关于我们",
+    survey: "问卷",
   },
 
   home: {
@@ -20,7 +21,7 @@ export default {
 
     stat1_value: "6",
     stat1_label: "入浴步骤",
-    stat2_value: "4",
+    stat2_value: "5",
     stat2_label: "支持语言",
     stat3_value: "¥520",
     stat3_label: "成人入浴费（东京）",

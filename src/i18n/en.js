@@ -6,6 +6,7 @@ export default {
     sento: "Sento",
     manner: "Manners",
     about: "About",
+    survey: "Survey",
   },
 
   home: {
@@ -21,7 +22,7 @@ export default {
 
     stat1_value: "6",
     stat1_label: "Steps to a bath",
-    stat2_value: "4",
+    stat2_value: "5",
     stat2_label: "Languages",
     stat3_value: "¥520",
     stat3_label: "Adult admission (Tokyo)",
