@@ -90,27 +90,26 @@ export default {
     body2:
       "카운터 너머로 오가는 인사, 단골 손님들의 스스럼없는 대화——이곳에는 도심의 소란을 잊게 하는 따뜻한 시간이 흐릅니다. 찾아오는 그 누구도 가리지 않는 넉넉함이야말로 다이코쿠유가 지켜온 자부심입니다.",
 
-    feature1_title: "가라하후 지붕이 맞이하는 입구",
+    feature1_title: "옛 모습 그대로의 현관",
     feature1_body:
-      "당당한 가라하후 양식의 지붕은 다이코쿠유의 상징입니다. 문을 들어서는 순간 옛 정취가 짙게 남아 있습니다.",
+      "격자 미닫이문을 열면 신발장이 늘어선 토방. 쇼와 시절과 다름없는 현관 풍경이 찾는 이를 그대로 맞이합니다.",
     feature2_title: "카운터에서 시작되는 교류의 시간",
     feature2_body:
       "카운터에서 나누는 사소한 대화가 방문의 시작입니다. 처음 오신 분에게는 입욕 순서도 친절히 알려줍니다.",
-    feature3_title: "욕실을 수놓는 웅장한 센토 벽화",
+    feature3_title: "김이 빠져나가는 탁 트인 천장",
     feature3_body:
-      "피어오르는 김 너머로 펼쳐지는 후지산 벽화. 탕에 몸을 담근 채 올려다보는 그 풍경은 다이코쿠유만의 특별한 순간입니다.",
+      "욕실 천장은 시원하게 트여 있고, 높은 창으로 빛과 바깥 공기가 들어옵니다. 피어오른 김이 완만하게 빠져나가는 옛 방식의 센토 건축입니다.",
 
     access_eyebrow: "ACCESS — 위치",
     access_title: "오시는 길",
     access_addr_label: "ADDRESS 주소",
-    access_addr_value: "도쿄도 분쿄구 〇〇 2-0-0",
+    access_addr_value: "〒112-0012 도쿄도 분쿄구 오쓰카 3-8-6",
     access_hours_label: "HOURS 영업시간",
-    access_hours_value: "15:30 — 24:00",
+    access_hours_value: "15:30 — 23:30",
     access_closed_label: "CLOSED 정기 휴일",
-    access_closed_value: "금요일",
+    access_closed_value: "월요일",
     access_price_label: "PRICE 입욕료",
-    access_price_value: "성인 ¥520 / 어린이 ¥200",
-    access_note: "※ 영업시간과 요금은 임시 정보입니다. 정식 정보로 교체해 주세요.",
+    access_price_value: "성인 ¥600 / 중학생 ¥500 / 초등학생 이하 ¥200",
     access_cta: "구글 맵에서 열기",
   },
 

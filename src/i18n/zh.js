@@ -83,25 +83,24 @@ export default {
     body2:
       "柜台前的一句问候，常客之间不经意的闲聊——这里流淌着让都市喧嚣暂时远去的温暖时光。对每一位到访者都敞开怀抱，这正是大黒湯一直守护的骄傲。",
 
-    feature1_title: "唐破风屋顶迎接来客",
-    feature1_body: "气派的唐破风屋顶是大黒湯的标志，一踏入店内，昭和时代的氛围便扑面而来。",
+    feature1_title: "昔日风貌依旧的玄关",
+    feature1_body: "推开格子拉门，便是摆着木制鞋柜的水泥地玄关。这方与昭和年代别无二致的入口，静静迎接每一位来客。",
     feature2_title: "从柜台开始的交流时光",
     feature2_body:
       "在柜台前，与店主或工作人员的简单交谈由此展开，初次到访者也会被耐心告知入浴流程。",
-    feature3_title: "浴室中壮丽的钱汤壁画",
-    feature3_body: "透过氤氲热气，一幅富士山壁画在浴池上方展开——这是大黒湯独有的奢侈时刻。",
+    feature3_title: "让蒸汽升腾散去的挑高空间",
+    feature3_body: "浴室天花板高高挑空，高窗引入光线与外气。腾起的热气缓缓向上散去，正是昔日钱汤的建筑智慧。",
 
     access_eyebrow: "ACCESS — 场所",
     access_title: "交通指南",
     access_addr_label: "ADDRESS 地址",
-    access_addr_value: "东京都文京区〇〇 2-0-0",
+    access_addr_value: "〒112-0012 东京都文京区大塚3-8-6",
     access_hours_label: "HOURS 营业时间",
-    access_hours_value: "15:30 — 24:00",
+    access_hours_value: "15:30 — 23:30",
     access_closed_label: "CLOSED 定休日",
-    access_closed_value: "周五",
+    access_closed_value: "周一",
     access_price_label: "PRICE 入浴费",
-    access_price_value: "成人 ¥520 ／ 儿童 ¥200",
-    access_note: "※营业时间与价格为临时信息，请替换为正式内容。",
+    access_price_value: "成人 ¥600 ／ 初中生 ¥500 ／ 小学生及以下 ¥200",
     access_cta: "在谷歌地图中打开",
   },
 

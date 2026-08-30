@@ -92,27 +92,26 @@ export default {
     body2:
       "A greeting across the reception counter, easy chatter between regulars — here, time slows down in a way the city rarely allows. Welcoming everyone who walks through its doors, without exception, is the quiet pride Daikoku-yu has carried all along.",
 
-    feature1_title: "A gabled roof greets every visitor",
+    feature1_title: "An old-fashioned entrance welcomes you",
     feature1_body:
-      "The bathhouse's signature karahafu gable roof still stands proud, carrying the atmosphere of a bygone era the moment you step inside.",
+      "Slide open the latticed door and you step into a stone-floored genkan lined with wooden shoe lockers — an entryway that has looked much the same since the Showa era.",
     feature2_title: "Connection begins at the counter",
     feature2_body:
       "A few words exchanged at the counter set the tone for your visit — staff are happy to walk first-timers through the routine.",
-    feature3_title: "A grand mural over the bathing hall",
+    feature3_title: "A soaring open ceiling",
     feature3_body:
-      "Through the rising steam, a sweeping mural of Mt. Fuji unfolds above the tub — a small luxury unique to Daikoku-yu.",
+      "The bathing hall rises into a tall, open ceiling, with high clerestory windows drawing in light and air. The steam lifts and drifts away — classic old-bathhouse architecture.",
 
     access_eyebrow: "ACCESS — LOCATION",
     access_title: "Access",
     access_addr_label: "ADDRESS",
-    access_addr_value: "0-0-0 〇〇, Bunkyo-ku, Tokyo",
+    access_addr_value: "3-8-6 Otsuka, Bunkyo-ku, Tokyo 112-0012",
     access_hours_label: "HOURS",
-    access_hours_value: "15:30 — 24:00",
+    access_hours_value: "15:30 — 23:30",
     access_closed_label: "CLOSED",
-    access_closed_value: "Fridays",
+    access_closed_value: "Mondays",
     access_price_label: "PRICE",
-    access_price_value: "Adults ¥520 / Children ¥200",
-    access_note: "*Hours and pricing shown are placeholders — please replace with confirmed details.",
+    access_price_value: "Adults ¥600 / Junior high ¥500 / Elementary & under ¥200",
     access_cta: "Open in Google Maps",
   },
 

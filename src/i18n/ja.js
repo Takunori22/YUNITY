@@ -90,27 +90,26 @@ export default {
     body2:
       "番台越しに交わされるあいさつ、常連客同士の何気ない会話——ここには、都会の喧騒を忘れさせる、あたたかな時間が流れています。訪れる人を選ばない懐の深さこそ、大黒湯が守り続けてきた誇りです。",
 
-    feature1_title: "唐破風の屋根が出迎える玄関",
+    feature1_title: "昔ながらの佇まいが迎える玄関",
     feature1_body:
-      "堂々とした唐破風造りの屋根は、大黒湯のシンボル。一歩くぐれば、昭和の面影が今も色濃く残ります。",
+      "格子の引き戸をくぐれば、下駄箱の並ぶ土間。昭和のころと変わらない玄関の風景が、訪れる人をそのまま迎えてくれます。",
     feature2_title: "番台からはじまる、ひとときの交流",
     feature2_body:
       "受付では、ご主人やスタッフとの何気ないやり取りが待っています。初めての方には入浴の流れも丁寧に教えてもらえます。",
-    feature3_title: "浴室を彩る、雄大な銭湯絵",
+    feature3_title: "湯気が抜けていく、高い吹き抜け",
     feature3_body:
-      "湯気の向こうに広がる富士山の銭湯絵。湯船に浸かりながら見上げる一枚は、大黒湯ならではの贅沢なひとときです。",
+      "浴室の天井は大きく吹き抜け、高窓から光と外気が入ります。立ちのぼる湯気がゆるやかに抜けていく、昔ながらの銭湯建築です。",
 
     access_eyebrow: "ACCESS — 場所",
     access_title: "アクセス",
     access_addr_label: "ADDRESS 住所",
-    access_addr_value: "東京都文京区〇〇 2-0-0",
+    access_addr_value: "〒112-0012 東京都文京区大塚3-8-6",
     access_hours_label: "HOURS 営業時間",
-    access_hours_value: "15:30 — 24:00",
+    access_hours_value: "15:30 — 23:30",
     access_closed_label: "CLOSED 定休日",
-    access_closed_value: "金曜日",
+    access_closed_value: "月曜日",
     access_price_label: "PRICE 入浴料",
-    access_price_value: "大人 ¥520 ／ 子ども ¥200",
-    access_note: "※営業時間・料金は仮の情報です。正式な情報に差し替えてください。",
+    access_price_value: "大人 ¥600 ／ 中学生 ¥500 ／ 小学生以下 ¥200",
     access_cta: "Google マップで開く",
   },
 
