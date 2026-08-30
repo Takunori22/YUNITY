@@ -85,3 +85,15 @@ export function initI18n() {
 export function getCurrentLang() {
   return localStorage.getItem("yunity-lang") || detectDefaultLang();
 }
+
+export { translations };
+
+export function t(path, vars) {
+  const lang = getCurrentLang();
+  let s = path.split(".").reduce((o, k) => o?.[k], translations[lang]);
+  if (s == null) s = path.split(".").reduce((o, k) => o?.[k], translations.en);
+  if (typeof s === "string" && vars) {
+    for (const [k, v] of Object.entries(vars)) s = s.replaceAll(`{${k}}`, v);
+  }
+  return s ?? path;
+}

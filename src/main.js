@@ -3,6 +3,7 @@ import { initReveal } from "./animations/reveal.js";
 import { createParallax } from "./animations/parallax.js";
 import { createHeaderChrome } from "./animations/header.js";
 import { initTabs } from "./animations/tabs.js";
+import { initSurvey } from "./survey/wizard.js";
 
 // ── 動きの設定はここが唯一の判断点 ───────────────────
 // .js-motion が付いているときだけ animations.css のリビールが働く。
@@ -64,6 +65,8 @@ window.addEventListener("resize", onScroll, { passive: true });
 // 直接ページを指して来たとき、走査時に正しいページが表示されていないと
 // 「読み込み時に画面内にある要素」を取り違える。
 initTabs({ reduced, onSwap: onScroll });
+
+initSurvey({ rootId: "survey-form-root" });
 
 if (!reduced) initReveal();
 

@@ -4,3 +4,48 @@
   margin: 0 auto;
   padding: 140px 24px 120px;
 }
+
+.survey-head { margin-bottom: 32px; }
+.survey-progress {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px; letter-spacing: 0.16em; color: rgba(42,39,36,0.5);
+  margin: 0 0 10px;
+}
+.survey-bar { height: 2px; background: rgba(42,39,36,0.14); margin-bottom: 24px; }
+.survey-bar__fill { display: block; height: 100%; background: #2a7d7b; transition: width 0.25s ease; }
+.survey-section { font-size: 22px; margin: 0 0 8px; }
+.survey-intro, .survey-consent {
+  font-size: 13px; line-height: 1.8; color: rgba(42,39,36,0.62); margin: 12px 0 0;
+}
+.survey-q { border: 0; padding: 0; margin: 0 0 40px; }
+.survey-q__label { font-size: 15px; line-height: 1.7; padding: 0; margin-bottom: 14px; }
+.survey-opts { display: grid; gap: 8px; }
+.survey-opt {
+  display: flex; gap: 12px; align-items: flex-start;
+  border: 1px solid rgba(42,39,36,0.2); padding: 14px 16px; cursor: pointer; font-size: 14px;
+}
+.survey-opt:hover { background: rgba(42,39,36,0.04); }
+.survey-opt input { margin-top: 3px; }
+.survey-select, .survey-textarea {
+  width: 100%; font: inherit; padding: 12px 14px; border: 1px solid rgba(42,39,36,0.28); background: #fff;
+}
+.survey-scale { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.survey-scale__btn {
+  appearance: none; border: 1px solid rgba(42,39,36,0.28); background: transparent;
+  font-size: 16px; padding: 14px 0; cursor: pointer;
+}
+.survey-scale__btn.is-on { background: #2a7d7b; color: #fff; border-color: #2a7d7b; }
+.survey-scale__ends {
+  display: flex; justify-content: space-between; font-size: 11px; color: rgba(42,39,36,0.5); margin-top: 8px;
+}
+.survey-error { color: #b3261e; font-size: 13px; margin: 4px 0 0; }
+.survey-nav { display: flex; gap: 12px; margin-top: 40px; }
+.survey-btn {
+  appearance: none; border: 1px solid #2a2724; background: #2a2724; color: #efe9df;
+  font: inherit; letter-spacing: 0.06em; padding: 14px 28px; cursor: pointer;
+}
+.survey-btn--ghost { background: transparent; color: #2a2724; }
+.survey-btn[disabled] { opacity: 0.5; cursor: default; }
+.survey-thanks { text-align: center; padding: 60px 0; }
+.survey-thanks__title { font-size: 22px; margin: 0 0 12px; }
+.survey-thanks__body { font-size: 14px; color: rgba(42,39,36,0.62); margin: 0 0 28px; }
