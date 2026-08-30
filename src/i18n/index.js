@@ -23,7 +23,7 @@ function loadFont(lang) {
   }
 }
 
-function detectDefaultLang() {
+export function detectDefaultLang() {
   const saved = localStorage.getItem("yunity-lang");
   if (saved && translations[saved]) return saved;
   const browser = navigator.language.toLowerCase();
@@ -58,8 +58,18 @@ export function setLanguage(lang) {
   loadFont(lang);
 }
 
+export function hasStoredLang() {
+  const saved = localStorage.getItem("yunity-lang");
+  return !!(saved && translations[saved]);
+}
+
 export function initI18n() {
-  setLanguage(detectDefaultLang());
+  if (hasStoredLang()) {
+    setLanguage(localStorage.getItem("yunity-lang"));
+  } else {
+    // 言語未確定。フォールバック描画のまま main.js がゲートを開く。
+    document.documentElement.lang = "en";
+  }
 
   document.querySelectorAll("[data-lang-btn]").forEach((btn) => {
     btn.addEventListener("click", () => setLanguage(btn.dataset.langBtn));

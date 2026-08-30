@@ -1,0 +1,54 @@
+/* 初回訪問の言語選択ゲート */
+.lang-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--paper, #efe9df);
+}
+.lang-gate__card {
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+.lang-gate__lead {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(42, 39, 36, 0.55);
+  margin: 0 0 24px;
+}
+.lang-gate__grid {
+  display: grid;
+  gap: 10px;
+}
+.lang-gate__btn {
+  appearance: none;
+  border: 1px solid rgba(42, 39, 36, 0.24);
+  background: transparent;
+  color: #2a2724;
+  font-size: 17px;
+  letter-spacing: 0.04em;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.lang-gate__btn:hover,
+.lang-gate__btn:focus-visible {
+  background: rgba(42, 39, 36, 0.06);
+  border-color: rgba(42, 39, 36, 0.5);
+  outline: none;
+}
+.lang-gate__btn.is-suggested {
+  border-color: #2a7d7b;
+  box-shadow: inset 0 0 0 1px #2a7d7b;
+}
+@media (min-width: 560px) {
+  .lang-gate__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

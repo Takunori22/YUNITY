@@ -16,8 +16,23 @@
     <link rel="stylesheet" href="/src/styles/components.css" />
     <link rel="stylesheet" href="/src/styles/pages.css" />
     <link rel="stylesheet" href="/src/styles/animations.css" />
+    <link rel="stylesheet" href="/src/styles/lang-gate.css" />
   </head>
   <body>
+
+    <div class="lang-gate" id="lang-gate" role="dialog" aria-modal="true"
+         aria-label="Choose your language" hidden>
+      <div class="lang-gate__card">
+        <p class="lang-gate__lead">Choose your language</p>
+        <div class="lang-gate__grid">
+          <button class="lang-gate__btn" data-lang-choice="ja">日本語</button>
+          <button class="lang-gate__btn" data-lang-choice="en">English</button>
+          <button class="lang-gate__btn" data-lang-choice="fr">Français</button>
+          <button class="lang-gate__btn" data-lang-choice="zh">中文</button>
+          <button class="lang-gate__btn" data-lang-choice="ko">한국어</button>
+        </div>
+      </div>
+    </div>
 
     <!-- ============================================================
          HEADER — 透明・白文字で始まり、ヒーローを抜けると生成り地に反転
