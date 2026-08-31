@@ -29,7 +29,7 @@ export function initSurvey({ rootId, submit = null } = {}) {
   render();
 
   // 言語切替に追従（ヘッダートグル）
-  document.querySelectorAll("[data-lang-btn]").forEach((b) =>
+  document.querySelectorAll("[data-lang-btn], [data-lang-choice]").forEach((b) =>
     b.addEventListener("click", () => {
       if (state.status !== "done") render();
     })

@@ -358,7 +358,7 @@ function json_(obj) {
 - **ホスティング先未確認**。静的ビルドのままを前提。Apps Script URL はどのオリジンからでも動作。ビルド時に `VITE_SURVEY_ENDPOINT` を渡せない環境なら `endpoint.js` の直書きで運用。
 - スプレッドシートの Apps Script は**同時大量送信に弱い**（appendRow のロック）。想定トラフィック（イベント時に数十〜数百）なら問題なし。必要なら `LockService` を後日追加。
 - スパム対策はハニーポットのみ（軽量）。増える場合は所要時間チェックや Turnstile を後日検討。
-- 実装状況（2026-08-31）: French ロケール・言語ゲート・アンケートウィザード（日英仏中韓）・Apps Script/スプレッドシート手順まで実装済み。French コピーと survey の日本語訳はネイティブ確認が未実施（`src/i18n/fr.js` と `src/i18n/survey/fr.js` の `// NATIVE-CHECK`）。
+- 実装状況（2026-08-31）: French ロケール・言語ゲート・アンケートウィザード（日英仏中韓）・Apps Script/スプレッドシート手順まで実装済み。French コピーはネイティブ確認が未実施（`src/i18n/fr.js` に `// NATIVE-CHECK` マーカー）。survey のフランス語コピー（`src/i18n/survey/fr.js`）と日本語訳もネイティブ確認が必要だが、マーカーは未設置。
 - `src/survey/endpoint.js` は placeholder URL（`REPLACE_WITH_DEPLOYMENT_ID`）のまま。`docs/survey-setup.md` を実施し実 URL を設定して実送信を1回確認するまで、本番の回答は保存されない。
 
 ## 10. 変更ファイル一覧

@@ -9,6 +9,9 @@
   padding: 24px;
   background: var(--paper, #efe9df);
 }
+.lang-gate[hidden] {
+  display: none;
+}
 .lang-gate__card {
   width: 100%;
   max-width: 420px;
