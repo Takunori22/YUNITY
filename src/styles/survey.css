@@ -12,7 +12,7 @@
   margin: 0 0 10px;
 }
 .survey-bar { height: 2px; background: rgba(42,39,36,0.14); margin-bottom: 24px; }
-.survey-bar__fill { display: block; height: 100%; background: #2a7d7b; transition: width 0.25s ease; }
+.survey-bar__fill { display: block; height: 100%; background: var(--asagi); transition: width 0.25s ease; }
 .survey-section { font-size: 22px; margin: 0 0 8px; }
 .survey-intro, .survey-consent {
   font-size: 13px; line-height: 1.8; color: rgba(42,39,36,0.62); margin: 12px 0 0;
@@ -22,7 +22,7 @@
 .survey-opts { display: grid; gap: 8px; }
 .survey-opt {
   display: flex; gap: 12px; align-items: flex-start;
-  border: 1px solid rgba(42,39,36,0.2); padding: 14px 16px; cursor: pointer; font-size: 14px;
+  border: 1px solid var(--ink-20); padding: 14px 16px; cursor: pointer; font-size: 14px;
 }
 .survey-opt:hover { background: rgba(42,39,36,0.04); }
 .survey-opt input { margin-top: 3px; }
@@ -34,17 +34,17 @@
   appearance: none; border: 1px solid rgba(42,39,36,0.28); background: transparent;
   font-size: 16px; padding: 14px 0; cursor: pointer;
 }
-.survey-scale__btn.is-on { background: #2a7d7b; color: #fff; border-color: #2a7d7b; }
+.survey-scale__btn.is-on { background: var(--asagi); color: #fff; border-color: var(--asagi); }
 .survey-scale__ends {
   display: flex; justify-content: space-between; font-size: 11px; color: rgba(42,39,36,0.5); margin-top: 8px;
 }
 .survey-error { color: #b3261e; font-size: 13px; margin: 4px 0 0; }
 .survey-nav { display: flex; gap: 12px; margin-top: 40px; }
 .survey-btn {
-  appearance: none; border: 1px solid #2a2724; background: #2a2724; color: #efe9df;
+  appearance: none; border: 1px solid var(--ink); background: var(--ink); color: var(--paper);
   font: inherit; letter-spacing: 0.06em; padding: 14px 28px; cursor: pointer;
 }
-.survey-btn--ghost { background: transparent; color: #2a2724; }
+.survey-btn--ghost { background: transparent; color: var(--ink); }
 .survey-btn[disabled] { opacity: 0.5; cursor: default; }
 .survey-thanks { text-align: center; padding: 60px 0; }
 .survey-thanks__title { font-size: 22px; margin: 0 0 12px; }

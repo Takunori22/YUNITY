@@ -3,7 +3,7 @@ import { SURVEY_ENDPOINT } from "./endpoint.js";
 export function buildPayload(answers, lang, meta = {}) {
   return {
     language: lang,
-    _hp: "",
+    _hp: meta.hp || "",
     answers: {
       q1_nationality_code: answers.q1_nationality_code || "",
       q1_nationality: answers.q1_nationality || "",
@@ -18,7 +18,6 @@ export function buildPayload(answers, lang, meta = {}) {
       q10_free_comment: answers.q10_free_comment || "",
     },
     meta: {
-      userAgent: meta.userAgent || (typeof navigator !== "undefined" ? navigator.userAgent : ""),
       startedAt: meta.startedAt || "",
       submittedAt: meta.submittedAt || new Date().toISOString(),
     },
@@ -30,6 +29,9 @@ function numOrEmpty(v) {
 }
 
 export async function submitSurvey(payload) {
+  if (SURVEY_ENDPOINT.includes("REPLACE_WITH_DEPLOYMENT_ID")) {
+    throw new Error("Survey endpoint is not configured");
+  }
   return fetch(SURVEY_ENDPOINT, {
     method: "POST",
     headers: { "Content-Type": "text/plain;charset=utf-8" },

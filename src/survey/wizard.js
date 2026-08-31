@@ -120,6 +120,21 @@ function render() {
   step.forEach((q) => form.append(renderQuestion(q)));
   if (state.step === 4) {
     form.append(el("p", "survey-consent", t("surveyForm.consent")));
+    form.append(
+      el("div", "", "", (d) => {
+        d.setAttribute(
+          "style",
+          "position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"
+        );
+        const hp = document.createElement("input");
+        hp.type = "text";
+        hp.name = "_hp";
+        hp.tabIndex = -1;
+        hp.autocomplete = "off";
+        hp.setAttribute("aria-hidden", "true");
+        d.append(hp);
+      })
+    );
   }
   root.append(form);
 
@@ -131,6 +146,7 @@ function render() {
   if (state.step > 1) {
     nav.append(
       btn("survey-btn survey-btn--ghost", t("surveyForm.ui.back"), () => {
+        if (state.status === "error") state.status = "editing";
         state.step--;
         render();
         scrollTop();
@@ -158,6 +174,7 @@ function render() {
   function onNext() {
     const bad = validateStep();
     if (bad) return showInvalid(bad, err);
+    if (state.status === "error") state.status = "editing";
     state.step++;
     render();
     scrollTop();
@@ -274,11 +291,13 @@ function renderThanks(root) {
 }
 
 async function doSubmit() {
+  const hp = state.root.querySelector('[name="_hp"]')?.value || "";
   state.status = "submitting";
   render();
   const payload = buildPayload(state.answers, getCurrentLang(), {
     startedAt: state.startedAt,
     submittedAt: new Date().toISOString(),
+    hp,
   });
   try {
     const fn = state.submit || submitSurvey;
