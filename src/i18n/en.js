@@ -112,7 +112,7 @@ export default {
     access_closed_label: "CLOSED",
     access_closed_value: "Mondays",
     access_price_label: "PRICE",
-    access_price_value: "Adults ¥600 / Junior high ¥500 / Elementary & under ¥200",
+    access_price_value: "Adults ¥600 / Children ¥500 / Small children ¥200",
     access_cta: "Open in Google Maps",
   },
 

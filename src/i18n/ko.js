@@ -110,7 +110,7 @@ export default {
     access_closed_label: "CLOSED 정기 휴일",
     access_closed_value: "월요일",
     access_price_label: "PRICE 입욕료",
-    access_price_value: "성인 ¥600 / 중학생 ¥500 / 초등학생 이하 ¥200",
+    access_price_value: "대인 ¥600 / 중인 ¥500 / 소인 ¥200",
     access_cta: "구글 맵에서 열기",
   },
 

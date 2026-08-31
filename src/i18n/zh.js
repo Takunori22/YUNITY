@@ -101,7 +101,7 @@ export default {
     access_closed_label: "CLOSED 定休日",
     access_closed_value: "周一",
     access_price_label: "PRICE 入浴费",
-    access_price_value: "成人 ¥600 ／ 初中生 ¥500 ／ 小学生及以下 ¥200",
+    access_price_value: "大人 ¥600 ／ 中人 ¥500 ／ 小人 ¥200",
     access_cta: "在谷歌地图中打开",
   },
 

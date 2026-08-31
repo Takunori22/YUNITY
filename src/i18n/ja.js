@@ -110,7 +110,7 @@ export default {
     access_closed_label: "CLOSED 定休日",
     access_closed_value: "月曜日",
     access_price_label: "PRICE 入浴料",
-    access_price_value: "大人 ¥600 ／ 中学生 ¥500 ／ 小学生以下 ¥200",
+    access_price_value: "大人 ¥600 ／ 中人 ¥500 ／ 小人 ¥200",
     access_cta: "Google マップで開く",
   },
 

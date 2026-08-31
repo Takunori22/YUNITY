@@ -108,7 +108,7 @@ export default {
     access_closed_label: "FERMÉ",
     access_closed_value: "Le lundi",
     access_price_label: "TARIF",
-    access_price_value: "Adultes ¥600 / Collège ¥500 / Primaire et moins ¥200",
+    access_price_value: "Adultes ¥600 / Enfants ¥500 / Jeunes enfants ¥200",
     access_cta: "Ouvrir dans Google Maps",
   },
 
