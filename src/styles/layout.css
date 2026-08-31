@@ -291,6 +291,13 @@
   .nav-toggle {
     display: flex;
   }
+  /* backdrop-filter を持つ要素は position:fixed の子孫の包含ブロックになる。
+     それだとスクロール後（.is-solid 時）にドロワー .site-nav がヘッダー基準に
+     潰れて開かなくなるので、ドロワーがある幅では blur を使わない。
+     背景は rgba(...,0.94) でほぼ不透明なので見た目はほぼ変わらない。 */
+  .site-header.is-solid {
+    backdrop-filter: none;
+  }
   .lang-switch--bar {
     display: none;
   }
