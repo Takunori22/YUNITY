@@ -174,6 +174,6 @@ export default {
 
   footer: {
     tagline: "센토로 연결하는 세계",
-    copy: "© 2025 YU-NITY PROJECT. ALL RIGHTS RESERVED.",
+    copy: "© 2026 YU-NITY PROJECT. ALL RIGHTS RESERVED.",
   },
 };

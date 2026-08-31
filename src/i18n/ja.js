@@ -176,6 +176,6 @@ export default {
 
   footer: {
     tagline: "銭湯でつながる世界",
-    copy: "© 2025 YU-NITY PROJECT. ALL RIGHTS RESERVED.",
+    copy: "© 2026 YU-NITY PROJECT. ALL RIGHTS RESERVED.",
   },
 };

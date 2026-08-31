@@ -179,6 +179,6 @@ export default {
 
   footer: {
     tagline: "Connecting worlds through sento",
-    copy: "© 2025 YU-NITY PROJECT. ALL RIGHTS RESERVED.",
+    copy: "© 2026 YU-NITY PROJECT. ALL RIGHTS RESERVED.",
   },
 };

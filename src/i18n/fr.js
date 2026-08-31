@@ -174,6 +174,6 @@ export default {
 
   footer: {
     tagline: "Relier les mondes par le sento",
-    copy: "© 2025 YU-NITY PROJECT. ALL RIGHTS RESERVED.",
+    copy: "© 2026 YU-NITY PROJECT. ALL RIGHTS RESERVED.",
   },
 };

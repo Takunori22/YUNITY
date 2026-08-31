@@ -163,6 +163,6 @@ export default {
 
   footer: {
     tagline: "以钱汤连接世界",
-    copy: "© 2025 YU-NITY PROJECT. ALL RIGHTS RESERVED.",
+    copy: "© 2026 YU-NITY PROJECT. ALL RIGHTS RESERVED.",
   },
 };
