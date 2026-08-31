@@ -1,6 +1,7 @@
-import { QUESTIONS, STEPS, EXCLUSIVE_OPTION } from "./questions.js";
+import { STEPS, EXCLUSIVE_OPTION } from "./questions.js";
 import { sortedCountries, englishCountryName } from "./countries.js";
-import { t, getCurrentLang, setLanguage } from "../i18n/index.js";
+import { t, getCurrentLang } from "../i18n/index.js";
+import { buildPayload, submitSurvey } from "./submit.js";
 
 const DRAFT_KEY = "yunity-survey-draft";
 
@@ -9,6 +10,7 @@ const state = {
   answers: {},
   status: "editing", // editing | submitting | done | error
   submit: null,
+  startedAt: null,
   root: null,
 };
 
@@ -21,6 +23,7 @@ export function initSurvey({ rootId, submit = null } = {}) {
   if (!root) return;
   state.root = root;
   state.submit = submit;
+  if (!state.startedAt) state.startedAt = new Date().toISOString();
   state.answers = loadDraft();
   state.step = firstIncompleteStep();
   render();
@@ -135,9 +138,12 @@ function render() {
     );
   }
   const isLast = state.step === 4;
+  const primaryLabel = isLast
+    ? t(state.status === "error" ? "surveyForm.ui.retry" : "surveyForm.ui.submit")
+    : t("surveyForm.ui.next");
   const primary = btn(
     "survey-btn survey-btn--primary",
-    isLast ? t("surveyForm.ui.submit") : t("surveyForm.ui.next"),
+    primaryLabel,
     isLast ? onSubmit : onNext
   );
   if (state.status === "submitting") primary.disabled = true;
@@ -270,19 +276,19 @@ function renderThanks(root) {
 async function doSubmit() {
   state.status = "submitting";
   render();
+  const payload = buildPayload(state.answers, getCurrentLang(), {
+    startedAt: state.startedAt,
+    submittedAt: new Date().toISOString(),
+  });
   try {
-    if (state.submit) await state.submit(buildAnswersView());
+    const fn = state.submit || submitSurvey;
+    await fn(payload);
     state.status = "done";
     clearDraft();
   } catch {
     state.status = "error";
   }
   render();
-}
-
-function buildAnswersView() {
-  // Task 8 で submit.js の buildPayload に置き換わる。ここでは answers をそのまま渡す。
-  return { answers: state.answers, language: getCurrentLang() };
 }
 
 // ---------- tiny dom helpers ----------
