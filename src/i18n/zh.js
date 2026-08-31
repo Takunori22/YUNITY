@@ -23,7 +23,7 @@ export default {
     stat1_label: "入浴步骤",
     stat2_value: "5",
     stat2_label: "支持语言",
-    stat3_value: "¥520",
+    stat3_value: "¥600",
     stat3_label: "成人入浴费（东京）",
     stat4_value: "15:30–",
     stat4_label: "大黒湯营业时间",

@@ -23,7 +23,7 @@ export default {
     stat1_label: "入浴のステップ",
     stat2_value: "5",
     stat2_label: "対応言語",
-    stat3_value: "¥520",
+    stat3_value: "¥600",
     stat3_label: "大人の入浴料（東京）",
     stat4_value: "15:30–",
     stat4_label: "大黒湯の営業時間",

@@ -23,7 +23,7 @@ export default {
     stat1_label: "입욕 단계",
     stat2_value: "5",
     stat2_label: "지원 언어",
-    stat3_value: "¥520",
+    stat3_value: "¥600",
     stat3_label: "성인 입욕료 (도쿄)",
     stat4_value: "15:30–",
     stat4_label: "다이코쿠유 영업시간",

@@ -24,7 +24,7 @@ export default {
     stat1_label: "Steps to a bath",
     stat2_value: "5",
     stat2_label: "Languages",
-    stat3_value: "¥520",
+    stat3_value: "¥600",
     stat3_label: "Adult admission (Tokyo)",
     stat4_value: "15:30–",
     stat4_label: "Daikoku-yu opening hours",

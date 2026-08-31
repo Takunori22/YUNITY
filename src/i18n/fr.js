@@ -23,7 +23,7 @@ export default {
     stat1_label: "Étapes du bain",
     stat2_value: "5",
     stat2_label: "Langues disponibles",
-    stat3_value: "¥520",
+    stat3_value: "¥600",
     stat3_label: "Tarif adulte (Tokyo)",
     stat4_value: "15:30–",
     stat4_label: "Ouverture du Daikoku-yu",
